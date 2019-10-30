@@ -111,7 +111,7 @@ a {
     width: 100%;
     height: 100%;
     font-size: 20px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
 }
@@ -155,7 +155,7 @@ a {
     width: 100%;
     height: 38px;
     font-size: 16px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 40px;
@@ -199,7 +199,7 @@ a {
 
 .header-text-left .header-left-title {
     font-size: 48px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 800;
     color: rgba(255, 255, 255, 1);
     letter-spacing: 3px;
@@ -216,7 +216,7 @@ a {
 
 .header-text-left .header-left-title2 {
     font-size: 30px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     margin-bottom: 28px;
@@ -226,7 +226,7 @@ a {
     width: 311px;
     height: 49px;
     font-size: 18px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 27px;
@@ -244,14 +244,26 @@ a {
 
 .header-right-title {
     font-size: 28px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 800;
     color: rgba(255, 255, 255, 1);
     letter-spacing: 3px;
 }
 
 .header-right-input {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
     flex-direction: column;
     width: 306px;
     margin: 40px 10px 0px 12px;
@@ -298,7 +310,7 @@ input::-ms-input-placeholder {
     opacity: 0.96;
     border-radius: 28px;
     font-size: 22px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 58px;
@@ -341,7 +353,19 @@ span:nth-child(4) {
 }
 
 .serves-box .serves .serve-item {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     width: 400px;
     height: 100%;
@@ -366,7 +390,7 @@ span:nth-child(4) {
 
 .serve-item .serve-item-text p:nth-child(1) {
     font-size: 24px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     letter-spacing: 3px;
     color: rgba(0, 0, 0, 1);
@@ -376,7 +400,7 @@ span:nth-child(4) {
 .serve-item .serve-item-text p:nth-child(2),
 .serve-item .serve-item-text p:nth-child(3) {
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     letter-spacing: 2px;
     color: rgba(0, 0, 0, 1);
@@ -395,7 +419,7 @@ span:nth-child(4) {
     padding: 1px;
     background: linear-gradient(0deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     font-size: 14px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
     text-align: center;
@@ -420,7 +444,19 @@ span:nth-child(4) {
 }
 
 .difficulty-box .difficulty {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
     flex-direction: column;
     padding-bottom: 70px;
 }
@@ -434,7 +470,7 @@ span:nth-child(4) {
 
 .difficulty .difficulty-title p {
     font-size: 42px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin: 20px 0 0 110px;
@@ -472,7 +508,7 @@ span:nth-child(4) {
 
 .difficulty-item-title p {
     text-align: center;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
 }
@@ -514,7 +550,7 @@ span:nth-child(4) {
     padding-top: 20px;
     background: url('../images/fanganbeijing2x.png') no-repeat;
     font-size: 42px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -526,7 +562,7 @@ span:nth-child(4) {
     width: 980px;
     margin: 0 auto;
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, .8);
     text-align: center;
@@ -549,7 +585,7 @@ span:nth-child(4) {
     float: left;
     padding: 20px 79px;
     font-size: 24px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     cursor: pointer
@@ -577,7 +613,7 @@ span:nth-child(4) {
 
 .project-tabs-items p:nth-child(1) {
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     margin-top: 46px;
@@ -587,7 +623,7 @@ span:nth-child(4) {
 .project-tabs-items p:nth-child(2) {
     width: 628px;
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 26px;
@@ -601,7 +637,7 @@ span:nth-child(4) {
     opacity: 0.96;
     border-radius: 20px;
     font-size: 14px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -634,7 +670,7 @@ span:nth-child(4) {
     padding-top: 20px;
     background: url('../images/liyoubeijing2x.png') no-repeat;
     font-size: 42px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -649,7 +685,7 @@ span:nth-child(4) {
     width: 680px;
     margin: 0 auto;
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -665,7 +701,19 @@ span:nth-child(4) {
 .reason-content-items {}
 
 .reason-content-item {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     height: 120px;
     width: 560px;
@@ -700,7 +748,7 @@ span:nth-child(4) {
 
 .reason-content-item-text p:nth-child(1) {
     font-size: 24px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin-top: 25px;
@@ -708,7 +756,7 @@ span:nth-child(4) {
 
 .reason-content-item-text p:nth-child(2) {
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     opacity: 0.6;
@@ -740,7 +788,7 @@ span:nth-child(4) {
     padding-top: 20px;
     background: url('../images/liuchengbeijing2x.png') no-repeat;
     font-size: 42px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -749,7 +797,7 @@ span:nth-child(4) {
 
 .process-text {
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -784,7 +832,7 @@ span:nth-child(4) {
     padding-top: 20px;
     background: url('../images/hangyezixun2x.png') no-repeat;
     font-size: 42px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -793,7 +841,7 @@ span:nth-child(4) {
 
 .consulting-text {
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -802,8 +850,24 @@ span:nth-child(4) {
 }
 
 .consulting-items ul {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
     justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
     flex-wrap: wrap;
     /* background-color: skyblue; */
 }
@@ -854,7 +918,7 @@ span:nth-child(4) {
 .consulting-item-content-title {
     height: 72px;
     font-size: 23px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     line-height: 36px;
@@ -885,7 +949,7 @@ span:nth-child(4) {
 .consulting-item-content-details {
     height: 72px;
     font-size: 14px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
     line-height: 24px;
@@ -914,7 +978,7 @@ span:nth-child(4) {
     padding: 1px;
     border-radius: 30px;
     font-size: 14px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
     background: linear-gradient(0deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
@@ -936,7 +1000,7 @@ span:nth-child(4) {
     width: 100%;
     height: 100%;
     font-size: 14px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
 }
@@ -956,7 +1020,7 @@ span:nth-child(4) {
 
 .salary-box .salary div:nth-child(1) {
     font-size: 30px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -978,7 +1042,7 @@ span:nth-child(4) {
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     border-radius: 23px;
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -991,7 +1055,7 @@ span:nth-child(4) {
     width: 100%;
     height: 100%;
     font-size: 16px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
 }
@@ -1010,7 +1074,7 @@ span:nth-child(4) {
 .partener_titile {
     padding-top: 59px;
     font-size: 48px;
-    font-family: "PingFang SC";
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     -webkit-text-stroke: 1px undefined;
@@ -1032,7 +1096,7 @@ span:nth-child(4) {
     margin-top: 79px;
     overflow: hidden;
     font-size: 11px;
-    font-family: "Source Han Sans CN";
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 300;
     color: rgba(220, 220, 220, 1);
 }
@@ -1070,7 +1134,7 @@ span:nth-child(4) {
 
 .parter_catefories dl dd>a {
     font-size: 18px;
-    font-family: 'Source Han Sans CN';
+    font-family: 'Source Han Sans CN', "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(220, 220, 220, .7);
 }
@@ -1137,7 +1201,7 @@ span:nth-child(4) {
 
 .goTop div {
     font-size: 9px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(50, 50, 50, 1);
 }
@@ -1188,7 +1252,7 @@ span:nth-child(4) {
     position: relative;
     text-align: center;
     font-size: 30px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN" , "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 100px;
@@ -1219,7 +1283,19 @@ span:nth-child(4) {
 
 .form-content div {
     height: 40px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
     justify-content: space-between;
     margin-bottom: 41px;
     line-height: 44px;
@@ -1235,7 +1311,7 @@ span:nth-child(4) {
     height: 40px;
     margin-right: 20px;
     font-size: 14px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
     line-height: 46px;
@@ -1258,7 +1334,7 @@ span:nth-child(4) {
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     border-radius: 4px;
     font-size: 24px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     /* text-align: center; */
     color: rgba(255, 255, 255, 1);

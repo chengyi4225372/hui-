@@ -92,15 +92,43 @@ a {
 
 /* 头部信息 */
 .header-box {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     height: 100px;
     background: rgba(255, 255, 255, 1);
 }
 
 .header-box .header {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
     justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     /* padding-top: 15px; */
 }
@@ -128,7 +156,7 @@ a {
 
 .header .tohome a {
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(68, 139, 255, 1);
 }
@@ -173,7 +201,7 @@ a {
     transform: translateY(-29%);
     background: url('../images/biaodanbeijing.png') no-repeat;
     font-size: 24px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     /* color: rgba(47, 128, 237, 1); */
     color: #fff;
@@ -182,8 +210,24 @@ a {
 }
 
 .succeed-box>div {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
     flex-direction: column;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     width: 320px;
     margin: 0 auto;
@@ -202,7 +246,7 @@ a {
 
 .succeed-box>div div:nth-child(1) p {
     font-size: 30px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
     line-height: 30px;
@@ -216,7 +260,7 @@ a {
     opacity: 0.96;
     border-radius: 4px;
     font-size: 24px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 60px;
@@ -229,7 +273,7 @@ a {
     width: 100%;
     height: 100%;
     font-size: 24px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 60px;
@@ -243,7 +287,7 @@ a {
     transform: translateY(-29%);
     background: url('../images/biaodanbeijing.png') no-repeat;
     font-size: 24px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     /* color: rgba(47, 128, 237, 1); */
     color: #fff;
@@ -254,7 +298,7 @@ a {
 
 .tabs {
     font-size: 18px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     line-height: 30px;
     text-align: center;
@@ -311,7 +355,19 @@ a {
 .tabs-item-qy .two-box div,
 .tabs-item-gr .one-box div,
 .tabs-item-gr .two-box div {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     height: 46px;
     width: 420px;
@@ -329,7 +385,7 @@ a {
     margin-bottom: 14px;
     height: auto;
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
 }
@@ -343,7 +399,7 @@ a {
     height: 100%;
     padding-left: 17px;
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
     outline: none;
@@ -370,7 +426,7 @@ a {
     width: 90px;
     border-right: 2px solid rgba(0, 0, 0, .2);
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: #333;
 }
@@ -402,7 +458,7 @@ a {
 ::-webkit-input-placeholder {
     /* WebKit browsers */
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
 }
@@ -410,7 +466,7 @@ a {
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
 }
@@ -418,7 +474,7 @@ a {
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
 }
@@ -426,7 +482,7 @@ a {
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
     font-size: 16px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(153, 153, 153, 1) !important;
 }
@@ -445,7 +501,7 @@ a {
 .tabs-item-gr p {
     text-align: right;
     font-size: 14px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
 }
@@ -453,7 +509,7 @@ a {
 .tabs-item-qy p a,
 .tabs-item-gr p a {
     font-size: 14px;
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: #2F80ED;
 }
@@ -473,7 +529,7 @@ a {
     text-align: center;
     line-height: 56px;
     font-size: 20px;
-    font-family: Source Han Sans CN;
+    font-family: "Source Han Sans CN","Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 60px;
