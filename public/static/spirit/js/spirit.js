@@ -13,7 +13,7 @@ function search(objthis){
 
 //手机验证
 function checkPhone(phone) {
-    var tel_reg = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
+    var tel_reg = /^1(3|4|5|6|7|8|9)\d{9}$/;
     if (tel_reg.test(phone)) {
         return true;
     } else {
@@ -22,7 +22,7 @@ function checkPhone(phone) {
 }
 
 //接口 公海
-var gurl = "http://172.26.2.41:8089";
+var gurl = "http://172.26.3.8:8089";
 
 var urkl = gurl + "/api/wechatForeign/public/addGatewayPotentialCustomer";
 
