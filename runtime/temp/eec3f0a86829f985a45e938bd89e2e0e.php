@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1572404634;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1572404703;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +42,18 @@
           </ul>
         </div>
         <!-- 登陆注册 -->
-        <div class="u_info clearfix">
-          <i></i>
-          <span>13312541484</span>
+        <?php if(empty($userinfo['mobile'])): ?>
+        <div class='register'>
+          <a href="<?php echo url('/home/login/login'); ?>">登录</a>
+          <span></span>
+          <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
+        <?php else: ?>
+        <div class="u_info clearfix" style="cursor:pointer;">
+          <i></i>
+          <span><?php echo $userinfo['mobile']; ?></span>
+        </div>
+        <?php endif; ?>
       </div>
 
     </div>

@@ -330,7 +330,7 @@ a {
     border-radius: 3px 0px 0px 3px;
 }
 
-/* .search-box>div::after {
+ .search-box>div::after {
     content: '';
     position: absolute;
     left: -20px;
@@ -339,7 +339,9 @@ a {
     height: 14px;
    /* background: url('../images/guanbi.png') no-repeat 100% 100%; */
     cursor: pointer;
-} */
+}
+
+
 
 .search-box>div {
     position: relative;

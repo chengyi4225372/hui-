@@ -35,8 +35,8 @@ function check_phone(phone){
 var login_module = (function () {
     //手机号登录
     var phone_login_info = function phone_login_info(objthis){
-        layer.msg('暂时只有账号登录的一种方式',{icon:2,time:2000});return;
-        var url = baseUrl + '/api/portal/login';
+        //layer.msg('暂时只有账号登录的一种方式',{icon:2,time:2000});return;
+        var url = baseUrl + '/api/portal/loginByVercode';
         var phone = $(objthis).parent().find('.phone_input').val();
         var code_input = $(objthis).parent().find('.code_input').val();
         var check_phones = check_phone(phone);
@@ -46,19 +46,35 @@ var login_module = (function () {
         if(code_input == '' || code_input == 'undefined' || code_input == undefined){
             layer.msg('请输入验证码',{icon:2,time:2000});return;
         }
-        var data = new Object();
-        data.userMobile = phone;
+        var url2 = $('#check_url').attr('data-url');
         $.ajax({
             type:"post",
             url: url,
-            data: data,
+            data: JSON.stringify({userMobile:phone,verCode:code_input}),
             headers:{
                 "Content-Type": "application/json",
             },
             dataType:'json',
             success: function(ret) {
-                if(ret.status == true){
-                    location.href = '/home/index/index';
+                if(ret.status == 200){
+                    if(ret.status == 200){
+                        $.post(
+                            url2,
+                            {mobile:ret.data.mobile,token:ret.data.token,userName:ret.data.userName,userType:ret.data.userType},
+                            function (res){
+                                if(res.status == true){
+                                    layer.msg(res.message,{icon:1,time:1500},function (){
+                                        var href_url = $('#login_url').attr('data-url');
+                                        location.href = href_url;
+                                    });
+                                }else{
+                                    layer.msg(res.message,{icon:2,time:2000});
+                                }
+                            }
+                        );
+                    }else{
+                        layer.msg(ret.message,{icon:2,time:2000});
+                    }
                 }
             },
             error: function(data) {

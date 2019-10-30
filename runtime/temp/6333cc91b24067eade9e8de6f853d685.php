@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1572398833;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1572404765;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +62,7 @@
     <div class="content-box">
       <div class="w content">
         <div class="bread-crumbs">
-          <span>首页</span> > <span>资讯</span> > <span>搜索结果共<span><?php echo $total; ?></span>条</span>
+          <span><a href="/">首页</a></span> > <span><a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a></span> > <span></span>
         </div>
         <div class="information-list">
           <div class="tabs clearfix">
@@ -77,7 +77,15 @@
           </div>
           <div class="tabs-items show">
             <ul  id="shang">
-              <?php if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sh): $mod = ($i % 2 );++$i;?>
+              <?php if(empty($shang) || (($shang instanceof \think\Collection || $shang instanceof \think\Paginator ) && $shang->isEmpty())): ?>
+              <li>
+                <div class="tabs-items-content">
+                  <div class="tabs-items-content-text figcaption">
+                    <p>抱歉，没有找到与<b style="color: #ff2222"><?php echo \think\Request::instance()->get('keyword'); ?></b>的相关结果。</p>
+                  </div>
+                </div>
+              </li>
+              <?php else: if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sh): $mod = ($i % 2 );++$i;?>
               <li>
                 <a href="<?php echo url('/home/index/getInfo',array('mid'=>$sh['id'])); ?>">
 <!--                  <div class="tabs-items-img">-->
@@ -95,7 +103,7 @@
                   </div>
                 </a>
               </li>
-              <?php endforeach; endif; else: echo "" ;endif; ?>
+              <?php endforeach; endif; else: echo "" ;endif; endif; ?>
             </ul>
             <input type="hidden" id="sid" value="<?php echo \think\Request::instance()->get('keyword'); ?>">
             <input type="hidden" id="page" value="1">
@@ -103,7 +111,15 @@
           </div>
           <div class="tabs-items">
             <ul id="biao">
-              <?php if(is_array($biao) || $biao instanceof \think\Collection || $biao instanceof \think\Paginator): $i = 0; $__LIST__ = $biao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ww): $mod = ($i % 2 );++$i;?>
+              <?php if(empty($biao) || (($biao instanceof \think\Collection || $biao instanceof \think\Paginator ) && $biao->isEmpty())): ?>
+              <li>
+                <div class="tabs-items-content">
+                  <div class="tabs-items-content-text figcaption">
+                    <p>抱歉，没有找到与<b style="color: #ff2222"><?php echo \think\Request::instance()->get('keyword'); ?></b>的相关结果。</p>
+                  </div>
+                </div>
+              </li>
+              <?php else: if(is_array($biao) || $biao instanceof \think\Collection || $biao instanceof \think\Paginator): $i = 0; $__LIST__ = $biao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ww): $mod = ($i % 2 );++$i;?>
               <li>
                 <a href="<?php echo url('/home/index/getInfo',array('mid'=>$ww['id'])); ?>">
 <!--                  <div class="tabs-items-img">-->
@@ -123,7 +139,7 @@
                   </div>
                 </a>
               </li>
-              <?php endforeach; endif; else: echo "" ;endif; ?>
+              <?php endforeach; endif; else: echo "" ;endif; endif; ?>
             </ul>
             <input type="hidden" id="bid" value="<?php echo \think\Request::instance()->get('keyword'); ?>">
             <input type="hidden" id="pages" value="1">

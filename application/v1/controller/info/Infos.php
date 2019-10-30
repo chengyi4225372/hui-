@@ -33,6 +33,7 @@ class Infos extends  AuthController
         $array['content'] = input('post.content', '');
         $array['desc'] = input('post.desc', '', 'trim');
         $array['keyword'] = input('post.keyword', '', 'trim');
+        $array['create_time'] =time();
 
        $ret = Infosservice::instance()->saves($array);
        if($ret){

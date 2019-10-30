@@ -2,7 +2,7 @@
 namespace app\v1\controller;
 use think\Controller;
 use app\v1\service\Systems;
-use think\Session;
+use think\Cookie;
 class Login extends Controller
 {
     /**
@@ -61,11 +61,11 @@ class Login extends Controller
             }
             $this->success(__('修改成功!'));
         }
-        $userId = Session::get('userid');
+        $userId = Cookie::get('userid');
         if($userId == ''){
             echo '<h3 style="color:red;">用户不存在!!!</h3>';exit;
         }
-        $this->assign('username',Session::get('username'));
+        $this->assign('username',Cookie::get('username'));
         $this->assign('userid',$userId);
         return $this->fetch();
     }
@@ -82,11 +82,11 @@ class Login extends Controller
         }
         //销毁session
         Cookie::set('userid','');
-        Session::set('username','');
-        Session::set('truename','');
-        Session::set('tel','');
-        Session::set('power','');
-        Session::set('admin','');
+        Cookie::set('username','');
+        Cookie::set('truename','');
+        Cookie::set('tel','');
+        Cookie::set('power','');
+        Cookie::set('admin','');
         $this->success(__('退出登录成功'),url('v1/login/index'));
     }
 }

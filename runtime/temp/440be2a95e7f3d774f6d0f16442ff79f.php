@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\get_info.html";i:1572266449;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\get_info.html";i:1572405891;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +9,8 @@
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" href="/static/spirit/css/base.css">
   <link rel="stylesheet" href="/static/spirit/css/detail.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src='/static/home/js/common.js'></script>
 </head>
 
 <body>
@@ -35,7 +37,7 @@
     </div>
     <div class='main_content'>
       <div class='content_middle'>
-        <div class='bread_title'>首页 > 资讯 > 新闻详情</div>
+        <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > 新闻详情</div>
         <div class='pic_total'>
           <div class='pic_title'><?php echo $info['title']; ?></div>
           <div class='time'><?php echo $info['create_time']; ?></div>

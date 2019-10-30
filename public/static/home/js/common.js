@@ -15,9 +15,9 @@ function getErp() {
 
        var data = {};
 
-       data.contactName = $("#contactName").val();//联系姓名
-       data.companyName = $("#companyName").val(); //公司
-       data.contactMobile = $("#contactMobile").val();//手机
+       data.contactName = $.trim($("#contactName").val());//联系姓名
+       data.companyName = $.trim($("#companyName").val()); //公司
+       data.contactMobile = $.trim($("#contactMobile").val());//手机
        data.source = $("#source").val(); //渠道
        data.identification = $("#identification").val();//标识
 
@@ -198,8 +198,9 @@ function moreShang(keyword,pages,objthis){
     var hrefs = $(objthis).attr('data-href');
     $.get(urls,{'keyword':keyword,'page':pages},function(ret){
         if(ret.code == 200){
-            var html= "<li>";
+            var html= "";
             $.each(ret.data,function(i,item){
+                 html+= "<li>";
                  html+= "<a href='"+hrefs+"?mid="+item.id+" '>";
                  html+= "<div class='tabs-items-content'>";
                  html+= "<div class='tabs-items-content-title figcaption'>";
@@ -209,11 +210,11 @@ function moreShang(keyword,pages,objthis){
                  html+= "<div class='tabs-items-content-time'><span>";
                  html+= "<img src='/static/spirit/images/shijian2x.png'>";
                  html+="</span><span>"+item.create_time+"</span></div></div></a>";
+                 html +="</li>";
             });
-            html +="</li>";
-
-            $('#page').val(++pages);
             $('#shang').append(html).html();
+            $('#page').val(++pages);
+
         }
 
         if(ret.code == 404){
@@ -229,8 +230,9 @@ function moreBiao(keyword,pages,objthis){
     var hrefs = $(objthis).attr('data-href');
     $.get(urls,{'keyword':keyword,'page':pages},function(ret){
         if(ret.code == 200){
-            var html= "<li>";
+            var html= "";
             $.each(ret.data,function(i,item){
+                html+= "<li>";
                 html+= "<a href='"+hrefs+"?mid="+item.id+" '>";
                 html+= "<div class='tabs-items-content'>";
                 html+= "<div class='tabs-items-content-title figcaption'>";
@@ -240,11 +242,11 @@ function moreBiao(keyword,pages,objthis){
                 html+= "<div class='tabs-items-content-time'><span>";
                 html+= "<img src='/static/spirit/images/shijian2x.png'>";
                 html+="</span><span>"+item.create_time+"</span></div></div></a>";
+                html+="</li>";
             });
-            html +="</li>";
-
-            $('#pages').val(++pages);
+            console.log(html);
             $('#biao').append(html).html();
+            $('#pages').val(++pages);
         }
 
         if(ret.code == 404){

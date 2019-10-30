@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1572352825;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1572405618;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +68,7 @@
                     <div class='w content'>
                         <div class='content_logo' id='logo'></div>
                         <ul>
-                            <li><a href="#">首页</a></li>
+                            <li class="nav-active"><a href="#">首页</a></li>
                             <li><a href="#">惠优税</a></li>
                             <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
                             <li><a href="#">惠多薪</a></li>
@@ -87,7 +87,6 @@
                             <img src="/static/home/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
                             <span style="vertical-align: middle;"><?php echo $userinfo['mobile']; ?></span>
                         </div>
-
                         <?php endif; ?>
                     </div>
                 </div>

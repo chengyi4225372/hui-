@@ -30,9 +30,9 @@ function btnErp(){
 
     var datas = {};
 
-    datas.contactName = $("#Name").val();//联系姓名
-    datas.companyName = $("#cName").val(); //公司
-    datas.contactMobile = $("#Mobile").val();//手机
+    datas.contactName =$.trim($("#Name").val());//联系姓名
+    datas.companyName = $.trim($("#cName").val()); //公司
+    datas.contactMobile =$.trim($("#Mobile").val());//手机
     datas.source = $("#source").val(); //渠道
     datas.identification = $("#identification").val();//标识
 
@@ -106,9 +106,9 @@ function turnoff(){
 function form_btn(){
     var data = {};
 
-    data.contactName = $("#contactName").val();//联系姓名
-    data.companyName = $("#companyName").val(); //公司
-    data.contactMobile = $("#contactMobile").val();//手机
+    data.contactName = $.trim($("#contactName").val());//联系姓名
+    data.companyName = $.trim($("#companyName").val()); //公司
+    data.contactMobile =$.trim($("#contactMobile").val());//手机
     data.source = $("#sources").val(); //渠道
     data.identification = $("#identifications").val();//标识
 
@@ -176,8 +176,9 @@ function getMore(keyword,i,objthis){
    var hrefs=$(objthis).attr('data-href');
    $.get(urls,{'keyword':keyword,'page':i},function(ret){
          if(ret.code == 200){
-             var html= '<li>';
+             var html= '';
              $.each(ret.data,function(i,item){
+                html+= "<li>";
                 html+= "<a href= '"+hrefs+"?mid="+item.id+"'>";
                 html+= "<div class='tabs-items-img'><img src="+item.imgs+" alt=''></div>";
                 html+= "<div class='tabs-items-content'><div class='tabs-items-content-title figcaption'>";
@@ -188,11 +189,11 @@ function getMore(keyword,i,objthis){
                 html+="<span><img src='/static/spirit/images/shijian2x.png' alt=''></span>";
                 html+="<span>"+item.create_time +"</span></div></div>";
                 html+= "</a>";
+                html+="</li>";
              });
-             html +='</li>';
-            console.log(html);return;
-            $('#page').val(++i);
-            $('#content').append(html).html();
+             console.log(html);
+             $('#content').append(html).html();
+             $('#page').val(++i);
          }
 
          if(ret.code == 404){
@@ -203,7 +204,7 @@ function getMore(keyword,i,objthis){
 
 }
 
-<<<<<<< HEAD
+
 //回到惠灵工
 function go_work(obj){
     var urls  = $(obj).attr('data-url');
@@ -215,7 +216,7 @@ function go_news(obj){
     var urlk  = $(obj).attr('data-url');
     window.location.href= urlk;
 }
-=======
+
 
 //登录了才能查看了解更多
 function is_login(objthis){
@@ -229,4 +230,4 @@ function is_login(objthis){
     }
 }
 
->>>>>>> da3e85cb4a2ff309ebb8f44f7843ec3b96f2dadc
+
