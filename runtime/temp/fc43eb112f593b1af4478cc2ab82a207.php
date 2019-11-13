@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573609918;}*/ ?>
- <!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573616980;}*/ ?>
+ <!DOCTYPE>
 <html lang="en">
 
 <head>
