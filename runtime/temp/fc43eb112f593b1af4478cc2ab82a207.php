@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573616980;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573626318;}*/ ?>
  <!DOCTYPE>
 <html lang="en">
 
@@ -15,68 +15,74 @@
     <script src='/static/home/js/common.js'></script>
     <script src='/static/common/js/public.js'></script>
     <style>
-        .header {
-            background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");
-        }
+        /*.header {*/
+            /*background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");*/
+        /*}*/
 
         .success_icon>div:nth-of-type(1) {
             position: absolute;
-            top: 49px;
-            left: 14px;
-            width: 386px;
-            height: 166px;
+            top: 3.0625rem;
+            left: 0.875rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huiduoxin.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(2) {
             position: absolute;
-            top: 106px;
-            right: -3px;
-            width: 386px;
-            height: 166px;
+            top: 6.625rem;
+            right: -0.1875rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: 100%;
             background-image: url('/static/home/images/huichuangyou.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(3) {
             position: absolute;
-            top: 190px;
+            top: 11.875rem;
             left: -1px;
-            width: 386px;
-            height: 166px;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huilinggong.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(4) {
             position: absolute;
-            top: 229px;
-            right: 6px;
-            width: 386px;
-            height: 166px;
+            top: 14.3125rem;
+            right: 0.375rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: 100%;
             background-image: url('/static/home/images/huizhaoshi.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(5) {
             position: absolute;
-            bottom: 107px;
-            left: 12px;
-            width: 386px;
-            height: 166px;
+            bottom: 6.6875rem;
+            left: 0.75rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huiqidong.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(6) {
             position: absolute;
-            bottom: 72px;
-            right: -7px;
-            width: 386px;
-            height: 166px;
+            bottom: 4.5rem;
+            right: -0.4375rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huichuangye.png');
+            background-size: 100% 100%;
         }
     </style>
 
