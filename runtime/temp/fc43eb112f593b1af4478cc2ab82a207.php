@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573626318;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573627635;}*/ ?>
  <!DOCTYPE>
 <html lang="en">
 
@@ -124,12 +124,12 @@
                         <div class='content_logo' id='logo'></div>
                         <ul>
                             <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-                            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
-                            <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
-                            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
-                            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
-                            <li><a href="<?php echo url('/home/searches/index'); ?>">惠找事</a></li>
-                            <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li>
+                            <li><a href="<?php echo url('/home/optimal/index'); ?>" target="_blank">惠优税</a></li>
+                            <li><a href="http://172.26.3.13:8009/index.php" target="_blank">惠灵工</a></li>
+                            <li><a href="<?php echo url('/home/many/index'); ?>" target="_blank">惠多薪</a></li>
+                            <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
+                            <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
+                            <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
