@@ -1,36 +1,48 @@
 <?php
 
 namespace app\home\controller;
+
 use app\common\controller\BaseController;
 use  think\Controller;
 use think\Cookie;
 use think\Cache;
-class Login extends  BaseController{
 
+class Login extends BaseController
+{
 
-    public function login(){
-        if(isset($_GET['id']) && !empty($_GET['id'])){
+    protected $base_urls = 'http://172.26.3.12:8009/#';
+
+    /**
+     * @DESC：登录
+     * @return mixed
+     * @author: jason
+     * @date: 2019-11-13 09:33:33
+     */
+    public function login()
+    {
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
             $id = intval($_GET['id']);
-        }else{
+        } else {
             $id = '0';
         }
-        if(isset($_GET['type']) && !empty($_GET['type'])){
+        if (isset($_GET['type']) && !empty($_GET['type'])) {
             $type = intval($_GET['type']);
-        }else{
+        } else {
             $type = '0';
         }
-        $this->assign('web_type',$type);
-        $this->assign('data_id',$id);
+        $this->assign('web_type', $type);
+        $this->assign('data_id', $id);
         return $this->fetch();
     }
 
-    public  function register(){
-        if(isset($_GET['id']) && !empty($_GET['id'])){
+    public function register()
+    {
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
             $id = intval($_GET['id']);
-        }else{
+        } else {
             $id = '';
         }
-        $this->assign('data_id',$id);
+        $this->assign('data_id', $id);
         return $this->fetch();
     }
 
@@ -44,22 +56,22 @@ class Login extends  BaseController{
     {
         //允许跨域
         header("Access-Control-Allow-Origin:*");
-        if($this->request->isPost() && $this->request->isAjax()){
-            if(empty($_POST)){
-                return json(['status' => false,'message' => '请确认用户或密码是否正确']);
+        if ($this->request->isPost() && $this->request->isAjax()) {
+            if (empty($_POST)) {
+                return json(['status' => false, 'message' => '请确认用户或密码是否正确']);
             }
             $mobile = $_POST['mobile'];
             $token = $_POST['token'];
             $userName = $_POST['userName'];
             $userType = $_POST['userType'];
-            Cookie::set('mobile',$mobile);
-            Cookie::set('token',$token);
-            Cookie::set('userName',$userName);
-            Cookie::set('userType',$userType);
-            Cache::set($mobile,$mobile);
-            return json(['status' => true,'message' => '登录成功']);
-        }else{
-            return json(['status' => false,'message' => '请确认用户或密码是否正确']);
+            Cookie::set('mobile', $mobile);
+            Cookie::set('token', $token);
+            Cookie::set('userName', $userName);
+            Cookie::set('userType', $userType);
+            Cache::set($mobile, $mobile);
+            return json(['status' => true, 'message' => '登录成功']);
+        } else {
+            return json(['status' => false, 'message' => '请确认用户或密码是否正确']);
         }
     }
 
@@ -73,29 +85,59 @@ class Login extends  BaseController{
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //token
-        if(empty($_GET['msg1']) || !isset($_GET['msg1'])){
-            $this->redirect('http://172.26.3.12:8009/#');return;
+        if (empty($_GET['msg1']) || !isset($_GET['msg1'])) {
+            $this->redirect($this->base_urls);
+            return;
         }
         //电话
-        if(empty($_GET['msg2']) || !isset($_GET['msg2'])){
-            $this->redirect('http://172.26.3.12:8009/#');return;
+        if (empty($_GET['msg2']) || !isset($_GET['msg2'])) {
+            $this->redirect($this->base_urls);
+            return;
         }
         //角色
-        if(empty($_GET['msg3']) || !isset($_GET['msg3'])){
-            $this->redirect('http://172.26.3.12:8009/#');return;
+        if (empty($_GET['msg3']) || !isset($_GET['msg3'])) {
+            $this->redirect($this->base_urls);
+            return;
         }
         $mobile = $_GET['msg2'];
         $token = $_GET['msg1'];
         $userType = $_GET['msg3'];
-        Cookie::set('mobile',$mobile);
-        Cookie::set('token',$token);
-        Cookie::set('userType',$userType);
-        if($userType == 'B'){
-            $this->redirect('http://172.26.3.12:8009/#/task/task');
+        Cookie::set('mobile', $mobile);
+        Cookie::set('token', $token);
+        Cookie::set('userType', $userType);
+        if ($userType == 'B') {
+            $this->redirect($this->base_urls . '/task/task');
         }
-        if($userType == 'C'){
-            $this->redirect('http://172.26.3.12:8009/#/personTask/myTask');
+        if ($userType == 'C') {
+            $this->redirect($this->base_urls . '/personTask/myTask');
         }
+    }
+
+
+    /**
+     * @DESC：全局退出
+     * @author: jason
+     * @date: 2019-11-13 09:24:43
+     */
+    public function commonlogout()
+    {
+        //允许跨域
+        header("Access-Control-Allow-Origin:*");
+        //是否是退出
+        if (empty($_GET['is_logout']) || !isset($_GET['is_logout'])) {
+            $this->redirect($this->base_urls);
+            return;
+        }
+        //电话
+        if (empty($_GET['mobile']) || !isset($_GET['mobile'])) {
+            $this->redirect($this->base_urls);
+            return;
+        }
+        Cookie::clear('mobile');
+        Cookie::clear('token');
+        Cookie::clear('userType');
+        $this->redirect($this->base_urls . '/login');
+        return;
     }
 
 
@@ -105,15 +147,16 @@ class Login extends  BaseController{
      * @author: jason
      * @date: 2019-10-31 10:38:54
      */
-    public function logout(){
-        if($this->request->isAjax() && $this->request->isPost()){
+    public function logout()
+    {
+        if ($this->request->isAjax() && $this->request->isPost()) {
             Cookie::clear('mobile');
             Cookie::clear('token');
             Cookie::clear('userName');
             Cookie::clear('userType');
-            return json(['status' => true,'message' => '退出登录成功']);
-        }else{
-            return json(['status' => false,'message' => '退出登录失败']);
+            return json(['status' => true, 'message' => '退出登录成功']);
+        } else {
+            return json(['status' => false, 'message' => '退出登录失败']);
         }
     }
 

@@ -25,23 +25,23 @@ function user_logout(objthis){
     });
 }
 
-$(function (){
-    var url = baseUrl + '/api/front/cPersonalInfo/getInfo';
-    var token = $('#data_token').val();
-    $.ajax({
-        type: "get",
-        url: url,
-        data: '',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization":token
-        },
-        dataType: 'json',
-        success: function (ret) {
-
-        },
-        error: function (data) {
-            layer.msg(data)
-        }
-    });
-});
+//$(function (){
+//    var url = baseUrl + '/api/front/cPersonalInfo/getInfo';
+//    var token = $('#data_token').val();
+//    $.ajax({
+//        type: "get",
+//        url: url,
+//        data: '',
+//        headers: {
+//            "Content-Type": "application/json",
+//            "Authorization":token
+//        },
+//        dataType: 'json',
+//        success: function (ret) {
+//
+//        },
+//        error: function (data) {
+//            layer.msg(data)
+//        }
+//    });
+//});
