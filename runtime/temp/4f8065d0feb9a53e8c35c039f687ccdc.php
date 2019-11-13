@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1573181705;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1573106971;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1573611150;}*/ ?>
  <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +13,7 @@
     <script src='/static/home/js/index.js'></script>
     <script src="/static/assets/plugins/layui/layui.all.js"></script>
     <script src='/static/home/js/common.js'></script>
-    <script src='/static/common/js/common.js'></script>
+    <script src='/static/common/js/public.js'></script>
     <style>
         .header {
             background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");
@@ -21,62 +21,68 @@
 
         .success_icon>div:nth-of-type(1) {
             position: absolute;
-            top: 49px;
-            left: 14px;
-            width: 386px;
-            height: 166px;
+            top: 3.0625rem;
+            left: 0.875rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huiduoxin.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(2) {
             position: absolute;
-            top: 106px;
-            right: -3px;
-            width: 386px;
-            height: 166px;
+            top: 6.625rem;
+            right: -0.1875rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: 100%;
             background-image: url('/static/home/images/huichuangyou.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(3) {
             position: absolute;
-            top: 190px;
+            top: 11.875rem;
             left: -1px;
-            width: 386px;
-            height: 166px;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huilinggong.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(4) {
             position: absolute;
-            top: 229px;
-            right: 6px;
-            width: 386px;
-            height: 166px;
+            top: 14.3125rem;
+            right: 0.375rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: 100%;
             background-image: url('/static/home/images/huizhaoshi.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(5) {
             position: absolute;
-            bottom: 107px;
-            left: 12px;
-            width: 386px;
-            height: 166px;
+            bottom: 6.6875rem;
+            left: 0.75rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huiqidong.png');
+            background-size: 100% 100%;
         }
 
         .success_icon>div:nth-of-type(6) {
             position: absolute;
-            bottom: 72px;
-            right: -7px;
-            width: 386px;
-            height: 166px;
+            bottom: 4.5rem;
+            right: -0.4375rem;
+            width: 24.125rem;
+            height: 10.375rem;
             background-size: contain;
             background-image: url('/static/home/images/huichuangye.png');
+            background-size: 100% 100%;
         }
     </style>
 
@@ -112,6 +118,7 @@
 
             <!-- 头部其他内容 -->
             <div class='header_fixed'>
+                <input type="hidden" id="data_token" value="<?php echo $userinfo['token']; ?>"/>
                 <div class='header_content' id='headerContent'>
                     <div class='w content'>
                         <div class='content_logo' id='logo'></div>
@@ -127,27 +134,21 @@
 
                         <?php if(empty($userinfo['mobile'])): ?>
                         <div class='register'>
-                            <a href="<?php echo url('/home/login/login'); ?>">登录</a>
+                            <!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
+                            <a href="<?php echo $baseurl; ?>" target="_blank">登录</a>
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
-                        <?php else: if(empty($userinfo['mobile'])): ?>
-<div class="loging clearfix">
-    <div class="register-btn"><a href="<?php echo url('/home/login/login'); ?>">
-        登陆
-    </a></div>
-    <div class="loging-btn"><a href="<?php echo url('/home/login/register'); ?>">注册</a></div>
-</div>
-<?php else: ?>
-<div class="u_info">
-    <img src="/static/home/images/user_img.png"
-         style="width:30px;height:30px; vertical-align: middle;">
-    <p style="display:inline-block;color:#fff;"><?php echo $userinfo['mobile']; ?></p>
-    <div class="u_info_content" id="u_info_content">
-        <a class="u_out" href="javascript:void(0)" onclick="index_module.user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
-    </div>
-</div>
-<?php endif; endif; ?>
+                        <?php else: ?>
+                        <div class="u_info">
+                            <img src="/static/home/images/user_img.png"
+                                 style="width:30px;height:30px; vertical-align: middle;">
+                            <p style="display:inline-block;color:#fff;"><?php echo $userinfo['mobile']; ?></p>
+                            <div class="u_info_content" id="u_info_content">
+                                <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -318,7 +319,7 @@
                         <?php endforeach; endif; else: echo "" ;endif; ?>
                         <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
                             data-url="<?php echo url('/home/index/infoList'); ?>"
-                            login_url="<?php echo url('/home/login/login',['type' => 3]); ?>">了解更多</button>
+                            login_url="<?php echo $baseurl; ?>">了解更多</button>
                     </div>
 
                     <div class='zhaoTotalInfo'>
@@ -327,7 +328,7 @@
                         <div class='totalInfo_content'>
                             <a href="javascript:void(0)"
                                data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
-                               login_url="<?php echo url('/home/login/login',['type' => 1,'id' => $ss['id']]); ?>"
+                               login_url="<?php echo $baseurl; ?>"
                                mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
                                 <div class='zhao_contentInfo'>
                                     <div><?php echo (isset($biaos['title']) && ($biaos['title'] !== '')?$biaos['title']:''); ?></div>
@@ -344,7 +345,7 @@
 
                         <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
                             data-url="<?php echo url('/home/index/infoList'); ?>"
-                            login_url="<?php echo url('/home/login/login',['type' => 3]); ?>">了解更多</button>
+                            login_url="<?php echo $baseurl; ?>">了解更多</button>
 
                     </div>
 
@@ -420,7 +421,34 @@
         </div>
 
     </div>
+    <script>
 
+
+
+/*        function user_logout(objthis){
+            var baseUrl = 'http://172.26.2.215:8089';
+            //var url = $(objthis).attr('data-url');
+            var url = baseUrl + '/api/huser/goOut';;
+            var url2 = $(objthis).attr('location_url');
+            var tokens = $(objthis).attr('data-token');
+            $.ajax({
+                type: "post",
+                url: url,
+                data: '',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization":tokens
+                },
+                dataType: 'json',
+                success: function (ret) {
+
+                },
+                error: function (data) {
+                    console.log(data)
+                }
+            });
+        }*/
+    </script>
 </body>
 
 </html>
