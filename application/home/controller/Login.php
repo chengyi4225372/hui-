@@ -121,6 +121,7 @@ class Login extends BaseController
      */
     public function commonlogout()
     {
+        echo '<pre>';print_r($_GET);exit;
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //是否是退出
@@ -152,7 +153,6 @@ class Login extends BaseController
         if ($this->request->isAjax() && $this->request->isPost()) {
             Cookie::clear('mobile');
             Cookie::clear('token');
-            Cookie::clear('userName');
             Cookie::clear('userType');
             return json(['status' => true, 'message' => '退出登录成功']);
         } else {
