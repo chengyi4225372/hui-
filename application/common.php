@@ -121,6 +121,27 @@ function curl_post($url, array $params = array(), $timeout = 120)
     return $result;
 }
 
+/**
+ * CURL GET 请求
+ * @param $url
+ * @param int $timeout
+ * @return mixed
+ */
+function curl_get($url, $timeout = 120)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_URL, $url);
+
+    $result = curl_exec($curl);
+    curl_close($curl);
+
+    return $result;
+}
+
 
 #SendSms("15827100194","222")
 use AlibabaCloud\Client\AlibabaCloud;

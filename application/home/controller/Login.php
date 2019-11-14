@@ -111,7 +111,7 @@ class Login extends BaseController
         $array['token'] = $token;
         $array['userType'] = $userType;
 //        //请求惠灵工的页面的接口把用户信息带过去
-        $res = curl_post($hlg_url,$array);
+        $res = curl_post($hlg_url.'/home/login/savetokens',$array);
         if ($userType == 'B') {
             $this->redirect($this->base_urls . '/task/task');
         }
@@ -129,6 +129,7 @@ class Login extends BaseController
      */
     public function commonlogout()
     {
+        $hlg_url = Config::get('curl.hlg');
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //是否是退出
@@ -144,6 +145,7 @@ class Login extends BaseController
         Cookie::clear('mobile');
         Cookie::clear('token');
         Cookie::clear('userType');
+        $res = curl_get($hlg_url.'/home/login/logout');
         $this->redirect($this->base_urls . '/login');
         return;
     }
@@ -157,10 +159,12 @@ class Login extends BaseController
      */
     public function logout()
     {
+        $hlg_url = Config::get('curl.hlg');
         if ($this->request->isAjax() && $this->request->isPost()) {
             Cookie::clear('mobile');
             Cookie::clear('token');
             Cookie::clear('userType');
+            $res = curl_get($hlg_url.'/home/login/logout');
             return json(['status' => true, 'message' => '退出登录成功']);
         } else {
             return json(['status' => false, 'message' => '退出登录失败']);

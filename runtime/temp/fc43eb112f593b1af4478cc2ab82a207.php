@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573627635;}*/ ?>
- <!DOCTYPE>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573696875;}*/ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -130,6 +130,7 @@
                             <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
                             <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
                             <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
+                            <li><a href="javascript:void(0)" onclick="click_btn()">活动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
@@ -142,8 +143,8 @@
                         <?php else: ?>
                         <div class="u_info">
                             <img src="/static/home/images/user_img.png"
-                                 style="width:30px;height:30px; vertical-align: middle;">
-                            <p style="display:inline-block;color:#fff;"><?php echo $userinfo['mobile']; ?></p>
+                                 style="width:30px;height:30px; vertical-align: bottom;">
+                            <p style="display:inline-block;color:#fff;height: 1.5625rem"><?php echo $userinfo['mobile']; ?></p>
                             <div class="u_info_content" id="u_info_content">
                                 <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
                             </div>
@@ -421,34 +422,6 @@
         </div>
 
     </div>
-    <script>
-
-
-
-/*        function user_logout(objthis){
-            var baseUrl = 'http://172.26.2.215:8089';
-            //var url = $(objthis).attr('data-url');
-            var url = baseUrl + '/api/huser/goOut';;
-            var url2 = $(objthis).attr('location_url');
-            var tokens = $(objthis).attr('data-token');
-            $.ajax({
-                type: "post",
-                url: url,
-                data: '',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization":tokens
-                },
-                dataType: 'json',
-                success: function (ret) {
-
-                },
-                error: function (data) {
-                    console.log(data)
-                }
-            });
-        }*/
-    </script>
 </body>
 
 </html>
