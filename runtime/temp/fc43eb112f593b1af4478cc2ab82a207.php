@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573696875;}*/ ?>
- <!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573713588;}*/ ?>
+ <!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -130,13 +130,12 @@
                             <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
                             <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
                             <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
-                            <li><a href="javascript:void(0)" onclick="click_btn()">活动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
                         <div class='register'>
                             <!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
-                            <a href="<?php echo $baseurl; ?>" target="_blank">登录</a>
+                            <a href="<?php echo $baseurl; ?>">登录</a>
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
