@@ -1,4 +1,4 @@
-var baseUrl = 'http://172.26.2.215:8089';
+var baseUrl = 'http://172.26.2.12:8089';
 function user_logout(objthis){
 
 
@@ -20,7 +20,7 @@ function user_logout(objthis){
                 url3,
                 '',
                 function (ret){
-                    layer.msg(ret.message,{icon:1,time:1000},function (){
+                    layer.msg('退出登录成功',{icon:1,time:1000},function (){
                         location.href = url2;
                     });
                 },'json'

@@ -6,7 +6,7 @@ use app\common\controller\BaseController;
 use  think\Controller;
 use think\Cookie;
 use think\Cache;
-
+use think\Config;
 class Login extends BaseController
 {
 
@@ -82,6 +82,7 @@ class Login extends BaseController
      */
     public function savetokens()
     {
+        $hlg_url = Config::get('curl.hlg');
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //token
@@ -105,12 +106,19 @@ class Login extends BaseController
         Cookie::set('mobile', $mobile);
         Cookie::set('token', $token);
         Cookie::set('userType', $userType);
+        $array = [];
+        $array['mobile'] = $mobile;
+        $array['token'] = $token;
+        $array['userType'] = $userType;
+//        //请求惠灵工的页面的接口把用户信息带过去
+        $res = curl_post($hlg_url,$array);
         if ($userType == 'B') {
             $this->redirect($this->base_urls . '/task/task');
         }
         if ($userType == 'C') {
             $this->redirect($this->base_urls . '/personTask/myTask');
         }
+
     }
 
 
