@@ -168,7 +168,8 @@ function showUrl(objthis){
     var login_url = $(objthis).attr('login_url');
     var is_login = $(objthis).attr('mobile-phone');
     if(is_login == '' || is_login == 'undefined' || is_login == undefined){
-        window.location.href=login_url;
+        //window.location.href=login_url;
+        window.open(login_url);
     }else{
         window.location.href=data_url;
     }
