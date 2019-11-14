@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"/opt/web/hui-/public/../application/v1/view/login/index.html";i:1572311816;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1572404193;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1571986795;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"/opt/web/hui-/public/../application/v1/view/login/index.html";i:1573624356;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1573715000;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1571986795;}*/ ?>
+<!DOCTYPE>
 <html lang="zh-CN">
 <head>
     <!-- 加载样式及META信息 -->
