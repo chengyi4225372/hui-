@@ -20,7 +20,7 @@ function user_logout(objthis){
                 url3,
                 '',
                 function (ret){
-                    location.href = url2;
+                    //location.href = url2;
                     //layer.msg('退出登录成功',{icon:1,time:1000},function (){
                     //
                     //});
@@ -35,23 +35,23 @@ function user_logout(objthis){
 
 
 
-//$(function (){
-//    var url = baseUrl + '/api/front/cPersonalInfo/getInfo';
-//    var token = $('#data_token').val();
-//    $.ajax({
-//        type: "get",
-//        url: url,
-//        data: '',
-//        headers: {
-//            "Content-Type": "application/json",
-//            "Authorization":token
-//        },
-//        dataType: 'json',
-//        success: function (ret) {
-//
-//        },
-//        error: function (data) {
-//            layer.msg(data)
-//        }
-//    });
-//});
+$(function (){
+    var url = baseUrl + '/api/front/cPersonalInfo/getInfo';
+    var token = $('#data_token').val();
+    $.ajax({
+        type: "get",
+        url: url,
+        data: '',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization":token
+        },
+        dataType: 'json',
+        success: function (ret) {
+
+        },
+        error: function (data) {
+            layer.msg(data)
+        }
+    });
+});

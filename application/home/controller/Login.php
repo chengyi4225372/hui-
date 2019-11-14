@@ -164,12 +164,25 @@ class Login extends BaseController
             Cookie::clear('mobile');
             Cookie::clear('token');
             Cookie::clear('userType');
-            $res = curl_get($hlg_url.'/home/login/logout');
+            $res = curl_get($hlg_url.'/home/login/logout2');
             return json(['status' => true, 'message' => '退出登录成功']);
         } else {
             return json(['status' => false, 'message' => '退出登录失败']);
         }
     }
 
+    /**
+     * @DESC：其他页面退出那么当前这个页面也要退出
+     * @author: jason
+     * @date: 2019-11-14 04:14:53
+     */
+    public function apilogout()
+    {
+        header("Access-Control-Allow-Origin:*");
+        Cookie::clear('mobile');
+        Cookie::clear('token');
+        Cookie::clear('userType');
+        return json(['status' => 200,'message' => 'success']);
+    }
 
 }
