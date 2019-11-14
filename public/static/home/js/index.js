@@ -64,7 +64,8 @@ var home_module = (function () {
         var login_url = $(objthis).attr('login_url');
         var data_id = $(objthis).attr('data-id');
         if (mobile_phone == undefined || mobile_phone == 'undefined' || mobile_phone == '') {
-            location.href = login_url;
+            //location.href = login_url;
+            window.open(login_url);
         } else {
             location.href = url;
         }
