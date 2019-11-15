@@ -142,7 +142,7 @@
                         <div class="u_info">
                             <img src="__HOME__/images/user_img.png"
                                  style="width:30px;height:30px; vertical-align: bottom;">
-                            <p style="display:inline-block;color:#fff;height: 1.5625rem">{$userinfo['mobile']}</p>
+                            <p style="display:inline-block;color:#fff;height: 1.5625rem" id="mobile_phone">{$userinfo['mobile']}</p>
                             <div class="u_info_content" id="u_info_content">
                                 <a class="u_out" href="javascript:void(0)" data-token="{$userinfo['token']}" onclick="user_logout(this)" location_url="{:url('/home/index/index')}" data-url="{:url('/home/login/logout')}">退出账号</a>
                             </div>

@@ -40,7 +40,7 @@ class BaseController extends Controller
         $userType = !empty($userType) ? $userType : '';
         $userInfo = [];
 
-        $userInfo['mobile'] = !empty($mobile) ? mb_substr($mobile,0,6,$charset="utf-8") : '';
+        $userInfo['mobile'] = $mobile;
         $userInfo['token'] = $token;
         $userInfo['userName'] = $userName;
         $userInfo['userType'] = $userType;
