@@ -34,7 +34,7 @@ function user_logout(objthis){
 }
 $(function (){
     var phone = $('#mobile_phone').html();
-    if(phone != undefined || phone != 'undefined' || phone != ''){
+    if(phone != undefined){
         var newPhone = phone.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
         $('#mobile_phone').html(newPhone);
     }
