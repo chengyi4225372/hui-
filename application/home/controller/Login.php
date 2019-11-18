@@ -10,7 +10,6 @@ use think\Config;
 class Login extends BaseController
 {
 
-    protected $base_urls = 'http://172.26.3.12:8009/#';
 
     /**
      * @DESC：登录
@@ -82,7 +81,10 @@ class Login extends BaseController
      */
     public function savetokens()
     {
+        //惠灵工
         $hlg_url = Config::get('curl.hlg');
+        //会找事
+        $hzs_url = Config::get('curl.hzs');
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //token
@@ -112,6 +114,8 @@ class Login extends BaseController
         $array['userType'] = $userType;
 //        //请求惠灵工的页面的接口把用户信息带过去
         $res = curl_post($hlg_url.'/home/login/savetokens',$array);
+        //把手机号、token、用户类型存到【会找事】页面的cookie里面
+        $res2 = curl_post($hzs_url.'/home/login/savetokens',$array);
         if ($userType == 'B') {
             $this->redirect($this->base_urls . '/task/task');
         }
@@ -129,7 +133,10 @@ class Login extends BaseController
      */
     public function commonlogout()
     {
+        //惠灵工
         $hlg_url = Config::get('curl.hlg');
+        //会找事
+        $hzs_url = Config::get('curl.hzs');
         //允许跨域
         header("Access-Control-Allow-Origin:*");
         //是否是退出
@@ -145,7 +152,8 @@ class Login extends BaseController
         Cookie::clear('mobile');
         Cookie::clear('token');
         Cookie::clear('userType');
-        $res = curl_get($hlg_url.'/home/login/logout');
+        $res = curl_get($hlg_url.'/home/login/apilogout');
+        $res2 = curl_get($hzs_url.'/home/login/apilogout');
         $this->redirect($this->base_urls . '/login');
         return;
     }
@@ -159,12 +167,16 @@ class Login extends BaseController
      */
     public function logout()
     {
+        //惠灵工
         $hlg_url = Config::get('curl.hlg');
+        //会找事
+        $hzs_url = Config::get('curl.hzs');
         if ($this->request->isAjax() && $this->request->isPost()) {
             Cookie::clear('mobile');
             Cookie::clear('token');
             Cookie::clear('userType');
-            $res = curl_get($hlg_url.'/home/login/logout2');
+            $res = curl_get($hlg_url.'/home/login/apilogout');
+            $res2 = curl_get($hzs_url.'/home/login/apilogout');
             return json(['status' => true, 'message' => '退出登录成功']);
         } else {
             return json(['status' => false, 'message' => '退出登录失败']);

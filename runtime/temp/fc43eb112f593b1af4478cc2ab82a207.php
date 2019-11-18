@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573713588;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573804100;}*/ ?>
  <!DOCTYPE>
 <html lang="en">
 
@@ -124,12 +124,12 @@
                         <div class='content_logo' id='logo'></div>
                         <ul>
                             <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-                            <li><a href="<?php echo url('/home/optimal/index'); ?>" target="_blank">惠优税</a></li>
-                            <li><a href="http://172.26.3.13:8009/index.php" target="_blank">惠灵工</a></li>
-                            <li><a href="<?php echo url('/home/many/index'); ?>" target="_blank">惠多薪</a></li>
-                            <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
-                            <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
-                            <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
+                            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
+                            <li><a href="<?php echo config('curl.hlg'); ?>">惠灵工</a></li>
+                            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
+                            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
+                            <li><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></li>
+                            <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
@@ -143,7 +143,7 @@
                         <div class="u_info">
                             <img src="/static/home/images/user_img.png"
                                  style="width:30px;height:30px; vertical-align: bottom;">
-                            <p style="display:inline-block;color:#fff;height: 1.5625rem"><?php echo $userinfo['mobile']; ?></p>
+                            <p style="display:inline-block;color:#fff;height: 1.5625rem" id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
                             <div class="u_info_content" id="u_info_content">
                                 <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
                             </div>
@@ -304,7 +304,7 @@
                         <div class='totalInfo_content'>
                             <a href="javascript:void(0)"
                                data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
-                               login_url="<?php echo url('/home/login/login',['type' => 1,'id' => $ss['id']]); ?>"
+                               login_url="<?php echo $baseurl; ?>"
                                mobile-phone="<?php echo $userinfo['mobile']; ?>"
                                data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
                                 <div class='zhao_contentInfo'>

@@ -8,8 +8,13 @@
 {else /}
 <div class="u_info">
     <img src="__HOME__/images/user_img.png"
+<<<<<<< HEAD
          style="width:30px;height:30px; vertical-align: bottom;">
     <p style="display:inline-block;color:#fff;height: 23px">{$userinfo['mobile']}</p>
+=======
+         style="width:30px;height:30px; vertical-align: middle;">
+    <p style="display:inline-block;color:#fff;"  id="mobile_phone">{$userinfo['mobile']}</p>
+>>>>>>> 106053de4f010f28e1c4fce1986d197d47b22b65
     <div class="u_info_content" id="u_info_content">
         <a class="u_out" href="javascript:void(0)" data-token="{$userinfo['token']}" onclick="user_logout(this)" location_url="{:url('/home/index/index')}" data-url="{:url('/home/login/logout')}">退出账号</a>
     </div>
