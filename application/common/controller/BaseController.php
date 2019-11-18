@@ -22,6 +22,10 @@ class BaseController extends Controller
      */
     protected $userinfo = '';
 
+
+    protected $base_urls = '';
+
+
     /**
      * @DESC：初始化
      * @author: jason
@@ -52,8 +56,9 @@ class BaseController extends Controller
         }else{
             $is_nginx = '/index.php';
         }
+        $this->base_urls = Config::get('curl.redirect_url');
+        $login_url = Config::get('curl.login_url');
 
-        $base_url = 'http://172.26.3.12:8009/#/login';
         $modulename = $this->request->module();
         $controllername = strtolower($this->request->controller());
         $actionname = strtolower($this->request->action());
@@ -62,7 +67,7 @@ class BaseController extends Controller
         $path = '/'.$modulename . '/' . str_replace('.', '/', $controllername) . '/' . $actionname;
         $this->assign('path',$path);
         $this->assign('is_nginx',$is_nginx);
-        $this->assign('baseurl',$base_url);
+        $this->assign('baseurl',$login_url);
         $this->assign('userinfo',$userInfo);
     }
 }

@@ -21,6 +21,7 @@ class Index extends BaseController
 //        Cookie::clear('userType');
 //        var_dump(Cache::set(18681524382,'')).'<br>';
 //        var_dump(Cookie::get());exit;
+
         if ($this->request->isGet()) {
 
             //慧享产品

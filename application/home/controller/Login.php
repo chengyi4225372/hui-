@@ -10,7 +10,6 @@ use think\Config;
 class Login extends BaseController
 {
 
-    protected $base_urls = 'http://172.26.3.12:8009/#';
 
     /**
      * @DESC：登录
