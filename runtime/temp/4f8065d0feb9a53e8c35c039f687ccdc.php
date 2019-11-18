@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1573611150;}*/ ?>
- <!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1574063295;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574063183;}*/ ?>
+ <!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -15,9 +15,9 @@
     <script src='/static/home/js/common.js'></script>
     <script src='/static/common/js/public.js'></script>
     <style>
-        .header {
-            background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");
-        }
+        /*.header {*/
+            /*background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");*/
+        /*}*/
 
         .success_icon>div:nth-of-type(1) {
             position: absolute;
@@ -124,31 +124,38 @@
                         <div class='content_logo' id='logo'></div>
                         <ul>
                             <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-                            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
-                            <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
-                            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
-                            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
-                            <li><a href="<?php echo url('/home/searches/index'); ?>">惠找事</a></li>
-                            <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li>
+                            <li><a href="<?php echo url('/home/optimal/index'); ?>" target="_blank">惠优税</a></li>
+                            <li><a href="http://172.26.3.13:8009/index.php" target="_blank">惠灵工</a></li>
+                            <li><a href="<?php echo url('/home/many/index'); ?>" target="_blank">惠多薪</a></li>
+                            <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
+                            <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
+                            <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
                         <div class='register'>
                             <!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
-                            <a href="<?php echo $baseurl; ?>" target="_blank">登录</a>
+                            <a href="<?php echo $baseurl; ?>">登录</a>
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
-                        <?php else: ?>
-                        <div class="u_info">
-                            <img src="/static/home/images/user_img.png"
-                                 style="width:30px;height:30px; vertical-align: middle;">
-                            <p style="display:inline-block;color:#fff;"><?php echo $userinfo['mobile']; ?></p>
-                            <div class="u_info_content" id="u_info_content">
-                                <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
-                            </div>
-                        </div>
-                        <?php endif; ?>
+                        <?php else: if(empty($userinfo['mobile'])): ?>
+<div class="loging clearfix">
+    <div class="register-btn"><a href="<?php echo $baseurl; ?>" target="_blank">
+        登陆
+    </a></div>
+    <div class="loging-btn"><a href="<?php echo url('/home/login/register'); ?>">注册</a></div>
+</div>
+<?php else: ?>
+<div class="u_info">
+    <img src="/static/home/images/user_img.png"
+         style="width:30px;height:30px; vertical-align: bottom;">
+    <p style="display:inline-block;color:#fff;height: 23px"><?php echo $userinfo['mobile']; ?></p>
+    <div class="u_info_content" id="u_info_content">
+        <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+    </div>
+</div>
+<?php endif; endif; ?>
                     </div>
                 </div>
             </div>
@@ -304,7 +311,7 @@
                         <div class='totalInfo_content'>
                             <a href="javascript:void(0)"
                                data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
-                               login_url="<?php echo url('/home/login/login',['type' => 1,'id' => $ss['id']]); ?>"
+                               login_url="<?php echo $baseurl; ?>"
                                mobile-phone="<?php echo $userinfo['mobile']; ?>"
                                data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
                                 <div class='zhao_contentInfo'>
@@ -421,34 +428,6 @@
         </div>
 
     </div>
-    <script>
-
-
-
-/*        function user_logout(objthis){
-            var baseUrl = 'http://172.26.2.215:8089';
-            //var url = $(objthis).attr('data-url');
-            var url = baseUrl + '/api/huser/goOut';;
-            var url2 = $(objthis).attr('location_url');
-            var tokens = $(objthis).attr('data-token');
-            $.ajax({
-                type: "post",
-                url: url,
-                data: '',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization":tokens
-                },
-                dataType: 'json',
-                success: function (ret) {
-
-                },
-                error: function (data) {
-                    console.log(data)
-                }
-            });
-        }*/
-    </script>
 </body>
 
 </html>
