@@ -44,11 +44,7 @@ class BaseController extends Controller
         $userType = !empty($userType) ? $userType : '';
         $userInfo = [];
 
-<<<<<<< HEAD
-        $userInfo['mobile'] = !empty($mobile) ? substr_replace($mobile,'****',3,4) : '';
-=======
         $userInfo['mobile'] = $mobile;
->>>>>>> 106053de4f010f28e1c4fce1986d197d47b22b65
         $userInfo['token'] = $token;
         $userInfo['userName'] = $userName;
         $userInfo['userType'] = $userType;
