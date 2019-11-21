@@ -61,9 +61,12 @@ var home_module = (function () {
     var show_detail = function show_detail(objthis) {
         var mobile_phone = $(objthis).attr('mobile-phone');
         var url = $(objthis).attr('data-url');
-        var login_url = $(objthis).attr('login_url');
+        var login_url2 = $(objthis).attr('login_url');
+        var loca_url2 = $(objthis).attr('loca_url');
+        var loca_url = encodeURIComponent(loca_url2);
+        var login_url = login_url2+'?location='+loca_url;
         var data_id = $(objthis).attr('data-id');
-        if (mobile_phone == undefined || mobile_phone == 'undefined' || mobile_phone == '') {
+        if (mobile_phone == undefined) {
             //location.href = login_url;
             window.open(login_url);
         } else {
