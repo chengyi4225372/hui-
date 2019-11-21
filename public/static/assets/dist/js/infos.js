@@ -131,13 +131,13 @@ $('.infos-edits').click(function(){
 
     $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':keyword},function(ret){
         if(ret.code == 200){
-            layer.msg(ret.msg,{icon:6},function(){
+            layer.msg(ret.msg,{icon: 6},function(){
                 parent.location.href="index";
             })
         }
 
         if(ret.code == 400){
-            layer.msg(ret.msg,{icon:5},function(){
+            layer.msg(ret.msg,{icon: 5},function(){
                 parent.location.href="index";
             })
         }
