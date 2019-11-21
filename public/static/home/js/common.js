@@ -165,9 +165,12 @@ function click_show(objthis){
 //了解更多
 function showUrl(objthis){
     var data_url = $(objthis).attr('data-url');
-    var login_url = $(objthis).attr('login_url');
     var is_login = $(objthis).attr('mobile-phone');
-    if(is_login == '' || is_login == 'undefined' || is_login == undefined){
+    var login_url2 = $(objthis).attr('login_url');
+    var loca_url2 = $(objthis).attr('loca_url');
+    var loca_url = encodeURIComponent(loca_url2);
+    var login_url = login_url2+'?artId='+loca_url;
+    if(is_login == '' || is_login == undefined){
         //window.location.href=login_url;
         window.open(login_url);
     }else{
