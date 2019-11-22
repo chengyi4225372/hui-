@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\index.html";i:1573181931;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:114:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\protuct\protucts\index.html";i:1571736080;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
 <!DOCTYPE>
 <html lang="zh-CN">
 <head>
@@ -326,18 +326,17 @@
 <div class="content" style="margin-bottom:0px;min-height:0px;">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-inline"  id="form">
-
+            <form class="form-inline">
                 <div class="panel panel-default panel-btn">
                     <div class="panel-heading">
-
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title"  value="<?php echo \think\Request::instance()->get('title'); ?>" placeholder="请输入标题名称搜索...">
+                            <input type="text"  class="form-control" name="names" id="names" value="<?php echo \think\Request::instance()->get('names'); ?>" placeholder="请输入产品名称搜索...">
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-info" id="btn_search" type="button"  data-url="<?php echo url('/v1/info/infos/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
+                            <button class="btn btn-info" id="btn_search_protuct" type="button"  data-url="<?php echo url('/v1/protuct/protucts/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
                         </div>
+
                     </div>
                 </div>
                 <br>
@@ -351,44 +350,53 @@
     <div class="box box-default color-palette-box" style="min-height:700px;">
         <div class="box-header with-border">
             <button type="button" class="btn btn-sm btn-refresh"><i class="fa fa-refresh"></i></button>
-            <button type="button" class="btn bg-purple btn-sm btn-dialog"
-                    id="infosadd" data-url="<?php echo url('/v1/info/infos/infosadd'); ?>">
+            <button type="button" class="btn bg-purple btn-sm btn-dialog" id="addprotuct"
+                    data-url="<?php echo url('/v1/protuct/protucts/add'); ?>">
                 <i class="fa fa-plus-circle">添加</i></button>
         </div>
         <div class="box-body">
             <table class="table table-bordered table-hover table-striped">
                 <thead>
-                <th class="text-center">所属分类</th>
-                <th class="text-center">新闻标题</th>
-                <th class="text-center">创建时间</th>
+                <th class="td-align td-width-40px">
+                    <input class="data-check_box_total" onclick="admin_module.check_out(this)" type="checkbox"/><span></span>
+                </th>
+                <th class="text-center">产品名称</th>
+                <th class="text-center">产品图</th>
+                <th class="text-center">产品描述</th>
+                <th class="text-center">链接地址</th>
+                <th class="text-center">状态</th>
                 <th class="text-center">操作</th>
                 </thead>
                 <tbody>
-
-            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+               <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
-                    <td class="text-center">
-                     <?php if($vo['pid'] == '1'): ?>
-                       招标信息
-                      <?php else: ?>
-                        招商信息
-                      <?php endif; ?>
+                    <td class="td-align td-padding">
+                        <input type="checkbox" name="box_checked" data-id="<?php echo $vo['id']; ?>" class="data-check_box">
                     </td>
-                    <td class="text-center"><?php echo $vo['title']; ?></td>
-                    <td class="text-center"><?php echo $vo['release_time']; ?></td>
-
+                    <td class="text-center"><?php echo $vo['names']; ?></td>
                     <td class="text-center">
-                        <a href="javascript:void(0)" class="btn btn-info infos_edit" data-url="<?php echo url('/v1/info/infos/infosEdit',['id'=>$vo['id']]); ?>">编辑</a>
-
-                        <a  class="btn btn-danger infos_del" data-url="<?php echo url('/v1/info/infos/infoDels',['id'=>$vo['id']]); ?>">删除</a>
-
+                        <a href="<?php echo $vo['imgs']; ?>">
+                        <img src="<?php echo $vo['imgs']; ?>" style="width: 90px;height: 90px;">
+                        </a>
+                    </td>
+                    <td class="text-center"><?php echo (isset($vo['desc']) && ($vo['desc'] !== '')?$vo['desc']:''); ?></td>
+                    <td class="text-center"><?php echo (isset($vo['purl']) && ($vo['purl'] !== '')?$vo['purl']:''); ?></td>
+                    <td class="text-center">
+                        <?php if($vo['status'] == 1): ?>
+                        <span class="btn btn-success">正常</span>
+                        <?php else: ?>
+                        <span class="btn btn-danger">禁用</span>
+                        <?php endif; ?>
                     </td>
 
+                    <td class="text-center">
+                        <a  class="btn btn-info edit-protuct" data-url="<?php echo url('/v1/protuct/protucts/edit',['id'=>$vo['id']]); ?>">编辑</a>
+                    </td>
                 </tr>
-           <?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
-            <div class="pages"><?php echo $list->render();; ?></div>
+            <div class="pages"></div>
         </div>
     </div>
 

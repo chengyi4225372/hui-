@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\index.html";i:1573181931;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\users\user\index.html";i:1571635873;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
 <!DOCTYPE>
 <html lang="zh-CN">
 <head>
@@ -330,13 +330,22 @@
 
                 <div class="panel panel-default panel-btn">
                     <div class="panel-heading">
+                        <div class="form-group">
+                            <label>状态：</label>
+                            <select class="form-control" name="status">
+                                <option value="">请选择</option>
+                                <option value="0" <?php if((isset($params['status'])) && ($params['status'] == 0)): ?>selected='selected'<?php endif; ?>>启用</option>
+                                <option value="1" <?php if((isset($params['status'])) && ($params['status'] == 1)): ?>selected='selected'<?php endif; ?>>禁用</option>
+                            </select>
+                        </div>
+
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title"  value="<?php echo \think\Request::instance()->get('title'); ?>" placeholder="请输入标题名称搜索...">
+                            <input type="text"  class="form-control" name="username" value="<?php echo $params['username']; ?>" placeholder="多姓名搜索(空格逗号隔开)">
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-info" id="btn_search" type="button"  data-url="<?php echo url('/v1/info/infos/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
+                            <button class="btn btn-info" id="btn_search" type="Submit"  data-url="<?php echo url('/v1/users/user/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
                         </div>
                     </div>
                 </div>
@@ -352,43 +361,41 @@
         <div class="box-header with-border">
             <button type="button" class="btn btn-sm btn-refresh"><i class="fa fa-refresh"></i></button>
             <button type="button" class="btn bg-purple btn-sm btn-dialog"
-                    id="infosadd" data-url="<?php echo url('/v1/info/infos/infosadd'); ?>">
-                <i class="fa fa-plus-circle">添加</i></button>
+                    id="addusers" data-url="<?php echo url('/v1/users/user/adduser'); ?>">
+                <i class="fa fa-plus-circle">添加用户</i></button>
         </div>
         <div class="box-body">
             <table class="table table-bordered table-hover table-striped">
                 <thead>
-                <th class="text-center">所属分类</th>
-                <th class="text-center">新闻标题</th>
-                <th class="text-center">创建时间</th>
+                <th class="td-align td-width-40px">
+                    <input class="data-check_box_total" onclick="admin_module.check_out(this)" type="checkbox"/>
+                </th>
+                <th class="text-center">用户</th>
+                <th class="text-center">电话</th>
+                <th class="text-center">邮箱</th>
+                <th class="text-center">状态</th>
                 <th class="text-center">操作</th>
                 </thead>
                 <tbody>
-
-            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                <?php if(is_array($data_list) || $data_list instanceof \think\Collection || $data_list instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?>
                 <tr>
-                    <td class="text-center">
-                     <?php if($vo['pid'] == '1'): ?>
-                       招标信息
-                      <?php else: ?>
-                        招商信息
-                      <?php endif; ?>
+                    <td class="td-align td-padding">
+                        <input type="checkbox" name="box_checked" data-id="<?php echo $list['id']; ?>" class="data-check_box">
                     </td>
-                    <td class="text-center"><?php echo $vo['title']; ?></td>
-                    <td class="text-center"><?php echo $vo['release_time']; ?></td>
-
+                    <td class="text-center"><?php echo $list['username']; ?></td>
+                    <td class="text-center"><?php echo $list['tel']; ?></td>
+                    <td class="text-center"><?php echo $list['mail']; ?></td>
                     <td class="text-center">
-                        <a href="javascript:void(0)" class="btn btn-info infos_edit" data-url="<?php echo url('/v1/info/infos/infosEdit',['id'=>$vo['id']]); ?>">编辑</a>
-
-                        <a  class="btn btn-danger infos_del" data-url="<?php echo url('/v1/info/infos/infoDels',['id'=>$vo['id']]); ?>">删除</a>
-
+                        <span class="btn <?php if($list['is_del'] == 0): ?>btn-success<?php else: ?>btn-danger<?php endif; ?>"><?php echo $status[$list['is_del']]; ?></span>
                     </td>
-
+                    <td class="text-center">
+                        <a href="javascript:void(0)" class="btn btn-info" data-url="<?php echo url('/v1/users/user/edituser',['id' => $list['id']]); ?>" data-id="" onclick="admin_module.user_edit(this)">编辑</a>
+                    </td>
                 </tr>
-           <?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
-            <div class="pages"><?php echo $list->render();; ?></div>
+            <div class="pages"></div>
         </div>
     </div>
 

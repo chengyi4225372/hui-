@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\index.html";i:1573181931;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:113:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\cate\ifications\index.html";i:1574416167;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
 <!DOCTYPE>
 <html lang="zh-CN">
 <head>
@@ -332,11 +332,12 @@
                     <div class="panel-heading">
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title"  value="<?php echo \think\Request::instance()->get('title'); ?>" placeholder="请输入标题名称搜索...">
+                            <input type="text"  id="keywords" class="form-control" name="title" value="<?php echo \think\Request::instance()->get('title'); ?>" placeholder="请输入标题进行搜索....">
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-info" id="btn_search" type="button"  data-url="<?php echo url('/v1/info/infos/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
+                            <button class="btn btn-info" id="btnsearch" type="button"  data-url="<?php echo url('/v1/cate/ifications/index'); ?>">
+                                <i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
                         </div>
                     </div>
                 </div>
@@ -352,43 +353,37 @@
         <div class="box-header with-border">
             <button type="button" class="btn btn-sm btn-refresh"><i class="fa fa-refresh"></i></button>
             <button type="button" class="btn bg-purple btn-sm btn-dialog"
-                    id="infosadd" data-url="<?php echo url('/v1/info/infos/infosadd'); ?>">
-                <i class="fa fa-plus-circle">添加</i></button>
+                    id="addcates" data-url="<?php echo url('/v1/cate/ifications/add'); ?>">
+                <i class="fa fa-plus-circle">添加标签</i></button>
         </div>
         <div class="box-body">
             <table class="table table-bordered table-hover table-striped">
                 <thead>
-                <th class="text-center">所属分类</th>
-                <th class="text-center">新闻标题</th>
+                <th class="text-center">排序</th>
+                <th class="text-center">标签名</th>
                 <th class="text-center">创建时间</th>
                 <th class="text-center">操作</th>
                 </thead>
+                <?php if(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty())): else: if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tbody>
-
-            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
                     <td class="text-center">
-                     <?php if($vo['pid'] == '1'): ?>
-                       招标信息
-                      <?php else: ?>
-                        招商信息
-                      <?php endif; ?>
+                            <input type="text" class="form-control col-xs-3" value="<?php echo $vo['sort']; ?>" >
                     </td>
+
                     <td class="text-center"><?php echo $vo['title']; ?></td>
-                    <td class="text-center"><?php echo $vo['release_time']; ?></td>
-
+                    <td class="text-center"><?php echo $vo['create_time']; ?></td>
                     <td class="text-center">
-                        <a href="javascript:void(0)" class="btn btn-info infos_edit" data-url="<?php echo url('/v1/info/infos/infosEdit',['id'=>$vo['id']]); ?>">编辑</a>
+                        <a  class="btn btn-info" data-url="<?php echo url('/v1/cate/ifications/edit'); ?>" data-id="<?php echo $vo['id']; ?>" onclick="edits(this)">编辑</a>
 
-                        <a  class="btn btn-danger infos_del" data-url="<?php echo url('/v1/info/infos/infoDels',['id'=>$vo['id']]); ?>">删除</a>
-
+                        <a  class="btn btn-danger" data-url="<?php echo url('/v1/cate/ifications/dels'); ?>" data-id="<?php echo $vo['id']; ?>" onclick="dels(this)">删除</a>
                     </td>
-
                 </tr>
-           <?php endforeach; endif; else: echo "" ;endif; ?>
+
                 </tbody>
+                <?php endforeach; endif; else: echo "" ;endif; endif; ?>
             </table>
-            <div class="pages"><?php echo $list->render();; ?></div>
+            <div class="pages"><?php echo $list->render(); ?></div>
         </div>
     </div>
 

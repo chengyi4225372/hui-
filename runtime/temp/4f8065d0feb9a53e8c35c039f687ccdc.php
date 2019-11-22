@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1574063295;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574063183;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1574068504;}*/ ?>
  <!DOCTYPE>
 <html lang="en">
 
@@ -124,12 +124,12 @@
                         <div class='content_logo' id='logo'></div>
                         <ul>
                             <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-                            <li><a href="<?php echo url('/home/optimal/index'); ?>" target="_blank">惠优税</a></li>
-                            <li><a href="http://172.26.3.13:8009/index.php" target="_blank">惠灵工</a></li>
-                            <li><a href="<?php echo url('/home/many/index'); ?>" target="_blank">惠多薪</a></li>
-                            <li><a href="<?php echo url('/home/business/index'); ?>" target="_blank">惠创业</a></li>
-                            <li><a href="<?php echo url('/home/searches/index'); ?>" target="_blank">惠找事</a></li>
-                            <li><a href="<?php echo url('/home/launch/index'); ?>" target="_blank">惠企动</a></li>
+                            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
+                            <li><a href="<?php echo config('curl.hlg'); ?>">惠灵工</a></li>
+                            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
+                            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
+                            <li><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></li>
+                            <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li>
                         </ul>
 
                         <?php if(empty($userinfo['mobile'])): ?>
@@ -139,23 +139,18 @@
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
-                        <?php else: if(empty($userinfo['mobile'])): ?>
-<div class="loging clearfix">
-    <div class="register-btn"><a href="<?php echo $baseurl; ?>" target="_blank">
-        登陆
-    </a></div>
-    <div class="loging-btn"><a href="<?php echo url('/home/login/register'); ?>">注册</a></div>
-</div>
-<?php else: ?>
-<div class="u_info">
-    <img src="/static/home/images/user_img.png"
-         style="width:30px;height:30px; vertical-align: bottom;">
-    <p style="display:inline-block;color:#fff;height: 23px"><?php echo $userinfo['mobile']; ?></p>
-    <div class="u_info_content" id="u_info_content">
-        <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
-    </div>
-</div>
-<?php endif; endif; ?>
+                        <?php else: ?>
+
+                        <div class="u_info">
+                            <img src="/static/home/images/user_img.png"
+                                 style="width:30px;height:30px; vertical-align: bottom;">
+                            <p style="display:inline-block;color:#fff;height: 23px;" id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
+                            <div class="u_info_content" id="u_info_content">
+                                <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+                            </div>
+                        </div>
+
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

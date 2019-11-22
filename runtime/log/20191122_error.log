@@ -1,0 +1,27 @@
+---------------------------------------------------------------
+[ 2019-11-22T14:27:49+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [0]模板文件不存在:C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\cate\ifications\index.html[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\thinkphp\library\think\view\driver\Think.php:82]
+---------------------------------------------------------------
+[ 2019-11-22T14:51:14+08:00 ] 127.0.0.1 GET /v1/cate/ifications/add.html
+[ error ] [0]致命错误: Call to undefined method app\v1\controller\cate\Ifications::fetchI()[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\controller\cate\Ifications.php:27]
+---------------------------------------------------------------
+[ 2019-11-22T16:29:31+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [8]未定义变量: vo[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\9861499653342c3baa5f98fa26e17d61.php:375]
+---------------------------------------------------------------
+[ 2019-11-22T16:29:35+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [8]未定义变量: vo[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\9861499653342c3baa5f98fa26e17d61.php:375]
+---------------------------------------------------------------
+[ 2019-11-22T17:14:15+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE), expecting end of file[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\9861499653342c3baa5f98fa26e17d61.php:369]
+---------------------------------------------------------------
+[ 2019-11-22T17:14:16+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE), expecting end of file[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\9861499653342c3baa5f98fa26e17d61.php:369]
+---------------------------------------------------------------
+[ 2019-11-22T17:14:17+08:00 ] 127.0.0.1 GET /v1/cate/ifications/index.html
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE), expecting end of file[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\9861499653342c3baa5f98fa26e17d61.php:369]
+---------------------------------------------------------------
+[ 2019-11-22T17:15:00+08:00 ] 127.0.0.1 POST /v1/cate/ifications/add.html
+[ error ] [0]致命错误: Call to undefined method app\v1\service\Ificationservice::insetData()[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\controller\cate\Ifications.php:43]
+---------------------------------------------------------------
+[ 2019-11-22T17:15:08+08:00 ] 127.0.0.1 POST /v1/cate/ifications/add.html
+[ error ] [0]致命错误: Call to undefined method app\v1\service\Ificationservice::insetData()[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\controller\cate\Ifications.php:43]
