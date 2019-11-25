@@ -170,12 +170,13 @@ function showUrl(objthis){
     var loca_url2 = $(objthis).attr('loca_url');
     var loca_url = encodeURIComponent(loca_url2);
     var login_url = login_url2+'?artId='+loca_url;
-    if(is_login == '' || is_login == undefined){
-        //window.location.href=login_url;
-        window.open(login_url);
-    }else{
-        window.location.href=data_url;
-    }
+    //if(is_login == '' || is_login == undefined){
+    //    //window.location.href=login_url;
+    //    window.open(login_url);
+    //}else{
+    //    window.location.href=data_url;
+    //}
+    window.location.href=data_url;
 
 }
 
