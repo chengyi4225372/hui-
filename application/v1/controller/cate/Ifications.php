@@ -117,7 +117,7 @@ class Ifications extends  AuthController
     public function change(){
         if($this->request->isGet()){
            $id   = input('get.mid','','int');
-           $sort = input('get.sort','','int');
+           $sort = input('get.sorts','','int');
 
            if(empty($id)|| is_null($id) || $id <=0 || !isset($id)){
                return false;
@@ -126,9 +126,9 @@ class Ifications extends  AuthController
            $ret = Ificationservice::instance()->saveSort($id,$sort);
 
            if($ret !== false){
-               return json();
+               return json(['code'=>200,'msg'=>'修改成功']);
            }else {
-               return json();
+               return json(['code'=>400,'msg'=>'修改失败']);
            }
         }
 
