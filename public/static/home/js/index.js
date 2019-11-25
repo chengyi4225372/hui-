@@ -94,12 +94,13 @@ window.onload = function () {
             var login_url = login_url2 + '?artId=' + loca_url;
 
             var data_id = $(objthis).attr('data-id');
-            if (mobile_phone == undefined || mobile_phone == '') {
-                //location.href = login_url;
-                window.open(login_url);
-            } else {
-                location.href = url;
-            }
+            //if (mobile_phone == undefined || mobile_phone == '') {
+            //    //location.href = login_url;
+            //    window.open(login_url);
+            //} else {
+            //    location.href = url;
+            //}
+            location.href = url;
         };
         return {
             show_detail: show_detail,
