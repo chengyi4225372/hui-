@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"C:\Users\ni959\Desktop\php\hui-\public/../application/home\view\index\get_info.html";i:1574674778;s:71:"C:\Users\ni959\Desktop\php\hui-\application\home\view\common\login.html";i:1574649386;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"C:\Users\ni959\Desktop\php\hui-\public/../application/home\view\index\get_info.html";i:1574682533;s:71:"C:\Users\ni959\Desktop\php\hui-\application\home\view\common\login.html";i:1574649386;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 
@@ -37,11 +37,65 @@
         </div>
         <ul class='titile'>
           <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-          <li><a href="<?php echo url('/home/optimal/index'); ?>">招募合伙人</a></li>
-          <li><a href="<?php echo url('/home/spirit/index'); ?>">“惠”家族产品</a></li>
-          <li><a href="<?php echo url('/home/many/index'); ?>">政府招标信息</a></li>
-          <li><a href="<?php echo url('/home/business/index'); ?>">政府招商信息</a></li>
-          <li><a href="<?php echo url('/home/searches/index'); ?>">行业资讯</a></li>
+          <li><a href="javascript:;">招募合伙人</a>
+          </li>
+          <li>
+            <a href="javascript:;">“惠”家族产品</a>
+            <!-- 二级菜单 -->
+								<div class="w secondary-menu" id="secondary-menu">
+                    <!-- <div>1</div>
+                                      <div>2</div> -->
+                    <div>
+                      <dl>
+                        <dt><a href="#">惠优税</a></dt>
+                        <dd>
+                          ·企税降成本 薪税降税负
+  
+                        </dd>
+                        <dd>·分红降扣率 创业降个税</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠灵工</a></dt>
+                        <dd>
+                          ·寻求多样化用工模式
+  
+                        </dd>
+                        <dd>·提高内部人员效能</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠多薪</a></dt>
+                        <dd>
+                          ·优化员工福利选择模块
+  
+                        </dd>
+                        <dd>·企业成本可控透明化</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠找事</a></dt>
+                        <dd>
+                          ·技能价值华
+  
+                        </dd>
+                        <dd>·成就更好自我</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠创业</a></dt>
+                        <dd>
+                          ·一站式解决方案
+  
+                        </dd>
+                        <dd>·激活企业最大效益</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠企动</a></dt>
+                        <dd>·产品内容建设中……</dd>
+                      </dl>
+                    </div>
+                  </div><!-- 二级菜单 -->
+          </li>
+          <li><a href="javascript:;">政府招标信息</a></li>
+          <li><a href="javascript:;">政府招商信息</a></li>
+          <li><a href="javascript:;">行业资讯</a></li>
           <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
         </ul>
         <?php if(empty($userinfo['mobile'])): ?>
@@ -49,7 +103,6 @@
           <a href="javascript:void(0)"
              login_url="<?php echo $baseurl; ?>"
              loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
-          <span></span>
           <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
         <?php else: if(empty($userinfo['mobile'])): ?>
