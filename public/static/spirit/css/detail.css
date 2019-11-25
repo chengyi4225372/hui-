@@ -1,7 +1,7 @@
 /* 版心 */
 
 .w {
-    width: 75rem;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -102,7 +102,7 @@ a {
 
 .header {
     width: 100%;
-    height: 6.25rem;
+    height: 3.75rem;
     background: rgba(3, 28, 54, 1);
 
 }
@@ -112,14 +112,14 @@ a {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 0 .875rem 0;
+    padding: 1rem 0 .6875rem 0;
 }
 
 .logo {
     margin-left: .75rem;
-    width: 7.75rem;
-    height: 3.375rem;
-    background-image: url('../images/logo.png');
+    width: 8.5rem;
+    height: 2.06rem;
+    background-image: url('../images/logoo.png');
     background-size: 100% 100%;
 }
 
@@ -132,33 +132,38 @@ a {
 .titile {
     list-style: none;
     display: flex;
-  
     /* margin: 0px 0px 0 129px; */
-    height: 2.75rem;
+    /* height: 2.75rem; */
 }
 
+.titile li a:hover {
+    color: #4091FF;
+}
+
+
 .titile li:nth-of-type(1) a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: Microsoft YaHei;
     font-weight: 400;
     color: #fff;
 }
 
 .titile li:nth-of-type(2) {
-    margin: 0 2.625rem;
+    margin: 0 3.375rem 0;
 }
 
+
 .titile li:nth-of-type(4) {
-    margin: 0 2.5625rem;
+    margin: 0 3.375rem 0;
 }
 
 .titile li:nth-of-type(6) {
-    margin: 0 2.625rem 0 2.5625rem;
+    margin: 0 3.375rem 0 3.375rem;
 }
 
 .titile a {
     /* padding:0 28px; */
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: Microsoft YaHei;
     font-weight: 400;
     color: #fff;
@@ -178,11 +183,11 @@ a {
     content: '';
     width: 2.375rem;
     height: 2px;
-    background: rgba(255, 255, 255, 1);
+    background: #4091FF;
 }
 
 .titile li {
-    padding-top: .75rem;
+    padding-top: .5rem;
     box-sizing: border-box;
 
 }
@@ -192,7 +197,18 @@ a {
     box-sizing: border-box;
 }
 
-
+.register a {
+    background:rgba(255,255,255,0);
+    border:1px solid rgba(191,191,191,1);
+    border-radius:4px;background:rgba(255,255,255,0);
+    color: #ffffff;
+    font-size: 1rem;
+    width: 3.5rem;
+    height: 1.5rem;
+}
+.register a:nth-of-type(2) {
+    margin-left: 1.125rem;
+}
 /* 用户信息 */
 
 .u_info {
@@ -262,7 +278,8 @@ a {
 .main_content {
     width: 100%;
     /* height: 1852px; */
-    background: rgba(245, 249, 255, 1);
+    /* background: rgba(245, 249, 255, 1); */
+    background: #ffffff;
 }
 
 .content_middle {
@@ -271,12 +288,15 @@ a {
 }
 
 .bread_title {
-    height: 4.5rem;
-    line-height: 4.5rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
     font-size: 1rem;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
+    padding-left: 25.87rem;
+    box-sizing: border-box;
+    background:rgba(245,249,255,1);
 }
 
 .pic_total {
@@ -310,7 +330,7 @@ a {
 }
 
 .tuwen {
-    padding: 3.375rem 0 4.125rem 2rem;
+    padding: 3.375rem 0 3.3125rem 2rem;
 }
 
 
@@ -386,9 +406,9 @@ a {
 }
 
 .fotter-box {
-    border-radius: 5rem 5rem 0px 0px;
+    /* border-radius: 5rem 5rem 0px 0px; */
     background-color: #323C48;
-    padding-bottom: 2.375rem;
+    padding-bottom: 2.75rem;
 }
 
 .fotter-box .fotter {}
@@ -415,12 +435,14 @@ a {
 }
 
 .parter_catefories {
-    margin-top: 4.9375rem;
     overflow: hidden;
     font-size: .6875rem;
     font-family: "Source Han Sans CN";
     font-weight: 300;
     color: rgba(220, 220, 220, 1);
+    box-sizing: border-box;
+    padding-left: 22.875rem;
+    padding-top: 5rem;
 }
 
 .parter_catefories>dl {
@@ -428,15 +450,15 @@ a {
 }
 
 .parter_catefories>dl:nth-of-type(2) {
-    margin: 0 5.125rem 0 5.875rem;
+    margin: 0 9.375rem 0 8.187rem;
 }
 
 .parter_catefories>dl:nth-of-type(3) {
-    margin-right: 5.875rem;
+    margin-right: 9.375rem;
 }
 
 .parter_catefories>dl:nth-of-type(5) {
-    float: right;
+    margin-left: 4.625rem;
 }
 
 .parter_catefories dl dt {
@@ -462,31 +484,28 @@ a {
 }
 
 .concat_icon {
-    margin-top: 1.75rem;
-    /* margin-right: 46px; */
-    padding-right: 2.875rem;
+    width: 75rem;
+    padding-right: 5rem;
     padding-bottom: 3.5625rem;
+    box-sizing: border-box;
+    margin: 1.75rem auto 0;
     border-bottom: 1px solid rgba(122, 122, 122, 1);
 }
 
 .concat_icon div {
     float: right;
-    width: 1.5rem;
+    width: 2.375rem;
     border: 1px solid #ccc;
     border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.375rem;
+    height: 2.375rem;
     text-align: center;
-    line-height: 1.5rem;
-    margin-left: 1.5rem;
+    line-height: 2.375rem;
+    margin-left: 2.375rem;
 }
 
 .concat_icon img {
-    padding-top: 0.1875rem;
-    padding-left: 1px;
-    height: 60%;
-    width: 60%;
-    border-radius: 50%;
+    padding-top: 0.6rem;
 }
 
 .concat_icon div:nth-of-type(2) {

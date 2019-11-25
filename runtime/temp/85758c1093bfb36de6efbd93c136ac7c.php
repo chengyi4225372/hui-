@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"C:\Users\ni959\Desktop\php\hui-\public/../application/home\view\index\get_info.html";i:1574649386;s:71:"C:\Users\ni959\Desktop\php\hui-\application\home\view\common\login.html";i:1574649386;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"C:\Users\ni959\Desktop\php\hui-\public/../application/home\view\index\get_info.html";i:1574674778;s:71:"C:\Users\ni959\Desktop\php\hui-\application\home\view\common\login.html";i:1574649386;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 
@@ -37,12 +37,12 @@
         </div>
         <ul class='titile'>
           <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-          <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
-          <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
-          <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
-          <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
-          <li><a href="<?php echo url('/home/searches/index'); ?>">惠找事</a></li>
-          <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li>
+          <li><a href="<?php echo url('/home/optimal/index'); ?>">招募合伙人</a></li>
+          <li><a href="<?php echo url('/home/spirit/index'); ?>">“惠”家族产品</a></li>
+          <li><a href="<?php echo url('/home/many/index'); ?>">政府招标信息</a></li>
+          <li><a href="<?php echo url('/home/business/index'); ?>">政府招商信息</a></li>
+          <li><a href="<?php echo url('/home/searches/index'); ?>">行业资讯</a></li>
+          <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
         </ul>
         <?php if(empty($userinfo['mobile'])): ?>
         <div class='register'>
@@ -71,9 +71,9 @@
 <?php endif; endif; ?>
       </div>
     </div>
+    <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > 新闻详情</div>
     <div class='main_content'>
       <div class='content_middle'>
-        <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > 新闻详情</div>
         <div class='pic_total'>
           <div class='pic_title'><?php echo $info['title']; ?></div>
           <div class='time'><?php echo $info['release_time']; ?></div>
@@ -103,10 +103,10 @@
     <!-- 底部 -->
     <div class="fotter-box">
       <div class="w fotter">
-        <div class='partener_titile'>用智“慧”创造优“惠”</div>
+        <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
         <div class='parterne_info'>
           深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
-        </div>
+        </div> -->
         <div class='parter_catefories'>
           <dl>
             <dt><a href="#">服务产品</a></dt>
