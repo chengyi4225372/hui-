@@ -166,4 +166,41 @@ function dels(obj){
 }
 
 
+/**
+ * 修改排序
+ */
+function savesort(val,id,url){
+        var  mid = id;
+        var  sort= val;;
+
+        if(mid == '' || mid == undefined || mid=='undefined'){
+         return false;
+        }
+
+        var urls = $(url).attr('data-url');
+
+        if(urls == '' || urls == undefined){
+            return false;
+        }
+
+        $.get(urls,{'mid':mid,'sorts':sort},function(ret){
+
+            if(ret.code == 200){
+                layer.msg(ret.msg,{icon:6},function(){
+                  parent.location.reload();
+                })
+            };
+
+            if(ret.code == 400){
+                layer.msg(ret.msg,{icon:5},function(){
+                    parent.location.reload();
+                })
+            };
+        },'json');
+
+    }
+
+
+
+
 

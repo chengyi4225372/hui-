@@ -38,7 +38,7 @@ $('.infos-add').click(function(){
 
     var pid     = $("#pid option:selected").val();
     var title   = $('#title').val();
-    var describe    = $("#describe").val();
+    var describe= $("#describe").val();
     var keyword = $("#keyword").val();
 
     if(title == '' || title== undefined){
@@ -64,7 +64,7 @@ $('.infos-add').click(function(){
     }
 
 
-    $.post(urls,{'title':title,'pid':pid,'describe':describe,'content':content,'keyword':keyword},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'describe':describe,'content':content,'keyword': JSON.stringify(keyword)},function(ret){
            if(ret.code == 200){
                layer.msg(ret.msg,{icon:6},function(){
                    parent.location.href="index";
@@ -129,7 +129,7 @@ $('.infos-edits').click(function(){
          return false;
     }
 
-    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':keyword},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':JSON.stringify(keyword)},function(ret){
         if(ret.code == 200){
             layer.msg(ret.msg,{icon: 6},function(){
                 parent.location.href="index";
