@@ -89,9 +89,9 @@ class Index extends BaseController
     public function infoList(){
        if($this->request->isGet()){
 
-//           if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
-//               return $this->redirect('/home/index/index');
-//           }
+           if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
+               return $this->redirect('/home/index/index');
+           }
            //招标 招商信息
            $title = input('get.keyword','','trim');
            $biao = Infosservice::instance()->getbiao($title,'');
@@ -112,9 +112,9 @@ class Index extends BaseController
      */
     public function getInfo(){
         if($this->request->isGet()){
-//            if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
-//                return $this->redirect('/home/index/index');
-//            }
+            if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
+                return $this->redirect('/home/index/index');
+            }
 
            $id = input('get.mid','','int');
            if(empty($id) || !isset($id)|| $id <=0){

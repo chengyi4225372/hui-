@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573804100;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574322578;}*/ ?>
  <!DOCTYPE>
 <html lang="en">
 
@@ -135,19 +135,23 @@
                         <?php if(empty($userinfo['mobile'])): ?>
                         <div class='register'>
                             <!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
-                            <a href="<?php echo $baseurl; ?>">登录</a>
+                            <a href="javascript:void(0)"
+                               login_url="<?php echo $baseurl; ?>"
+                               loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
                         <?php else: ?>
+
                         <div class="u_info">
                             <img src="/static/home/images/user_img.png"
                                  style="width:30px;height:30px; vertical-align: bottom;">
-                            <p style="display:inline-block;color:#fff;height: 1.5625rem" id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
+                            <p style="display:inline-block;color:#fff;height: 23px;" id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
                             <div class="u_info_content" id="u_info_content">
                                 <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
                             </div>
                         </div>
+
                         <?php endif; ?>
                     </div>
                 </div>
@@ -305,6 +309,7 @@
                             <a href="javascript:void(0)"
                                data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
                                login_url="<?php echo $baseurl; ?>"
+                               loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
                                mobile-phone="<?php echo $userinfo['mobile']; ?>"
                                data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
                                 <div class='zhao_contentInfo'>
@@ -319,6 +324,7 @@
                         <?php endforeach; endif; else: echo "" ;endif; ?>
                         <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
                             data-url="<?php echo url('/home/index/infoList'); ?>"
+                            loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
                             login_url="<?php echo $baseurl; ?>">了解更多</button>
                     </div>
 
@@ -329,6 +335,7 @@
                             <a href="javascript:void(0)"
                                data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
                                login_url="<?php echo $baseurl; ?>"
+                               loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
                                mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
                                 <div class='zhao_contentInfo'>
                                     <div><?php echo (isset($biaos['title']) && ($biaos['title'] !== '')?$biaos['title']:''); ?></div>
@@ -345,7 +352,8 @@
 
                         <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
                             data-url="<?php echo url('/home/index/infoList'); ?>"
-                            login_url="<?php echo $baseurl; ?>">了解更多</button>
+                                loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
+                                login_url="<?php echo $baseurl; ?>">了解更多</button>
 
                     </div>
 
