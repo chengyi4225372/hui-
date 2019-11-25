@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:60:"/opt/web/hui-/public/../application/v1/view/index/index.html";i:1572487980;s:53:"/opt/web/hui-/application/v1/view/layout/default.html";i:1573715063;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1573715000;s:52:"/opt/web/hui-/application/v1/view/common/header.html";i:1571715191;s:50:"/opt/web/hui-/application/v1/view/common/left.html";i:1572399441;s:52:"/opt/web/hui-/application/v1/view/common/footer.html";i:1571715917;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1571986795;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:60:"/opt/web/hui-/public/../application/v1/view/index/index.html";i:1572487980;s:53:"/opt/web/hui-/application/v1/view/layout/default.html";i:1573715063;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1573715000;s:52:"/opt/web/hui-/application/v1/view/common/header.html";i:1571715191;s:50:"/opt/web/hui-/application/v1/view/common/left.html";i:1574417046;s:52:"/opt/web/hui-/application/v1/view/common/footer.html";i:1571715917;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1574417046;}*/ ?>
 <!DOCTYPE>
 <html lang="zh-CN">
 <head>
@@ -188,7 +188,7 @@
         <ul class="sidebar-menu">
             <li class="header">主导航</li>
 
-            <li class="treeview <?php if($paths == '/v1/users/user/index' || $paths == '/v1/protuct/protucts/index' || $paths == '/v1/info/infos/index' || $paths == '/v1/partners/partner/index' || $paths == '/v1/systematic/cases/index' || $paths == '/v1/systematic/system/slideshow' || $paths == '/v1/systematic/system/setting'): ?>active<?php endif; ?> " >
+            <li class="treeview <?php if($paths == '/v1/users/user/index' || $paths == '/v1/protuct/protucts/index' || $paths == '/v1/info/infos/index' || $paths == '/v1/partners/partner/index' || $paths == '/v1/systematic/cases/index' || $paths == '/v1/systematic/system/slideshow' || $paths == '/v1/systematic/system/setting' || $path ='/v1/cate/ifications/index'): ?>active<?php endif; ?> " >
                 <a href="#">
                     <i class="fa fa-share"></i> <span>首页</span>
                     <span class="pull-right-container">
@@ -224,7 +224,7 @@
                         </ul>
                     </li>
 
-                    <li class="<?php if($paths == '/v1/info/infos/index'): ?>active<?php endif; ?>">
+                    <li class="<?php if($paths == '/v1/info/infos/index' || $paths == '/v1/cate/ifications/index'): ?>active<?php endif; ?>">
                         <a href="#">
                             <i class="glyphicon glyphicon-th-large"></i> <span>招标信息</span>
                             <span class="pull-right-container">
@@ -232,6 +232,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
+                            <li class="<?php if($paths == '/v1/cate/ifications/index'): ?>active<?php endif; ?>">
+                                <a href="<?php echo url('/v1/cate/ifications/index'); ?>"><i class="fa fa-circle-o"></i>关键字标签列表</a>
+                            </li>
                             <li class="<?php if($paths == '/v1/info/infos/index'): ?>active<?php endif; ?>">
                                 <a href="<?php echo url('/v1/info/infos/index'); ?>"><i class="fa fa-circle-o"></i>信息详情列表</a>
                             </li>
@@ -419,7 +422,7 @@
 <script src="/static/assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="/static/assets/plugins/datatables/dataTables.bootstrap.js"></script>
 <!-- 富文本 -->
-<script src="/static/assets/plugins/ueditor//ueditor.config.js"></script>
+<script src="/static/assets/plugins/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/ueditor.all.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
 <!-- 富文本-->
@@ -432,6 +435,8 @@
 <script src="/static/assets/dist/js/infos.js"></script>
 <script src="/static/assets/dist/js/partners.js"></script>
 <script src="/static/assets/dist/js/works.js"></script>
+<!-- 标签 -->
+<script src="/static/assets/dist/js/ification.js"></script>
 <script>
     admin_module.changepas();
 </script>

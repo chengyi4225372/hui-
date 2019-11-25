@@ -131,11 +131,13 @@ class Ificationservice
              return false;
          }
 
-         if(empty($sort)){
-             $sort == ['sort'=>1];
+         if(empty($sort) || $sort == 0){
+             $data = ['sort'=>1];
          }
 
-         $res = Ification::instance()->where(['id'=>$id])->data($sort)->update();
+         $data  = ['sort'=>$sort];
+
+         $res = Ification::instance()->where(['id'=>$id])->data($data)->update();
 
          if($res){
              return true;
