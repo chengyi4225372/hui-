@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574737053;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574739676;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -142,7 +142,7 @@
                                     <div>2</div> -->
 									<div>
 										<dl>
-											<dt><a href="#">惠优税</a></dt>
+											<dt><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></dt>
 											<dd>
 												·企税降成本 薪税降税负
 
@@ -150,7 +150,7 @@
 											<dd>·分红降扣率 创业降个税</dd>
 										</dl>
 										<dl>
-											<dt><a href="#">惠灵工</a></dt>
+											<dt><a href="<?php echo config('curl.hlg'); ?>">惠灵工</a></dt>
 											<dd>
 												·寻求多样化用工模式
 
@@ -158,7 +158,7 @@
 											<dd>·提高内部人员效能</dd>
 										</dl>
 										<dl>
-											<dt><a href="#">惠多薪</a></dt>
+											<dt><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></dt>
 											<dd>
 												·优化员工福利选择模块
 
@@ -166,7 +166,7 @@
 											<dd>·企业成本可控透明化</dd>
 										</dl>
 										<dl>
-											<dt><a href="#">惠找事</a></dt>
+											<dt><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></dt>
 											<dd>
 												·技能价值华
 
@@ -174,7 +174,7 @@
 											<dd>·成就更好自我</dd>
 										</dl>
 										<dl>
-											<dt><a href="#">惠创业</a></dt>
+											<dt><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></dt>
 											<dd>
 												·一站式解决方案
 
@@ -182,7 +182,7 @@
 											<dd>·激活企业最大效益</dd>
 										</dl>
 										<dl>
-											<dt><a href="#">惠企动</a></dt>
+											<dt><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></dt>
 											<dd>·产品内容建设中……</dd>
 										</dl>
 									</div>
@@ -191,22 +191,26 @@
                                     <div>6</div> -->
 								</div>
 							</li>
-							<li><a href="<?php echo url('/home/many/index'); ?>">政府招标信息</a></li>
-							<li><a href="<?php echo url('/home/business/index'); ?>">政府招商信息</a></li>
-							<li><a href="<?php echo config('curl.hzs'); ?>">行业资讯</a></li>
-							<!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li> -->
+							<li>
+								<a href="javascript:void(0)">政府招标信息</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">政府招商信息</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">行业资讯</a>
+							</li>
 						</ul>
 
 						<!-- <?php if(empty($userinfo['mobile'])): ?> -->
                         <div class='register'>
-						<!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
 						<a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
                                 onclick="login_btn(this)">登录</a>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
-                        <!-- <?php else: ?> -->
+<!--                         <?php else: ?>
 
-						<!-- <div class="u_info">
+						 <div class="u_info">
                             <img src="/static/home/images/user_img.png"
                                 style="width:30px;height:30px; vertical-align: bottom;">
                             <p style="display:inline-block;color:#fff;height: 23px;" id="mobile_phone">
@@ -218,8 +222,8 @@
                             </div>
                         </div>
 
-												<?php endif; ?> -->
-						<!-- <div class="u_info" id="u_info">
+												<?php endif; ?>
+						 <div class="u_info" id="u_info">
 							<img src="/static/home/images/user_img.png"/>
 							<p id="mobile_phone">
 								12312321</p>
