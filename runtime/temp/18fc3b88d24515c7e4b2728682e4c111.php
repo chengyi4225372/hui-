@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574754840;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574758166;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -31,73 +31,72 @@
           <a href="/"></a>
         </div>
         <ul class='titile'>
-          <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
+          <li><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
           <li><a href="javascript:;">招募合伙人</a>
           </li>
           <li>
             <a href="javascript:;">“惠”家族产品</a>
             <!-- 二级菜单 -->
-								<div class="w secondary-menu" id="secondary-menu">
-                    <!-- <div>1</div>
+            <div class="w secondary-menu" id="secondary-menu">
+              <!-- <div>1</div>
                                       <div>2</div> -->
-                    <div>
-                      <dl>
-                        <dt><a href="#">惠优税</a></dt>
-                        <dd>
-                          ·企税降成本 薪税降税负
-  
-                        </dd>
-                        <dd>·分红降扣率 创业降个税</dd>
-                      </dl>
-                      <dl>
-                        <dt><a href="#">惠灵工</a></dt>
-                        <dd>
-                          ·寻求多样化用工模式
-  
-                        </dd>
-                        <dd>·提高内部人员效能</dd>
-                      </dl>
-                      <dl>
-                        <dt><a href="#">惠多薪</a></dt>
-                        <dd>
-                          ·优化员工福利选择模块
-  
-                        </dd>
-                        <dd>·企业成本可控透明化</dd>
-                      </dl>
-                      <dl>
-                        <dt><a href="#">惠找事</a></dt>
-                        <dd>
-                          ·技能价值华
-  
-                        </dd>
-                        <dd>·成就更好自我</dd>
-                      </dl>
-                      <dl>
-                        <dt><a href="#">惠创业</a></dt>
-                        <dd>
-                          ·一站式解决方案
-  
-                        </dd>
-                        <dd>·激活企业最大效益</dd>
-                      </dl>
-                      <dl>
-                        <dt><a href="#">惠企动</a></dt>
-                        <dd>·产品内容建设中……</dd>
-                      </dl>
-                    </div>
-                  </div><!-- 二级菜单 -->
+              <div>
+                <dl>
+                  <dt><a href="#">惠优税</a></dt>
+                  <dd>
+                    ·企税降成本 薪税降税负
+
+                  </dd>
+                  <dd>·分红降扣率 创业降个税</dd>
+                </dl>
+                <dl>
+                  <dt><a href="#">惠灵工</a></dt>
+                  <dd>
+                    ·寻求多样化用工模式
+
+                  </dd>
+                  <dd>·提高内部人员效能</dd>
+                </dl>
+                <dl>
+                  <dt><a href="#">惠多薪</a></dt>
+                  <dd>
+                    ·优化员工福利选择模块
+
+                  </dd>
+                  <dd>·企业成本可控透明化</dd>
+                </dl>
+                <dl>
+                  <dt><a href="#">惠找事</a></dt>
+                  <dd>
+                    ·技能价值华
+
+                  </dd>
+                  <dd>·成就更好自我</dd>
+                </dl>
+                <dl>
+                  <dt><a href="#">惠创业</a></dt>
+                  <dd>
+                    ·一站式解决方案
+
+                  </dd>
+                  <dd>·激活企业最大效益</dd>
+                </dl>
+                <dl>
+                  <dt><a href="#">惠企动</a></dt>
+                  <dd>·产品内容建设中……</dd>
+                </dl>
+              </div>
+            </div><!-- 二级菜单 -->
           </li>
           <li><a href="javascript:;">政府招标信息</a></li>
-          <li><a href="javascript:;">政府招商信息</a></li>
+          <li class='nav-active'><a href="javascript:;">政府招商信息</a></li>
           <li><a href="javascript:;">行业资讯</a></li>
           <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
         </ul>
         <?php if(empty($userinfo['mobile'])): ?>
         <div class='register'>
-          <a href="javascript:void(0)"
-             login_url="<?php echo $baseurl; ?>"
-             loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
+          <a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
+            onclick="login_btn(this)">登录</a>
           <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
         <?php else: if(empty($userinfo['mobile'])): ?>
@@ -284,21 +283,21 @@
         </div>
       </div>
     </div>
-<!-- 分页 -->
-<div class="w pageNation">
-  <ul class="page">
-    <li class="prev">上一页</li>
-    <li class="currentPage">1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li class="more">...</li>
-    
-    <li>100</li>
-    <li class="next">下一页</li>
-  </ul>
-</div>
+    <!-- 分页 -->
+    <div class="w pageNation">
+      <ul class="page">
+        <li class="prev">上一页</li>
+        <li class="currentPage">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li class="more">...</li>
+
+        <li>100</li>
+        <li class="next">下一页</li>
+      </ul>
+    </div>
 
 
 
@@ -359,20 +358,23 @@
 
 
   </div>
-  
+
 
 </body>
-<!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
-
-
-
 
 <script>
-  
-  $('.goTop').click(()=>{
-    alert(111)
+
+  /* 选择热词 */
+  $('.hotWord ul li').click(function (e) {
+    if ($(this).hasClass('chosen')) {
+      $(this).removeClass('chosen')
+    } else {
+      $(this).addClass('chosen')
+      $(this).siblings().removeClass('chosen')
+    }
+
   })
- 
+
 
 </script>
 

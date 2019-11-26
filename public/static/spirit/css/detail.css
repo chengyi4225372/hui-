@@ -294,12 +294,26 @@ a {
   }
   
   .secondary-menu>div:nth-child(1) {
-    padding: .625rem 4.125rem 0 4.125rem;
+    /* padding: .625rem 4.125rem 0 4.125rem; */
+    display: -webkit-flex;
+  /* 新版本语法: Chrome 21+ */
+  display: -webkit-box;
+  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;
+  /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  /* 混合版本语法: IE 10 */
+  display: flex;
+  -moz-justify-content: space-around;
+  -webkit-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
   }
   
   .secondary-menu>div:nth-child(1) dl {
-    float: left;
-    margin-right: 3.8rem
+    /* float: left;
+    margin-right: 3.8rem */
   }
   
   .secondary-menu>div:nth-child(1) dl:last-child {

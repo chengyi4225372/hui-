@@ -67,6 +67,10 @@ window.onload = function () {
     // var module2 = document.querySelector(".tabs-items-content-text");
     // $clamp(module2, { clamp: 3 });
 
+
+
+    
+
 }
 
 
