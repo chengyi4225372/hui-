@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574748752;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574754840;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -25,38 +25,79 @@
   <div class='container'>
 
     <!-- 导航部分 -->
-    <div class="nav-box">
-      <div class="w nav-container clearfix">
-        <!-- logo图 -->
-        <div class="logo">
-          <h1>
-            <a href="/"><img src="/static/spirit/images/logo2x.png"></a>
-          </h1>
+    <div class='header'>
+      <div class=header_content>
+        <div class='logo'>
+          <a href="/"></a>
         </div>
-        <!-- nav部分 -->
-        <div class="nav">
-          <ul class="clearfix">
-            <!-- <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
-            <li><a href="<?php echo config('curl.hlg'); ?>">惠灵工</a></li>
-            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
-            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
-            <li><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></li>
-            <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
-            <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-            <li><a href="">招募合伙人</a></li>
-            <li><a href="<?php echo config('curl.hlg'); ?>">“惠”家族产品</a></li>
-            <li><a href="<?php echo url('/home/many/index'); ?>">政府招标信息</a></li>
-            <li><a href="<?php echo url('/home/business/index'); ?>">政府招商信息</a></li>
-            <li><a href="<?php echo config('curl.hzs'); ?>">行业资讯</a></li>
-          </ul>
-        </div>
-        <!-- 登陆注册 -->
+        <ul class='titile'>
+          <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
+          <li><a href="javascript:;">招募合伙人</a>
+          </li>
+          <li>
+            <a href="javascript:;">“惠”家族产品</a>
+            <!-- 二级菜单 -->
+								<div class="w secondary-menu" id="secondary-menu">
+                    <!-- <div>1</div>
+                                      <div>2</div> -->
+                    <div>
+                      <dl>
+                        <dt><a href="#">惠优税</a></dt>
+                        <dd>
+                          ·企税降成本 薪税降税负
+  
+                        </dd>
+                        <dd>·分红降扣率 创业降个税</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠灵工</a></dt>
+                        <dd>
+                          ·寻求多样化用工模式
+  
+                        </dd>
+                        <dd>·提高内部人员效能</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠多薪</a></dt>
+                        <dd>
+                          ·优化员工福利选择模块
+  
+                        </dd>
+                        <dd>·企业成本可控透明化</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠找事</a></dt>
+                        <dd>
+                          ·技能价值华
+  
+                        </dd>
+                        <dd>·成就更好自我</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠创业</a></dt>
+                        <dd>
+                          ·一站式解决方案
+  
+                        </dd>
+                        <dd>·激活企业最大效益</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠企动</a></dt>
+                        <dd>·产品内容建设中……</dd>
+                      </dl>
+                    </div>
+                  </div><!-- 二级菜单 -->
+          </li>
+          <li><a href="javascript:;">政府招标信息</a></li>
+          <li><a href="javascript:;">政府招商信息</a></li>
+          <li><a href="javascript:;">行业资讯</a></li>
+          <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
+        </ul>
         <?php if(empty($userinfo['mobile'])): ?>
         <div class='register'>
-          <a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
-            onclick="login_btn(this)">登录</a>
-          <span></span>
+          <a href="javascript:void(0)"
+             login_url="<?php echo $baseurl; ?>"
+             loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
           <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
         <?php else: if(empty($userinfo['mobile'])): ?>
@@ -77,8 +118,10 @@
 </div>
 <?php endif; endif; ?>
       </div>
-
     </div>
+
+
+
     <div class="bg_banner">
       <div class="w banner">
 
@@ -89,7 +132,7 @@
     <!-- 面包屑导航 -->
     <div class="w bg_breadCrumbs">
       <div class="bread-crumbs">
-        <span><a href="/">首页</a></span> > <span><a class="current" onclick="go_news(this)"
+        <span><a href="/">首页</a></span> > <span><a class="current" style="color:#3E92FF;" onclick="go_news(this)"
             data-url="<?php echo url('/home/index/infoList'); ?>">招商政策资讯</a></span> <span></span>
       </div>
     </div>
@@ -242,7 +285,20 @@
       </div>
     </div>
 <!-- 分页 -->
-<div id="pagination" class="pagination"></div>
+<div class="w pageNation">
+  <ul class="page">
+    <li class="prev">上一页</li>
+    <li class="currentPage">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li class="more">...</li>
+    
+    <li>100</li>
+    <li class="next">下一页</li>
+  </ul>
+</div>
 
 
 
@@ -251,48 +307,48 @@
 
     <!-- 底部 -->
     <div class="fotter-box">
-        <div class="w fotter">
-          <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
-          <div class='parterne_info'>
-            深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
-          </div> -->
-          <div class='parter_catefories'>
-            <dl>
-              <dt><a href="#">服务产品</a></dt>
-              <dd><a href="#">服务型税筹</a></dd>
-              <dd><a href="#">门户型税筹</a></dd>
-              <dd><a href="#">人力资源</a></dd>
-            </dl>
-            <dl>
-              <dt><a href="#">招商政策</a></dt>
-              <dd><a href="#">招商政策网</a></dd>
-            </dl>
-            <dl>
-              <dt><a href="#">合作</a></dt>
-              <dd><a href="#">代理合作</a></dd>
-            </dl>
-            <dl>
-              <dt><a href="#">公司信息</a></dt>
-              <dd><a href="#">瑟维斯有限公司</a></dd>
-              <dd><a href="#">惠创优产业联盟</a></dd>
-              <dd><a href="#">中兴瑞华有限公司</a></dd>
-            </dl>
-            <dl>
-              <dt><a href="#">联系我们</a></dt>
-              <dd><a href="#">400-150-9896</a></dd>
-              <dd><a href="#">hcylm008@dingtalk.com</a></dd>
-              <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
-            </dl>
-  
-          </div>
-          <div class='concat_icon clearfix'>
-            <div><img src="/static/spirit/images/tie.png" alt=""></div>
-            <div><img src="/static/spirit/images/wx.png" alt=""></div>
-            <div><img src="/static/spirit/images/bo.png" alt=""></div>
-          </div>
-          <div class="partener_fotter">© Copyright 2019 惠企动（湖北）科技有限公司 . All Rights Reserved</div>
+      <div class="w fotter">
+        <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
+        <div class='parterne_info'>
+          深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
+        </div> -->
+        <div class='parter_catefories'>
+          <dl>
+            <dt><a href="#">服务产品</a></dt>
+            <dd><a href="#">服务型税筹</a></dd>
+            <dd><a href="#">门户型税筹</a></dd>
+            <dd><a href="#">人力资源</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">招商政策</a></dt>
+            <dd><a href="#">招商政策网</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">合作</a></dt>
+            <dd><a href="#">代理合作</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">公司信息</a></dt>
+            <dd><a href="#">瑟维斯有限公司</a></dd>
+            <dd><a href="#">惠创优产业联盟</a></dd>
+            <dd><a href="#">中兴瑞华有限公司</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">联系我们</a></dt>
+            <dd><a href="#">400-150-9896</a></dd>
+            <dd><a href="#">hcylm008@dingtalk.com</a></dd>
+            <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
+          </dl>
+
         </div>
+        <div class='concat_icon clearfix'>
+          <div><img src="/static/spirit/images/tie.png" alt=""></div>
+          <div><img src="/static/spirit/images/wx.png" alt=""></div>
+          <div><img src="/static/spirit/images/bo.png" alt=""></div>
+        </div>
+        <div class="partener_fotter">© Copyright 2019 惠企动（湖北）科技有限公司 . All Rights Reserved</div>
       </div>
+    </div>
 
     <!-- 返回顶部 -->
     <div class='goTop' id="goTop">
