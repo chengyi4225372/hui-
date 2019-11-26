@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"C:\phpEnv\www\hui-\public/../application/home\view\index\get_info.html";i:1574736850;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"C:\phpEnv\www\hui-\public/../application/home\view\index\get_info.html";i:1574740259;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 
@@ -124,7 +124,10 @@
 <?php endif; endif; ?>
       </div>
     </div>
-    <div class='bread_title'>首页 > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > <a class="active" href="javasrcipt:;">新闻详情</a></div>
+    <div  class='bread_title'>
+      <a class="actives" href="/">首页 ></a>
+      <a  class="actives" onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> >
+      <a  class="activees" href="javasrcipt:;">新闻详情</a></div>
     <div class='main_content'>
       <div class='content_middle'>
         <div class='pic_total'>

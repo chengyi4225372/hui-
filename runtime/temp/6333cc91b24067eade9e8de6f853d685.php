@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574739275;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574328353;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 
@@ -76,9 +76,7 @@
     <div class="content-box">
       <div class="w content">
         <div class="bread-crumbs">
-          <span><a href="/">首页</a></span> >
-          <span><a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a></span>
-          <span></span>
+          <span><a href="/">首页</a></span> > <span><a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a></span> > <span></span>
         </div>
         <div class="information-list">
           <div class="tabs clearfix">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574739349;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574748752;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -242,21 +242,7 @@
       </div>
     </div>
 <!-- 分页 -->
-<div id="page">
-    <ul>
-        <li class="xl-prevPage">上一页</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li class="xl-disabled">...</li>
-        <li class="xl-active">100</li>
-        <li class="xl-nextPage xl-disabled">下一页</li>
- 
-    </ul>
-</div>
-    
+<div id="pagination" class="pagination"></div>
 
 
 
@@ -265,55 +251,48 @@
 
     <!-- 底部 -->
     <div class="fotter-box">
-      <div class="fotter">
-        <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
-        <div class='parterne_info'>
-          深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
-        </div> -->
-        <div class='parter_catefories'>
-          <dl>
-            <dt><a href="#">服务产品</a></dt>
-            <dd><a href="#">服务型税筹</a></dd>
-            <dd><a href="#">门户型税筹</a></dd>
-            <dd><a href="#">人力资源</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#">招商政策</a></dt>
-            <dd><a href="#">招商政策网</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#">合作</a></dt>
-            <dd><a href="#">代理合作</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#">公司信息</a></dt>
-            <dd><a href="#">瑟维斯有限公司</a></dd>
-            <dd><a href="#">惠创优产业联盟</a></dd>
-            <dd><a href="#">中兴瑞华有限公司</a></dd>
-          </dl>
-          <dl>
-            <dt><a href="#">联系我们</a></dt>
-            <dd><a href="#">400-150-9896</a></dd>
-            <dd><a href="#">hcylm008@dingtalk.com</a></dd>
-            <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
-            <dd>
-              <div class='concat_icon'>
-                <div><img src="/static/spirit/images/tie.png" alt=""></div>
-                <div><img src="/static/spirit/images/wx.png" alt=""></div>
-                <div><img src="/static/spirit/images/bo.png" alt=""></div>
-              </div>
-            </dd>
-          </dl>
-
+        <div class="w fotter">
+          <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
+          <div class='parterne_info'>
+            深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
+          </div> -->
+          <div class='parter_catefories'>
+            <dl>
+              <dt><a href="#">服务产品</a></dt>
+              <dd><a href="#">服务型税筹</a></dd>
+              <dd><a href="#">门户型税筹</a></dd>
+              <dd><a href="#">人力资源</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#">招商政策</a></dt>
+              <dd><a href="#">招商政策网</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#">合作</a></dt>
+              <dd><a href="#">代理合作</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#">公司信息</a></dt>
+              <dd><a href="#">瑟维斯有限公司</a></dd>
+              <dd><a href="#">惠创优产业联盟</a></dd>
+              <dd><a href="#">中兴瑞华有限公司</a></dd>
+            </dl>
+            <dl>
+              <dt><a href="#">联系我们</a></dt>
+              <dd><a href="#">400-150-9896</a></dd>
+              <dd><a href="#">hcylm008@dingtalk.com</a></dd>
+              <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
+            </dl>
+  
+          </div>
+          <div class='concat_icon clearfix'>
+            <div><img src="/static/spirit/images/tie.png" alt=""></div>
+            <div><img src="/static/spirit/images/wx.png" alt=""></div>
+            <div><img src="/static/spirit/images/bo.png" alt=""></div>
+          </div>
+          <div class="partener_fotter">© Copyright 2019 惠企动（湖北）科技有限公司 . All Rights Reserved</div>
         </div>
-        <!-- <div class='concat_icon clearfix'>
-          <div><img src="/static/spirit/images/tie.png" alt=""></div>
-          <div><img src="/static/spirit/images/wx.png" alt=""></div>
-          <div><img src="/static/spirit/images/bo.png" alt=""></div>
-        </div> -->
-        <div class="partener_fotter">© Copyright 2019 惠企动（湖北）科技有限公司 . All Rights Reserved</div>
       </div>
-    </div>
 
     <!-- 返回顶部 -->
     <div class='goTop' id="goTop">
@@ -337,16 +316,7 @@
   $('.goTop').click(()=>{
     alert(111)
   })
-  $("#page").paging({
-    nowPage: 6, // 当前页码
-    pageNum: 30, // 总页码
-    buttonNum: 6, //要展示的页码数量
-    canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
-    showOne: 0,//只有一页时，是否显示。0=不显示,1=显示（默认）
-    callback: function (num) { //回调函数
-      console.log(num);
-    }
-  });
+ 
 
 </script>
 
