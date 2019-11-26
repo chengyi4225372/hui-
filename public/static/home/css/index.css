@@ -912,6 +912,7 @@ body {
   height: 3rem;
   outline: none;
   height: 36.875rem;
+  cursor: pointer;
 }
 
 
@@ -1241,7 +1242,7 @@ body {
   display: none;
   padding-top: 0.4375rem;
   box-sizing: border-box;
-
+  cursor: pointer;
 }
 
 .goTop i {
