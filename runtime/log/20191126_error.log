@@ -1,3 +1,11 @@
 ---------------------------------------------------------------
 [ 2019-11-26T11:39:27+08:00 ] 172.26.2.194 GET /home/index/getInfo.html
 [ error ] [0]variable type errorï¼š boolean[/opt/web/hui-/thinkphp/library/think/Response.php:316]
+---------------------------------------------------------------
+[ 2019-11-26T14:49:15+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2019-11-26T14:49:38+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\thinkphp\library\think\db\Connection.php:295]

@@ -202,12 +202,14 @@
 						</ul>
 
 						<!-- {if empty($userinfo['mobile'])} -->
+						<!--
                         <div class='register'>
 						<a href="javascript:void(0)" login_url="{$baseurl}" loca_url="{:config('curl.website')}"
                                 onclick="login_btn(this)">登录</a>
                             <a href="{:url('/home/login/register')}">注册</a>
                         </div>
-<!--                         {else /}
+                        -->
+                      <!--   {else /}
 
 						 <div class="u_info">
                             <img src="__HOME__/images/user_img.png"
@@ -220,8 +222,8 @@
                                     data-url="{:url('/home/login/logout')}">退出账号</a>
                             </div>
                         </div>
-
-												{/if}
+                        {/if}
+                        -->
 						 <div class="u_info" id="u_info">
 							<img src="__HOME__/images/user_img.png"/>
 							<p id="mobile_phone">
@@ -230,7 +232,7 @@
 								<a class="u_out" href="javascript:void(0)" data-token="" onclick="user_logout(this)"
 									location_url="" data-url="">退出账号</a>
 							</div>
-						</div> -->
+						</div>
 					</div>
 
 				</div>
