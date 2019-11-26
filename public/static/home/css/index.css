@@ -1697,7 +1697,7 @@ input:-webkit-autofill {
 .u_info_two {
   position: relative;
   float: right;
-  margin-top: 1rem;
+  margin-top: .8rem;
   cursor: pointer;
   height: 80%;
   padding-left: 1.25rem;
