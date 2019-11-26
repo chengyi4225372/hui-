@@ -1,3 +1,3 @@
 ---------------------------------------------------------------
-[ 2019-11-26T11:39:27+08:00 ] 172.26.2.194 GET /home/index/getInfo.html
-[ error ] [0]variable type error： boolean[/opt/web/hui-/thinkphp/library/think/Response.php:316]
+[ 2019-11-26T14:38:47+08:00 ] 172.26.2.194 GET /
+[ error ] [0]语法解析错误: syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file[/opt/web/hui-/runtime/temp/fc43eb112f593b1af4478cc2ab82a207.php:136]
