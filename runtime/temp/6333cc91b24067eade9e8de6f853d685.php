@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574759387;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574759861;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -129,7 +129,7 @@
     <!-- 面包屑导航 -->
     <div class="w bg_breadCrumbs">
       <div class="bread-crumbs">
-        <span><a href="/">首页</a></span> > <span><a class="current" style="color:#3E92FF;" onclick="go_news(this)"
+        <span><a href="<?php echo url('/home/index/index'); ?>">首页</a></span> > <span><a class="current" style="color:#3E92FF;" onclick="go_news(this)"
             data-url="<?php echo url('/home/index/infoList'); ?>">招商政策资讯</a></span> <span></span>
       </div>
     </div>
@@ -311,30 +311,30 @@
         </div> -->
         <div class='parter_catefories'>
           <dl>
-            <dt><a href="#">服务产品</a></dt>
-            <dd><a href="#">服务型税筹</a></dd>
-            <dd><a href="#">门户型税筹</a></dd>
-            <dd><a href="#">人力资源</a></dd>
+            <dt><a href="javascript:;">服务产品</a></dt>
+            <dd><a href="javascript:;">服务型税筹</a></dd>
+            <dd><a href="javascript:;">门户型税筹</a></dd>
+            <dd><a href="javascript:;">人力资源</a></dd>
           </dl>
           <dl>
-            <dt><a href="#">招商政策</a></dt>
-            <dd><a href="#">招商政策网</a></dd>
+            <dt><a href="javascript:;">招商政策</a></dt>
+            <dd><a href="javascript:;">招商政策网</a></dd>
           </dl>
           <dl>
-            <dt><a href="#">合作</a></dt>
-            <dd><a href="#">代理合作</a></dd>
+            <dt><a href="javascript:;">合作</a></dt>
+            <dd><a href="javascript:;">代理合作</a></dd>
           </dl>
           <dl>
-            <dt><a href="#">公司信息</a></dt>
-            <dd><a href="#">瑟维斯有限公司</a></dd>
-            <dd><a href="#">惠创优产业联盟</a></dd>
-            <dd><a href="#">中兴瑞华有限公司</a></dd>
+            <dt><a href="javascript:;">公司信息</a></dt>
+            <dd><a href="javascript:;">瑟维斯有限公司</a></dd>
+            <dd><a href="javascript:;">惠创优产业联盟</a></dd>
+            <dd><a href="javascript:;">中兴瑞华有限公司</a></dd>
           </dl>
           <dl>
-            <dt><a href="#">联系我们</a></dt>
-            <dd><a href="#">400-150-9896</a></dd>
-            <dd><a href="#">hcylm008@dingtalk.com</a></dd>
-            <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
+            <dt><a href="javascript:;">联系我们</a></dt>
+            <dd><a href="javascript:;">400-150-9896</a></dd>
+            <dd><a href="javascript:;">hcylm008@dingtalk.com</a></dd>
+            <dd><a href="javascript:;">武汉市硚口区南国大武汉H座18楼</a></dd>
           </dl>
 
         </div>
