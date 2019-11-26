@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"C:\phpEnv\www\hui-\public/../application/home\view\index\index.html";i:1574740307;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"C:\phpEnv\www\hui-\public/../application/home\view\index\index.html";i:1574748131;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -203,12 +203,12 @@
 						</ul>
 
 						<!-- <?php if(empty($userinfo['mobile'])): ?> -->
-                        <div class='register'>
-						<a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
-                                onclick="login_btn(this)">登录</a>
-                            <a href="<?php echo url('/home/login/register'); ?>">注册</a>
-                        </div>
-<!--                         <?php else: ?>
+						<div class='register'>
+							<a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
+								onclick="login_btn(this)">登录</a>
+							<a href="<?php echo url('/home/login/register'); ?>">注册</a>
+						</div>
+						<!--                         <?php else: ?>
 
 						 <div class="u_info">
                             <img src="/static/home/images/user_img.png"
@@ -333,8 +333,10 @@
 						<?php if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ss): $mod = ($i % 2 );++$i;?>
 						<div class='totalInfo_content'>
 							<a href="javascript:void(0)" data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
-								login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
-								mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
+								login_url="<?php echo $baseurl; ?>"
+								loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
+								mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>"
+								onclick="home_module.show_detail(this)">
 								<div class='zhao_contentInfo'>
 									<div><?php echo $ss['title']; ?></div>
 									<div>
@@ -346,7 +348,8 @@
 						</div>
 						<?php endforeach; endif; else: echo "" ;endif; ?>
 						<button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
-							data-url="<?php echo url('/home/index/infoList'); ?>" loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
+							data-url="<?php echo url('/home/index/infoList'); ?>"
+							loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
 							login_url="<?php echo $baseurl; ?>">了解更多</button>
 					</div>
 
@@ -355,8 +358,10 @@
 						<?php if(is_array($biao) || $biao instanceof \think\Collection || $biao instanceof \think\Paginator): $i = 0; $__LIST__ = $biao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$biaos): $mod = ($i % 2 );++$i;?>
 						<div class='totalInfo_content'>
 							<a href="javascript:void(0)" data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
-								login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
-								mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
+								login_url="<?php echo $baseurl; ?>"
+								loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ss['id']; ?>"
+								mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>"
+								onclick="home_module.show_detail(this)">
 								<div class='zhao_contentInfo'>
 									<div><?php echo (isset($biaos['title']) && ($biaos['title'] !== '')?$biaos['title']:''); ?></div>
 									<div>
@@ -371,7 +376,8 @@
 						<?php endforeach; endif; else: echo "" ;endif; ?>
 
 						<button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
-							data-url="<?php echo url('/home/index/infoList'); ?>" loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
+							data-url="<?php echo url('/home/index/infoList'); ?>"
+							loca_url="<?php echo config('curl.website'); ?>/home/index/infoList"
 							login_url="<?php echo $baseurl; ?>">了解更多</button>
 
 					</div>
@@ -387,8 +393,8 @@
 				<div class='success_title'></div>
 				<div class='success_icon'>
 					<?php if(is_array($case_list) || $case_list instanceof \think\Collection || $case_list instanceof \think\Paginator): $i = 0; $__LIST__ = $case_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data_list): $mod = ($i % 2 );++$i;?>
-					<div style="cursor:pointer;" onclick="click_show(this)" keys="<?php echo $key; ?>" class="<?php echo $data_list['is_show'].$key; ?>" data="<?php echo $count; ?>"
-						data-attr="<?php echo $data_list['is_show']; ?>">
+					<div style="cursor:pointer;" onclick="click_show(this)" keys="<?php echo $key; ?>"
+						class="<?php echo $data_list['is_show'].$key; ?>" data="<?php echo $count; ?>" data-attr="<?php echo $data_list['is_show']; ?>">
 						<div class='<?php if($key == 1): ?>hui_icon<?php else: ?>p_icon<?php endif; ?>'>
 							<div><?php echo $data_list['title2']; ?></div>
 							<div><?php echo $data_list['title3']; ?></div>
@@ -489,11 +495,11 @@
 					</dl>
 
 				</div>
-				<!--<div class='concat_icon'>-->
-				<!--<div><img src="/static/home/images/bo.png" alt=""></div>-->
-				<!--<div><img src="/static/home/images/wx.png" alt=""></div>-->
-				<!--<div><img src="/static/home/images/tie.png" alt=""></div>-->
-				<!--</div>-->
+				<div class='concat_icon'>
+					<div><img src="/static/home/images/bo.png" alt=""></div>
+					<div><img src="/static/home/images/wx.png" alt=""></div>
+					<div><img src="/static/home/images/tie.png" alt=""></div>
+				</div>
 			</div>
 		</div>
 
