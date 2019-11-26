@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574739676;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574748168;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -135,7 +135,7 @@
 							<li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
 							<li><a href="<?php echo url('/home/optimal/index'); ?>">招募合伙人</a></li>
 							<li>
-								<a href="">“惠”家族产品</a>
+								<a href="javascript:;">“惠”家族产品</a>
 								<!-- 二级菜单 -->
 								<div class="w secondary-menu" id="secondary-menu">
 									<!-- <div>1</div>
@@ -266,15 +266,15 @@
 				<ul class='img_total'>
 					<li>
 						<img src="/static/home/images/more.png" alt="">
-						<a href="#">集专家智“惠”定制</a>
+						<a href="javascript:void(0)">集专家智“惠”定制</a>
 					</li>
 					<li>
 						<img src="/static/home/images/rainning.png" alt="">
-						<a href="#">集专家智“惠”定制</a>
+						<a href="javascript:void(0)">集专家智“惠”定制</a>
 					</li>
 					<li>
 						<img src="/static/home/images/pig.png" alt="">
-						<a href="#">给您最优“惠”</a>
+						<a href="javascript:void(0)">给您最优“惠”</a>
 					</li>
 				</ul>
 			</div>
@@ -288,8 +288,8 @@
 					<?php if(is_array($protuct) || $protuct instanceof \think\Collection || $protuct instanceof \think\Paginator): $i = 0; $__LIST__ = $protuct;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v1): $mod = ($i % 2 );++$i;?>
 					<li>
 						<img src="<?php echo (isset($v1['imgs']) && ($v1['imgs'] !== '')?$v1['imgs']:''); ?>" alt="">
-						<a href="#"><?php echo (isset($v1['names']) && ($v1['names'] !== '')?$v1['names']:''); ?></a>
-						<a href="#"><?php echo (isset($v1['desc']) && ($v1['desc'] !== '')?$v1['desc']:''); ?></a>
+						<a href="javascript:void(0)"><?php echo (isset($v1['names']) && ($v1['names'] !== '')?$v1['names']:''); ?></a>
+						<a href="javascript:void(0)"><?php echo (isset($v1['desc']) && ($v1['desc'] !== '')?$v1['desc']:''); ?></a>
 						<ul class='one_pic'>
 							<li><a onclick="showSearch()">获取方案</a></li>
 							<li><a href="<?php echo (isset($v1['purl']) && ($v1['purl'] !== '')?$v1['purl']:'#'); ?>">前往网站</a></li>
