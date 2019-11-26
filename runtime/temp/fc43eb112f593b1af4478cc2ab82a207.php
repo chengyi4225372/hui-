@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574750367;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574753168;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -137,8 +137,7 @@
                             <a href="javascript:;">“惠”家族产品</a>
                             <!-- 二级菜单 -->
                             <div class="w secondary-menu" id="secondary-menu">
-                                <!-- <div>1</div>
-                                <div>2</div> -->
+
                                 <div>
                                     <dl>
                                         <dt><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></dt>
@@ -167,7 +166,7 @@
                                     <dl>
                                         <dt><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></dt>
                                         <dd>
-                                            ·技能价值华
+                                            ·技能价值化
 
                                         </dd>
                                         <dd>·成就更好自我</dd>
@@ -185,9 +184,7 @@
                                         <dd>·产品内容建设中……</dd>
                                     </dl>
                                 </div>
-                                <!-- <div>4</div>
-                                <div>5</div>
-                                <div>6</div> -->
+
                             </div>
                         </li>
                         <li>
