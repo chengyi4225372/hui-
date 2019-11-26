@@ -566,14 +566,15 @@ var admin_module = (function (){
         layui.use('upload', function(){
             var upload = layui.upload;
             var is_nginx = $('#pic').attr('is_nginx');
-            var img_url = '';
-            if(is_nginx != '' || is_nginx != 'undefined' || is_nginx != undefined){
-                img_url = is_nginx;
-            }
+            //var img_url = '';
+            //if(is_nginx != '' || is_nginx != 'undefined' || is_nginx != undefined){
+            //    img_url = is_nginx;
+            //}
             //执行实例
+            var img_url = $('#pic').attr('data-url');
             var uploadInst = upload.render({
                 elem: '#pic' //绑定元素
-                ,url: img_url + '/v1/systematic/system/uploadimg' //上传接口
+                ,url: img_url //上传接口
                 ,done: function(ret){
                     if(ret.status){
                         $('#cur_pic').attr('src',ret['data']['src']);

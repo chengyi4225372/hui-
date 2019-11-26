@@ -14,6 +14,7 @@ class Works extends  AuthController
          $title = input('get.title','','trim');
          $list = Workservice::instance()->getNewList($title);
          $this->assign('list',$list);
+         $this->assign('title','行业资讯');
          return $this->fetch();
        }
        return false;

@@ -70,4 +70,17 @@ class Protuctservice
         $nlist = Protuct::instance()->where($array)->order('id desc')->select();
         return $nlist;
     }
+
+
+    /**
+     * @DESC：首页统计惠享产品的数量
+     * @return mixed
+     * @author: jason
+     * @date: 2019-10-31 09:36:25
+     */
+    public function getproductcount()
+    {
+        $info = Protuct::instance()->where(['status' => 1])->count();
+        return $info;
+    }
 }

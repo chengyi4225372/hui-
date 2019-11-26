@@ -88,9 +88,9 @@ function showSearch(){
          content += "<span>您的姓名</span>";
          content += "<input type='text' id='contactName'  placeholder='请输入您的姓名'></div>";
          content += "<div><span>您的公司</span>";
-         content += "<input type='text' id='companyName' placeholder='请输入您的公司名...'></div><div>";
+         content += "<input type='text' id='companyName' placeholder='请输入您的公司名称'></div><div>";
          content += "<span>联系方式</span>";
-         content += "<input type='text' id='contactMobile'  placeholder='请输入您的联系方式...'></div>";
+         content += "<input type='text' id='contactMobile'  placeholder='请输入您的联系方式'></div>";
          content += "<input type='hidden' id='source' value='门户首页'>";
          content += "<input type='hidden' id='identification' value='企业一站式服务'>";
          content += "<button  class='button' onclick='getErp()'>获取方案</button>";
@@ -165,10 +165,14 @@ function click_show(objthis){
 //了解更多
 function showUrl(objthis){
     var data_url = $(objthis).attr('data-url');
-    var login_url = $(objthis).attr('login_url');
     var is_login = $(objthis).attr('mobile-phone');
-    if(is_login == '' || is_login == 'undefined' || is_login == undefined){
-        window.location.href=login_url;
+    var login_url2 = $(objthis).attr('login_url');
+    var loca_url2 = $(objthis).attr('loca_url');
+    var loca_url = encodeURIComponent(loca_url2);
+    var login_url = login_url2+'?artId='+loca_url;
+    if(is_login == '' || is_login == undefined){
+        //window.location.href=login_url;
+        window.open(login_url);
     }else{
         window.location.href=data_url;
     }
@@ -206,10 +210,10 @@ function moreShang(keyword,pages,objthis){
                  html+= "<div class='tabs-items-content-title figcaption'>";
                  html+= "<p>"+item.title+"</p></div>";
                  html+= "<div class='tabs-items-content-text figcaption'>";
-                 html+= "<p>"+item.desc+"</p></div>";
+                 html+= "<p>"+item.describe+"</p></div>";
                  html+= "<div class='tabs-items-content-time'><span>";
                  html+= "<img src='/static/spirit/images/shijian2x.png'>";
-                 html+="</span><span>"+item.create_time+"</span></div></div></a>";
+                 html+="</span><span>"+item.release_time+"</span></div></div></a>";
                  html +="</li>";
             });
             $('#shang').append(html).html();
@@ -238,10 +242,10 @@ function moreBiao(keyword,pages,objthis){
                 html+= "<div class='tabs-items-content-title figcaption'>";
                 html+= "<p>"+item.title+"</p></div>";
                 html+= "<div class='tabs-items-content-text figcaption'>";
-                html+= "<p>"+item.desc+"</p></div>";
+                html+= "<p>"+item.describe+"</p></div>";
                 html+= "<div class='tabs-items-content-time'><span>";
                 html+= "<img src='/static/spirit/images/shijian2x.png'>";
-                html+="</span><span>"+item.create_time+"</span></div></div></a>";
+                html+="</span><span>"+item.release_time+"</span></div></div></a>";
                 html+="</li>";
             });
             console.log(html);

@@ -38,7 +38,7 @@ $('.infos-add').click(function(){
 
     var pid     = $("#pid option:selected").val();
     var title   = $('#title').val();
-    var desc    = $("#desc").val();
+    var describe    = $("#describe").val();
     var keyword = $("#keyword").val();
 
     if(title == '' || title== undefined){
@@ -46,7 +46,7 @@ $('.infos-add').click(function(){
         return ;
     }
 
-    if(desc == '' || desc == undefined){
+    if(describe == '' || describe == undefined){
         layer.msg('请填写新闻描述');
         return false;
     }
@@ -64,7 +64,7 @@ $('.infos-add').click(function(){
     }
 
 
-    $.post(urls,{'title':title,'pid':pid,'desc':desc,'content':content,'keyword':keyword},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'describe':describe,'content':content,'keyword':keyword},function(ret){
            if(ret.code == 200){
                layer.msg(ret.msg,{icon:6},function(){
                    parent.location.href="index";
@@ -99,7 +99,7 @@ $('.infos-edits').click(function(){
     var pid     = $("#pid option:selected").val();
     var title   = $('#title').val();
     var id      = $('#mid').val();
-    var desc    = $("#desc").val();
+    var describe    = $("#describe").val();
     var keyword    = $("#keyword").val();
 
     if(title == '' || title== undefined){
@@ -112,7 +112,7 @@ $('.infos-edits').click(function(){
         return ;
     }
 
-    if(desc == '' || desc == undefined){
+    if(describe == '' || describe == undefined){
         layer.msg('请填写新闻描述');
         return false;
     }
@@ -129,15 +129,15 @@ $('.infos-edits').click(function(){
          return false;
     }
 
-    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'desc':desc,'keyword':keyword},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':keyword},function(ret){
         if(ret.code == 200){
-            layer.msg(ret.msg,{icon:6},function(){
+            layer.msg(ret.msg,{icon: 6},function(){
                 parent.location.href="index";
             })
         }
 
         if(ret.code == 400){
-            layer.msg(ret.msg,{icon:5},function(){
+            layer.msg(ret.msg,{icon: 5},function(){
                 parent.location.href="index";
             })
         }

@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2019-11-25T09:43:35+08:00 ] 127.0.0.1 GET /
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'order clause'[C:\phpEnv\www\hui-\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2019-11-25T09:51:18+08:00 ] 127.0.0.1 GET /
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'order clause'[C:\phpEnv\www\hui-\thinkphp\library\think\db\Connection.php:390]

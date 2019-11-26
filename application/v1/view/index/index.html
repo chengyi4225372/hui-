@@ -7,11 +7,13 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                        <a href="{:url('/v1/protuct/protucts/index')}">
+                            <div class="info-box-content">
+                                <span class="info-box-text"><h2>共享产品</h2></span>
+                                <span class="info-box-number"><h2>{$pro_count}</h2></span>
+                            </div>
+                        </a>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">CPU Traffic</span>
-                            <span class="info-box-number">90<small>%</small></span>
-                        </div>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -21,10 +23,12 @@
                     <div class="info-box">
                         <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Likes</span>
-                            <span class="info-box-number">41,410</span>
-                        </div>
+                        <a href="{:url('/v1/info/infos/index')}">
+                            <div class="info-box-content">
+                                <span class="info-box-text"><h2>招标信息</h2></span>
+                                <span class="info-box-number"><h2>{$info_count}</h2></span>
+                            </div>
+                        </a>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -34,27 +38,17 @@
                 <!-- fix for small devices only -->
                 <div class="clearfix visible-sm-block"></div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Sales</span>
-                            <span class="info-box-number">760</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
                 <!-- /.col -->
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">New Members</span>
-                            <span class="info-box-number">2,000</span>
-                        </div>
+                        <a href="{:url('/v1/users/user/index')}">
+                            <div class="info-box-content">
+                                <span class="info-box-text"><h2>用户信息</h2></span>
+                                <span class="info-box-number"><h2>{$user_count}</h2></span>
+                            </div>
+                        </a>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->

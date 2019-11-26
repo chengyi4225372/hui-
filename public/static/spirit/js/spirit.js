@@ -66,13 +66,14 @@ function btnErp(){
         data: JSON.stringify(datas),
         success: function (ret) {
 
-            //201 号码已经存在
             if (ret.status == 200 && ret.rel == true) {
-                layer.msg('提交成功', function () {
-                    parent.location.reload();
-                })
+                $('.mask-box').show();
+                $('.mask-box').hide(1500,function(){
+                    window.location.reload();
+                });
             }
 
+            //201 号码已经存在
             if (ret.status == 201) {
                 layer.msg(ret.message, function () {
                     parent.location.reload();
@@ -101,6 +102,8 @@ function GetErp(){
 function turnoff(){
     $('#popbox').hide();
 }
+
+
 
 //提交公海
 function form_btn(){
@@ -142,13 +145,16 @@ function form_btn(){
         data: JSON.stringify(data),
         success: function (ret) {
 
-            //201 号码已经存在
+
             if (ret.status == 200 && ret.rel == true) {
-                layer.msg('提交成功', function () {
-                    parent.location.reload();
-                })
+                $('.mask-box').show();
+                $('.mask-box').hide(1500,function(){
+                    window.location.reload();
+                });
+
             }
 
+            //201 号码已经存在
             if (ret.status == 201) {
                 layer.msg(ret.message, function () {
                     parent.location.reload();

@@ -11,6 +11,8 @@ window.onscroll = function () {
     if (top >= 1080) {
         box.style.backgroundColor = "#031c36";
         box.style.position = 'fixed'
+        box.style.top = "0px"
+        box.style.left = "0px"
         // box.style.top='0'+px
         logo.style.display = 'none'
         headerTotal.style.position = 'absolute'
@@ -19,7 +21,7 @@ window.onscroll = function () {
 
         // 返回顶部
         let goTop = document.getElementById('goTop')
-        goTop.style.display="block"
+        goTop.style.display = "block"
 
         // console.log(goTop);
         var timer = null;
@@ -48,10 +50,31 @@ window.onscroll = function () {
 
         // 返回顶部样式
         let goTop = document.getElementById('goTop')
-        goTop.style.display="none"
+        goTop.style.display = "none"
     }
 
 
-
-
 };
+
+//招商政策详情,查看详情
+var home_module = (function () {
+    var show_detail = function show_detail(objthis) {
+        var mobile_phone = $(objthis).attr('mobile-phone');
+        var url = $(objthis).attr('data-url');
+        var login_url2 = $(objthis).attr('login_url');
+        var loca_url2 = $(objthis).attr('loca_url');
+        var loca_url = encodeURIComponent(loca_url2);
+        var login_url = login_url2+'?artId='+loca_url;
+
+        var data_id = $(objthis).attr('data-id');
+        if (mobile_phone == undefined || mobile_phone == '') {
+            //location.href = login_url;
+            window.open(login_url);
+        } else {
+            location.href = url;
+        }
+    };
+    return {
+        show_detail: show_detail,
+    };
+})();

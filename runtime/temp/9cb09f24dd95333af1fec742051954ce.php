@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\login\login.html";i:1572340369;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\login\login.html";i:1573106971;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="/static/spirit/css/login.css">
   <script src='/static/spirit/js/login.js'></script>
   <script src="/static/assets/plugins/layui/layui.all.js"></script>
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="/static/common/js/jquerySession.js"></script>
 </head>
 
 <body>
@@ -28,7 +30,10 @@
           </div>
         </div>
       </div>
-      <div id="login_url" data-url="<?php echo url('/home/index/index'); ?>"></div>
+      <div id="login_url" data-url="<?php echo url('/home/index/getInfo'); ?>"></div>
+      <div id="login_url2" data-url="<?php echo url('/home/index/index'); ?>"></div>
+      <div id="login_url3" data-url="<?php echo url('/home/spirit/informationlist'); ?>"></div>
+      <div id="login_url4" data-url="<?php echo url('/home/index/infoList'); ?>"></div>
       <div id="check_url" data-url="<?php echo url('/home/login/savetoken'); ?>"></div>
       <div class='login_content'>
         <div class='login_xin'>
@@ -51,9 +56,9 @@
                 </div>
                 <div class='goRegister'>
                   <span>还没有账号?</span>
-                  <a href='./register.html'>去注册</a>
+                  <a href="<?php echo url('/home/login/register',['id' => $data_id,'type' => $web_type]); ?>">去注册</a>
                 </div>
-                <button onclick="login_module.account_login_info(this)">登录</button>
+                <button data-id="<?php echo $data_id; ?>" web_type="<?php echo $web_type; ?>" onclick="login_module.account_login_info(this)">登录</button>
               </div>
               <div class='phone_user'>
                 <div class='phone_box'>
@@ -61,18 +66,19 @@
                     <option value='+86'>+86</option>
                   </select>
                   <i></i>
-                  <input type="text" placeholder="请输入手机号" class='phone_input' value="">
+                  <input type="text" placeholder="请输入手机号" class='phone_input' id="phone_input" value="">
                 </div>
                 <div class='code_box'>
                   <input type="text" placeholder="验证码" class='code_input'>
                   <i></i>
-                  <span class='huo_code'>获取验证码</span>
+                  <span class='huo_code' onclick="login_module.get_code(this)">获取验证码</span>
+                  <span class="huo_code" id="msg_code" style="display:none;">60秒后重新获取</span>
                 </div>
                 <div class='goRegister'>
                   <span>还没有账号?</span>
-                  <a href='./register.html'>去注册</a>
+                  <a href="<?php echo url('/home/login/register',['id' => $data_id,'type' => $web_type]); ?>">去注册</a>
                 </div>
-                <button onclick="login_module.phone_login_info(this)">登录</button>
+                <button data-id="<?php echo $data_id; ?>" web_type="<?php echo $web_type; ?>" onclick="login_module.phone_login_info(this)">登录</button>
               </div>
             </div>
           </div>

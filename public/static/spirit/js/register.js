@@ -42,7 +42,7 @@ window.onload = function () {
             layer.msg('请输入手机号', {icon: 2, time: 2000});return;
         }
         if (!check_phone(phone)) {
-            //layer.msg('企业手机号不合法',{icon:2,time:2000});return;
+            layer.msg('企业手机号不合法',{icon:2,time:2000});return;
         }
         if (code == '' || code == 'undefined' || code == undefined) {
             layer.msg('请输入短信验证码', {icon: 2, time: 2000});return;
@@ -105,7 +105,7 @@ window.onload = function () {
             layer.msg('请填写法人电话', {icon: 2, time: 2000});return;
         }
         if (!check_phone(legalPersonMobile)) {
-            //layer.msg('法人手机号不合法',{icon:2,time:2000});return;
+            layer.msg('法人手机号不合法',{icon:2,time:2000});return;
         }
 
         if (industryNo == '' || industryNo == 'undefined' || industryNo == undefined) {
@@ -127,6 +127,8 @@ window.onload = function () {
                     succeedbox.style.display = "block";
                     formcontent.style.display = "none";
 
+                }else{
+                    layer.msg(ret.message,{icon:2,time:1500});
                 }
             },
             error: function (data) {
@@ -328,13 +330,22 @@ function change_tax(objthis){
     });
 
 }
+var time_one = 0;
+
+
+var time_one2 = 0;
+
+
 
 //获取gr注册验证码
-function get_code(){
+function get_code(objthis){
     var code = $('#user_phone').val();
     if(code == '' || code == 'undefined' || code == undefined){
         layer.msg('请填写手机号', {icon: 2, time: 2000});return;
     }
+    settime(objthis);
+
+
     var url = baseUrl + '/api/wechatLogin/sendRegisterSMSCode';
     $.ajax({
         type:"post",
@@ -347,7 +358,8 @@ function get_code(){
         success:function(res){
 
             if(res.status == 200){
-                layer.msg(res.message, {icon: 1, time: 2000});
+                //$('#msg_code').css('display','block');
+                layer.msg('验证码已发送，请查收短信',{icon:1,time:2000});
             }else{
                 layer.msg(res.message, {icon: 2, time: 2000});
             }
@@ -359,11 +371,14 @@ function get_code(){
 }
 
 //获得企业注册验证码
-function get_qy_code(){
+function get_qy_code(objthis){
     var code = $('#phone').val();
     if(code == '' || code == 'undefined' || code == undefined){
         layer.msg('请填写手机号', {icon: 2, time: 2000});return;
     }
+    settime2(objthis);
+
+    return;
     var url = baseUrl + '/api/wechatLogin/sendRegisterSMSCode';
     $.ajax({
         type:"post",
@@ -376,7 +391,8 @@ function get_qy_code(){
         success:function(res){
 
             if(res.status == 200){
-                layer.msg(res.message, {icon: 1, time: 2000});
+                //$('#msg_code2').css('display','block');
+                layer.msg('验证码已发送，请查收短信',{icon:1,time:2000});
             }else{
                 layer.msg(res.message, {icon: 2, time: 2000});
             }
@@ -385,4 +401,48 @@ function get_qy_code(){
             console.log(data)
         }
     });
+}
+
+
+function settime(obj) { //发送验证码倒计时
+    $(obj).css('display','none');
+    $('#msg_code').css('display','block');
+    var time2 = 60;
+    var validCode = true;
+
+    if (validCode) {
+        validCode = false;
+        var t = setInterval(function () {
+            time2--;
+            $('#msg_code').html(time2 + "秒后重新获取");
+            if (time2 == 0) {
+                clearInterval(t);
+                validCode = true;
+                $('#msg_code').css('display','none');
+                $(obj).css('display','block');
+            }
+        }, 1000)
+    }
+}
+
+
+function settime2(obj) { //发送验证码倒计时
+    $(obj).css('display','none');
+    $('#msg_code2').css('display','block');
+    var time2 = 60;
+    var validCode = true;
+
+    if (validCode) {
+        validCode = false;
+        var t = setInterval(function () {
+            time2--;
+            $('#msg_code2').html(time2 + "秒后重新获取");
+            if (time2 == 0) {
+                clearInterval(t);
+                validCode = true;
+                $('#msg_code2').css('display','none');
+                $(obj).css('display','block');
+            }
+        }, 1000)
+    }
 }

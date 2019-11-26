@@ -22,6 +22,10 @@ class BaseController extends Controller
      */
     protected $userinfo = '';
 
+
+    protected $base_urls = '';
+
+
     /**
      * @DESC：初始化
      * @author: jason
@@ -40,7 +44,7 @@ class BaseController extends Controller
         $userType = !empty($userType) ? $userType : '';
         $userInfo = [];
 
-        $userInfo['mobile'] = !empty($mobile) ? mb_substr($mobile,0,6,$charset="utf-8") : '';
+        $userInfo['mobile'] = $mobile;
         $userInfo['token'] = $token;
         $userInfo['userName'] = $userName;
         $userInfo['userType'] = $userType;
@@ -52,7 +56,8 @@ class BaseController extends Controller
         }else{
             $is_nginx = '/index.php';
         }
-
+        $this->base_urls = Config::get('curl.redirect_url');
+        $login_url = Config::get('curl.login_url');
 
         $modulename = $this->request->module();
         $controllername = strtolower($this->request->controller());
@@ -62,7 +67,7 @@ class BaseController extends Controller
         $path = '/'.$modulename . '/' . str_replace('.', '/', $controllername) . '/' . $actionname;
         $this->assign('path',$path);
         $this->assign('is_nginx',$is_nginx);
-
+        $this->assign('baseurl',$login_url);
         $this->assign('userinfo',$userInfo);
     }
 }

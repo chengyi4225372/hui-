@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1572404965;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1573804100;}*/ ?>
+ <!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -13,23 +13,77 @@
     <script src='/static/home/js/index.js'></script>
     <script src="/static/assets/plugins/layui/layui.all.js"></script>
     <script src='/static/home/js/common.js'></script>
+    <script src='/static/common/js/public.js'></script>
     <style>
-        .header
-        {
-            background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");
+        /*.header {*/
+            /*background-image: url("<?php echo (isset($slideshow['pic']) && ($slideshow['pic'] !== '')?$slideshow['pic']:'/static/home/images/default.png'); ?>");*/
+        /*}*/
+
+        .success_icon>div:nth-of-type(1) {
+            position: absolute;
+            top: 3.0625rem;
+            left: 0.875rem;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: contain;
+            background-image: url('/static/home/images/huiduoxin.png');
+            background-size: 100% 100%;
         }
 
-        .success_icon > div:nth-of-type(1) {position: absolute;  top: 49px;  left: 14px;  width: 386px;  height: 166px;  background-size: contain;  background-image: url('/static/home/images/huiduoxin.png');  }
+        .success_icon>div:nth-of-type(2) {
+            position: absolute;
+            top: 6.625rem;
+            right: -0.1875rem;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: 100%;
+            background-image: url('/static/home/images/huichuangyou.png');
+            background-size: 100% 100%;
+        }
 
-        .success_icon > div:nth-of-type(2) {  position: absolute;  top: 106px;  right: -3px;  width: 386px;  height: 166px;  background-size: 100%;  background-image: url('/static/home/images/huichuangyou.png');  }
+        .success_icon>div:nth-of-type(3) {
+            position: absolute;
+            top: 11.875rem;
+            left: -1px;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: contain;
+            background-image: url('/static/home/images/huilinggong.png');
+            background-size: 100% 100%;
+        }
 
-        .success_icon > div:nth-of-type(3) {  position: absolute;  top: 190px; left: -1px;  width: 386px;  height: 166px;  background-size: contain;  background-image: url('/static/home/images/huilinggong.png');  }
+        .success_icon>div:nth-of-type(4) {
+            position: absolute;
+            top: 14.3125rem;
+            right: 0.375rem;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: 100%;
+            background-image: url('/static/home/images/huizhaoshi.png');
+            background-size: 100% 100%;
+        }
 
-        .success_icon > div:nth-of-type(4) {  position: absolute;  top: 229px;  right: 6px;  width: 386px;  height: 166px;  background-size: 100%;  background-image: url('/static/home/images/huizhaoshi.png');  }
+        .success_icon>div:nth-of-type(5) {
+            position: absolute;
+            bottom: 6.6875rem;
+            left: 0.75rem;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: contain;
+            background-image: url('/static/home/images/huiqidong.png');
+            background-size: 100% 100%;
+        }
 
-        .success_icon > div:nth-of-type(5) {  position: absolute;  bottom: 107px;  left: 12px;  width: 386px;  height: 166px;  background-size: contain;  background-image: url('/static/home/images/huiqidong.png');  }
-
-        .success_icon > div:nth-of-type(6) {  position: absolute;  bottom: 72px;  right: -7px;  width: 386px;  height: 166px;  background-size: contain;  background-image: url('/static/home/images/huichuangye.png');  }
+        .success_icon>div:nth-of-type(6) {
+            position: absolute;
+            bottom: 4.5rem;
+            right: -0.4375rem;
+            width: 24.125rem;
+            height: 10.375rem;
+            background-size: contain;
+            background-image: url('/static/home/images/huichuangye.png');
+            background-size: 100% 100%;
+        }
     </style>
 
 </head>
@@ -64,28 +118,35 @@
 
             <!-- 头部其他内容 -->
             <div class='header_fixed'>
+                <input type="hidden" id="data_token" value="<?php echo $userinfo['token']; ?>"/>
                 <div class='header_content' id='headerContent'>
                     <div class='w content'>
                         <div class='content_logo' id='logo'></div>
                         <ul>
-                            <li class="nav-active"><a href="#">首页</a></li>
-                            <li><a href="#">惠优税</a></li>
-                            <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
-                            <li><a href="#">惠多薪</a></li>
-                            <li><a href="#">惠创业</a></li>
-                            <li><a href="#">惠找事</a></li>
-                            <li><a href="#">惠启动</a></li>
+                            <li class="nav-active"><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
+                            <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
+                            <li><a href="<?php echo config('curl.hlg'); ?>">惠灵工</a></li>
+                            <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
+                            <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
+                            <li><a href="<?php echo config('curl.hzs'); ?>">惠找事</a></li>
+                            <li><a href="<?php echo url('/home/launch/index'); ?>">惠企动</a></li>
                         </ul>
+
                         <?php if(empty($userinfo['mobile'])): ?>
                         <div class='register'>
-                            <a href="<?php echo url('/home/login/login'); ?>">登录</a>
+                            <!--<a href="<?php echo url('/home/login/login'); ?>">登录</a>-->
+                            <a href="<?php echo $baseurl; ?>">登录</a>
                             <span></span>
                             <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                         </div>
                         <?php else: ?>
-                        <div style="float: right;margin-top: 17px;cursor: pointer;">
-                            <img src="/static/home/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
-                            <span style="vertical-align: middle;"><?php echo $userinfo['mobile']; ?></span>
+                        <div class="u_info">
+                            <img src="/static/home/images/user_img.png"
+                                 style="width:30px;height:30px; vertical-align: bottom;">
+                            <p style="display:inline-block;color:#fff;height: 1.5625rem" id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
+                            <div class="u_info_content" id="u_info_content">
+                                <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+                            </div>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -153,7 +214,7 @@
             </div>
         </div>
 
-       <div class="prop_box" ></div>
+        <div class="prop_box"></div>
 
 
         <!-- 近期成功案例 -->
@@ -163,69 +224,20 @@
                 <div class='success_title'></div>
                 <div class='success_icon'>
                     <?php if(is_array($case_list) || $case_list instanceof \think\Collection || $case_list instanceof \think\Paginator): $i = 0; $__LIST__ = $case_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data_list): $mod = ($i % 2 );++$i;?>
-                    <div onclick="click_show(this)" keys="<?php echo $key; ?>" class="<?php echo $data_list['is_show'].$key; ?>" data="<?php echo $count; ?>" data-attr="<?php echo $data_list['is_show']; ?>">
+                    <div onclick="click_show(this)" keys="<?php echo $key; ?>" class="<?php echo $data_list['is_show'].$key; ?>" data="<?php echo $count; ?>"
+                        data-attr="<?php echo $data_list['is_show']; ?>">
                         <div class='<?php if($key == 1): ?>hui_icon<?php else: ?>p_icon<?php endif; ?>'>
                             <div><?php echo $data_list['title2']; ?></div>
                             <div><?php echo $data_list['title3']; ?></div>
                             <?php if($key != 1): ?>
                             <!--<a href="javascript:void(0)">-->
-                                <!--<img src="/static/home/images/jiantou.png" alt="">-->
+                            <!--<img src="/static/home/images/jiantou.png" alt="">-->
                             <!--</a>-->
                             <?php endif; ?>
                         </div>
                     </div>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
-<!--                    <div onclick="click_show(this)" data-attr="huiduoxin">
-                        <div class='p_icon'>
-                            <div>惠多薪</div>
-                            <div>薪酬服务案例</div>
-                            <a href="#">
-                                <img src="/static/home/images/jiantou.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div onclick="click_show(this)" data-attr="huichuangyou">
-                        <div class='hui_icon'>
-                            <div>惠创优</div>
-                            <div>节税服务案例</div>
-                        </div>
-                    </div>
-                    <div onclick="click_show(this)" data-attr="huilinggong">
-                        <div class='duo_icon'>
-                            <div>惠灵工</div>
-                            <div>一站用工案例</div>
-                            <a href="#">
-                                <img src="/static/home/images/jiantou.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div onclick="click_show(this)" data-attr="huizhaoshi">
-                        <div class='p_icon'>
-                            <div>惠找事</div>
-                            <div>人才服务案例</div>
-                            <a href="#">
-                                <img src="/static/home/images/jiantou.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div onclick="click_show(this)" data-attr="huiqidong">
-                        <div class='p_icon'>
-                            <div>惠启动</div>
-                            <div>一站服务案例</div>
-                            <a href="#">
-                                <img src="/static/home/images/jiantou.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div onclick="click_show(this)" data-attr="huichuangye">
-                        <div class='p_icon'>
-                            <div>惠创业</div>
-                            <div>薪酬服务案例</div>
-                            <a href="#">
-                                <img src="/static/home/images/jiantou.png" alt="">
-                            </a>
-                        </div>
-                    </div>-->
+
                 </div>
                 <div class='to_detailInfo'>
                     <?php if(is_array($case_list) || $case_list instanceof \think\Collection || $case_list instanceof \think\Paginator): $i = 0; $__LIST__ = $case_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$info_list): $mod = ($i % 2 );++$i;?>
@@ -252,169 +264,12 @@
                                 <div>
                                     <input type='hidden' id='source' value='门户首页'>
                                     <input type='hidden' id='identification' value='企业一站式服务'>
-                                    <input type="button"  onclick='getErp()' value='定制您的方案'>
+                                    <input type="button" onclick='getErp()' value='定制您的方案'>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
-<!--                    <div class='huichuangyou'>
-                        <div class='huichuangyou_title'>惠创优-服务案例</div>
-                        <div class="con">
-                            <div class="desc">惠创优：能省122万</div>
-                            <div class="desc">原增值税纳税额:(8000-4000)*13%=520万</div>
-                            <div class="desc">原所得税纳税额:3500*25%=875万</div>
-                            <div class="desc">年纳税额:520+875=1395万</div>
-                            <div class="desc">园区政策:520*10%=52万</div>
-                            <div class="desc">园区政策奖励额:875*8%=875万</div>
-                            <div class="desc">惠创优的节税额:52+70=122万</div>
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='huiduoxin'>
-                        <div class='huichuangyou_title'>惠多薪：人力型社保薪酬</div>
-                        <div class="con">
-                            <div class="desc">发薪日核算考勤、社保扣缴、发放过程繁琐</div>
-                            <div class="desc">采购渠道复杂，财务流程冗长影响业务开展</div>
-                            <div class="desc">使用惠多薪从考勤管理到收入核算、优化、发放一站式操作</div>
-                            <div class="desc">整合各类优质采购渠道</div>
-                            <div class="desc">为企业提供更长的付款周期，提高资金利用率</div>
-                            <div class="desc">降低采购成本，减少繁琐工作</div>
-                            <div class="desc">令企业及员工采购、消费无忧</div>
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='huilinggong'>
-                        <div class='huichuangyou_title'>惠灵工：灵活用工型税筹</div>
-                        <div class="con">
-                            <div class="desc">将雇佣关系转变为与惠灵工创客承包关系</div>
-                            <div class="desc">承包费：100万 按所得税规定需要交纳25%</div>
-                            <div class="desc">手续费用及税费：100万*（3%+6.72%）=9.72万</div>
-                            <div class="desc">增值税专用发票可抵扣金额为：（109.72/1.06）*6%=6.21万元</div>
-                            <div class="desc">税收奖励返还： 100*1.8%=1.8万</div>
-                            <div class="desc">企业可以抵扣的所得税金额：（109.72/1.06）*25%=25.87万</div>
-                            <div class="desc">企业实际支付金额为： 9.72-6.21-1.8=1.71万 费用率仅为1.7%</div>
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='huizhaoshi'>
-                        <div class='huichuangyou_title'>惠找事：ToC找零工</div>
-                        <div class="con">
-                            <div class="desc">针对自由职业者</div>
-                            <div class="desc">收入个人所得税最低20%，最高40%</div>
-                            <div class="desc">在惠找事平台以惠灵工创客方式承包业务</div>
-                            <div class="desc">合法取得劳动所得同时为企业开具增值税6%专用发票</div>
-                            <div class="desc">个人只需承担0.4%</div>
-                            <div class="desc">同时免去合并征收烦恼</div>
-                            <div></div>
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='huiqidong'>
-                        <div class='huichuangyou_title'>惠企动一站式企业服务：</div>
-                        <div class="con">
-                            <div class="desc">以申办高新技术企业成功为例</div>
-                            <div class="desc">某高新技术企业的净利润为200万，研发费用为100万</div>
-                            <div class="desc">研发费用可按照175%进行企业所得税的税前扣除</div>
-                            <div class="desc">所需交税额：（200-175）*15%=3.75万</div>
-                            &lt;!&ndash; <div>园区政策:520*10%=52万</div>
-                                <div>园区政策奖励额:875*8%=875万</div>
-                                <div>惠创优的节税额:52+70=122万</div> &ndash;&gt;
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='huichuangye'>
-                        <div class='huichuangyou_title'>惠创业：工商、代账、地址注册</div>
-                        <div class="con">
-                            <div class="desc">充分利用地区差异 , 选择合理注册地址</div>
-                            <div class="desc">合理运用税收杠杆 , 匹配注册资金方案</div>
-                            <div class="desc">多方位了解各类政策 , 合法享受政策优惠</div>
-                            <div class="desc">大幅降低运营成本 , 显著提高营业利润</div>
-                            &lt;!&ndash; <div>园区政策:520*10%=52万</div>
-                                <div>园区政策奖励额:875*8%=875万</div>
-                                <div>惠创优的节税额:52+70=122万</div> &ndash;&gt;
-                            <div class='total_input'>
-                                <div>
-                                    <input type="text" placeholder="请输入您的姓名..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的公司名称..">
-                                </div>
-                                <div>
-                                    <input type="text" placeholder="请输入您的手机号..">
-                                </div>
-                                <div>
-                                    <input type="button" value='定制您的方案'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-
 
                 </div>
             </div>
@@ -437,7 +292,7 @@
                         <div class='zhaoSearch'>
                             <div class='searchLogo'>
                                 <i onclick="search(this)" data-url="<?php echo url('/home/index/infoList'); ?>"></i>
-                                <input type="text" id="keyword"  placeholder="搜索招标政策和招标信息...">
+                                <input type="text" id="keyword" placeholder="搜索招标政策和招标信息...">
                             </div>
                             <!-- <button>查询</button> -->
                         </div>
@@ -447,35 +302,50 @@
                         <div class='totalInfo_title'>招商政策</div>
                         <?php if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ss): $mod = ($i % 2 );++$i;?>
                         <div class='totalInfo_content'>
-                            <a href="<?php echo url('home/index/infoList'); ?>">
-                            <div class='zhao_contentInfo'>
-                                <div><?php echo $ss['title']; ?></div>
-                                <div><?php echo $ss['create_time']; ?></div>
-                            </div>
-                            <div> <?php echo $ss['desc']; ?></div>
+                            <a href="javascript:void(0)"
+                               data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
+                               login_url="<?php echo $baseurl; ?>"
+                               mobile-phone="<?php echo $userinfo['mobile']; ?>"
+                               data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
+                                <div class='zhao_contentInfo'>
+                                    <div><?php echo $ss['title']; ?></div>
+                                    <div>
+                                        <?php echo $ss['release_time']; ?>
+                                    </div>
+                                </div>
+                                <div> <?php echo $ss['describe']; ?></div>
                             </a>
                         </div>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
-                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)" data-url="<?php echo url('/home/index/infoList'); ?>" login_url="<?php echo url('/home/login/login'); ?>">了解更多</button>
+                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
+                            data-url="<?php echo url('/home/index/infoList'); ?>"
+                            login_url="<?php echo $baseurl; ?>">了解更多</button>
                     </div>
 
                     <div class='zhaoTotalInfo'>
                         <div class='totalInfo_title'>招标信息</div>
                         <?php if(is_array($biao) || $biao instanceof \think\Collection || $biao instanceof \think\Paginator): $i = 0; $__LIST__ = $biao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$biaos): $mod = ($i % 2 );++$i;?>
                         <div class='totalInfo_content'>
-                            <a href="<?php echo url('home/index/infoList'); ?>">
-                            <div class='zhao_contentInfo'>
-                                <div><?php echo (isset($biaos['title']) && ($biaos['title'] !== '')?$biaos['title']:''); ?></div>
-                                <div><?php echo $biaos['create_time']; ?></div>
-                            </div>
-                            <div>
-                                <?php echo $biaos['desc']; ?>
-                            </div>
+                            <a href="javascript:void(0)"
+                               data-url="<?php echo url('/home/index/getInfo',['mid' => $ss['id']]); ?>"
+                               login_url="<?php echo $baseurl; ?>"
+                               mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ss['id']; ?>" onclick="home_module.show_detail(this)">
+                                <div class='zhao_contentInfo'>
+                                    <div><?php echo (isset($biaos['title']) && ($biaos['title'] !== '')?$biaos['title']:''); ?></div>
+                                    <div>
+                                        <?php echo $biaos['release_time']; ?>
+                                    </div>
+                                </div>
+                                <div>
+                                    <?php echo $biaos['describe']; ?>
+                                </div>
                             </a>
                         </div>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
 
-                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)" data-url="<?php echo url('/home/index/infoList'); ?>" login_url="<?php echo url('/home/login/login'); ?>">了解更多</button>
+                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)"
+                            data-url="<?php echo url('/home/index/infoList'); ?>"
+                            login_url="<?php echo $baseurl; ?>">了解更多</button>
 
                     </div>
 
@@ -536,24 +406,21 @@
 
                 </div>
                 <!--<div class='concat_icon'>-->
-                    <!--<div><img src="/static/home/images/bo.png" alt=""></div>-->
-                    <!--<div><img src="/static/home/images/wx.png" alt=""></div>-->
-                    <!--<div><img src="/static/home/images/tie.png" alt=""></div>-->
+                <!--<div><img src="/static/home/images/bo.png" alt=""></div>-->
+                <!--<div><img src="/static/home/images/wx.png" alt=""></div>-->
+                <!--<div><img src="/static/home/images/tie.png" alt=""></div>-->
                 <!--</div>-->
             </div>
         </div>
 
 
 
-        <div class='goTop'id="goTop">
+        <div class='goTop' id="goTop">
             <i></i>
             <div>返回顶部</div>
         </div>
 
     </div>
-
 </body>
-
-
 
 </html>

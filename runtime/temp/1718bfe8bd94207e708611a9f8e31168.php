@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"/opt/web/hui-/public/../application/v1/view/login/index.html";i:1572311816;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1571642226;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1571986795;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"/opt/web/hui-/public/../application/v1/view/login/index.html";i:1573624356;s:50:"/opt/web/hui-/application/v1/view/common/meta.html";i:1573715000;s:52:"/opt/web/hui-/application/v1/view/common/script.html";i:1571986795;}*/ ?>
+<!DOCTYPE>
 <html lang="zh-CN">
 <head>
     <!-- 加载样式及META信息 -->
@@ -7,7 +7,7 @@
 <title><?php echo (isset($title) && ($title !== '')?$title:''); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="renderer" content="webkit">
-<link rel="shortcut icon" href="/static/assets/img/favicon.ico" />
+<link rel="shortcut icon" href="/static/favicon.ico" />
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.7 -->

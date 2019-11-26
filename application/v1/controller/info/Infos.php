@@ -31,9 +31,9 @@ class Infos extends  AuthController
         $array['pid'] = input('post.pid', '', 'int');
         $array['title'] = input('post.title', '', 'trim');
         $array['content'] = input('post.content', '');
-        $array['desc'] = input('post.desc', '', 'trim');
+        $array['describe'] = input('post.describe', '', 'trim');
         $array['keyword'] = input('post.keyword', '', 'trim');
-        $array['create_time'] =time();
+        $array['release_time'] = date("Y-m-d");
 
        $ret = Infosservice::instance()->saves($array);
        if($ret){
@@ -64,7 +64,7 @@ class Infos extends  AuthController
               'pid'     =>input('post.pid','','int'),
               'title'   =>input('post.title','','trim'),
               'content' =>input('post.content'),
-              'desc'    =>input('post.desc','','trim'),
+              'describe'    =>input('post.describe','','trim'),
               'keyword' =>input('post.keyword','','trim'),
           );
 

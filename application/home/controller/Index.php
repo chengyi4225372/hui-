@@ -9,7 +9,7 @@ use app\v1\service\Infosservice;
 use app\v1\service\Systems;
 use app\v1\service\Caseservice;
 use think\Cookie;
-
+use think\Cache;
 class Index extends BaseController
 {
 
@@ -19,6 +19,8 @@ class Index extends BaseController
 //        Cookie::clear('token');
 //        Cookie::clear('userName');
 //        Cookie::clear('userType');
+//        var_dump(Cache::set(18681524382,'')).'<br>';
+//        var_dump(Cookie::get());exit;
         if ($this->request->isGet()) {
 
             //慧享产品
@@ -86,6 +88,10 @@ class Index extends BaseController
      */
     public function infoList(){
        if($this->request->isGet()){
+
+           if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
+               return $this->redirect('/home/index/index');
+           }
            //招标 招商信息
            $title = input('get.keyword','','trim');
            $biao = Infosservice::instance()->getbiao($title,'');
@@ -106,6 +112,10 @@ class Index extends BaseController
      */
     public function getInfo(){
         if($this->request->isGet()){
+            if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
+                return $this->redirect('/home/index/index');
+            }
+
            $id = input('get.mid','','int');
            if(empty($id) || !isset($id)|| $id <=0){
                return false;

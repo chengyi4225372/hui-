@@ -174,4 +174,16 @@ class Userservice
         Admin::update($save,$where);
         return json(['status' => true,'msg' => '修改用户信息成功']);
     }
+
+    /**
+     * @DESC：用户数量
+     * @return int|string
+     * @author: jason
+     * @date: 2019-10-31 10:01:56
+     */
+    public function usercount()
+    {
+        $user = Admin::where(['is_del' => 0])->count();
+        return $user;
+    }
 }
