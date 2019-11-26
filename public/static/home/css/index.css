@@ -521,7 +521,7 @@ body {
   margin-bottom: .1875rem;
   font-size: 1.875rem;
   font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
-  font-weight: 500;
+  font-weight: 700;
   color: rgba(0, 0, 0, 1);
 }
 
@@ -597,6 +597,7 @@ body {
   background-size: contain;
   margin-bottom: 3.375rem;
   background-image: url('../images/hui_product.png');
+  background-repeat: no-repeat;
 }
 
 .all_product {
@@ -740,6 +741,7 @@ body {
   height: 3.375rem;
   background-size: contain;
   background-image: url('../images/success.png');
+  background-repeat: no-repeat;
 }
 
 .success_icon {
@@ -910,6 +912,7 @@ body {
   height: 3rem;
   outline: none;
   height: 36.875rem;
+  cursor: pointer;
 }
 
 
@@ -1026,9 +1029,9 @@ body {
   width: 34rem;
   height: 3.375rem;
   margin-bottom: 2.4375rem;
-
   background-size: contain;
   background-image: url('../images/zhaobiao_1.png');
+  background-repeat: no-repeat;
 }
 
 .zhaoTotalInfo {
@@ -1114,7 +1117,7 @@ body {
 
 .zhaomethods {
   /* width: 67.4375rem; */
-  height: 22.75rem;
+  height: 23.75rem;
   padding: 0 4.46875rem 0;
   background-color: #fff;
   margin-top: 1.5625rem;
@@ -1199,7 +1202,7 @@ body {
   position: absolute;
   top: 29.6875rem;
   left: 50%;
-  transform: translateX(600px);
+  transform: translateX(37.5rem);
   width: 10.3125rem;
   height: 12.75rem;
   background-size: contain;
@@ -1239,7 +1242,7 @@ body {
   display: none;
   padding-top: 0.4375rem;
   box-sizing: border-box;
-
+  cursor: pointer;
 }
 
 .goTop i {
@@ -1644,6 +1647,7 @@ input:-webkit-autofill {
   height: 1.125rem;
   background-image: url('../images/sou.png');
   background-size: 100% 100%;
+  cursor: pointer;
 }
 
 .zhaoSearch button {
