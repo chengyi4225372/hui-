@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574736665;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"C:\phpEnv\www\hui-\public/../application/home\view\index\info_list.html";i:1574739349;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -7,14 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php echo $title; ?></title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src='/static/spirit/js/xlPaging.js'></script> -->
   <link rel="stylesheet" href="/static/spirit/css/base.css">
   <!-- <link rel="stylesheet" href="/static/spirit/css/layui.css"  media="all"> -->
   <link rel="stylesheet" href="/static/spirit/css/Informationlist.css">
   <script src="/static/spirit/js/clamp.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  
+
   <script src='/static/spirit/js/Informationlist.js'></script>
-  <script src="/static/assets/plugins/layui/layui.all.js"></script> 
+  <script src="/static/assets/plugins/layui/layui.all.js"></script>
   <script src='/static/home/js/common.js'></script>
   <script src='/static/common/js/public.js'></script>
 </head>
@@ -151,7 +152,7 @@
               <?php else: if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sh): $mod = ($i % 2 );++$i;?>
               <li>
                 <a href="<?php echo url('/home/index/getInfo',array('mid'=>$sh['id'])); ?>">
-                <!-- <a href="javascript:;"> -->
+                  <!-- <a href="javascript:;"> -->
                   <!--                  <div class="tabs-items-img">-->
                   <!--                    <img src="./images/qitewentiyewu.jpg" alt="">-->
                   <!--                  </div>-->
@@ -181,7 +182,7 @@
                         </span>
                       </div>
                       <p>
-                          <?php echo $sh['describe']; ?>
+                        <?php echo $sh['describe']; ?>
                       </p>
                       <ul class="tags">
                         <li>外包</li>
@@ -240,10 +241,23 @@
         </div>
       </div>
     </div>
+<!-- 分页 -->
+<div id="page">
+    <ul>
+        <li class="xl-prevPage">上一页</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li class="xl-disabled">...</li>
+        <li class="xl-active">100</li>
+        <li class="xl-nextPage xl-disabled">下一页</li>
+ 
+    </ul>
+</div>
+    
 
-   
-    <div id="page" class="page_div"></div>
-   
 
 
 
@@ -283,11 +297,11 @@
             <dd><a href="#">hcylm008@dingtalk.com</a></dd>
             <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
             <dd>
-                <div class='concat_icon'>
-                    <div><img src="/static/spirit/images/tie.png" alt=""></div>
-                    <div><img src="/static/spirit/images/wx.png" alt=""></div>
-                    <div><img src="/static/spirit/images/bo.png" alt=""></div>
-                  </div>
+              <div class='concat_icon'>
+                <div><img src="/static/spirit/images/tie.png" alt=""></div>
+                <div><img src="/static/spirit/images/wx.png" alt=""></div>
+                <div><img src="/static/spirit/images/bo.png" alt=""></div>
+              </div>
             </dd>
           </dl>
 
@@ -310,22 +324,30 @@
 
 
   </div>
+  
 
 </body>
 <!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
-<script type="text/javascript" src='/static/spirit/js/pageMe.js'></script>
-<script>
 
-    
-  // pageMe.js 使用方法
-  // $("#page").paging({
-  //       pageNum: 5, // 当前页面
-  //       totalNum: 14, // 总页码
-  //       totalList: 300, // 记录总数量
-  //       callback: function (num) { //回调函数
-  //           console.log(num);
-  //       }
-  //   });
- 
+
+
+
+<script>
+  
+  $('.goTop').click(()=>{
+    alert(111)
+  })
+  $("#page").paging({
+    nowPage: 6, // 当前页码
+    pageNum: 30, // 总页码
+    buttonNum: 6, //要展示的页码数量
+    canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
+    showOne: 0,//只有一页时，是否显示。0=不显示,1=显示（默认）
+    callback: function (num) { //回调函数
+      console.log(num);
+    }
+  });
+
 </script>
+
 </html>

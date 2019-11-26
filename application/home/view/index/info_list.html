@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{$title}</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src='__SPI__/js/xlPaging.js'></script> -->
   <link rel="stylesheet" href="__SPI__/css/base.css">
   <!-- <link rel="stylesheet" href="__SPI__/css/layui.css"  media="all"> -->
   <link rel="stylesheet" href="__SPI__/css/Informationlist.css">
   <script src="__SPI__/js/clamp.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  
+
   <script src='__SPI__/js/Informationlist.js'></script>
-  <script src="__PUBLIC__/assets/plugins/layui/layui.all.js"></script> 
+  <script src="__PUBLIC__/assets/plugins/layui/layui.all.js"></script>
   <script src='__HOME__/js/common.js'></script>
   <script src='__PUBLIC__/common/js/public.js'></script>
 </head>
@@ -137,7 +138,7 @@
               {volist name='shang' id='sh'}
               <li>
                 <a href="{:url('/home/index/getInfo',array('mid'=>$sh.id))}">
-                <!-- <a href="javascript:;"> -->
+                  <!-- <a href="javascript:;"> -->
                   <!--                  <div class="tabs-items-img">-->
                   <!--                    <img src="./images/qitewentiyewu.jpg" alt="">-->
                   <!--                  </div>-->
@@ -167,7 +168,7 @@
                         </span>
                       </div>
                       <p>
-                          {$sh.describe}
+                        {$sh.describe}
                       </p>
                       <ul class="tags">
                         <li>外包</li>
@@ -229,10 +230,23 @@
         </div>
       </div>
     </div>
+<!-- 分页 -->
+<div id="page">
+    <ul>
+        <li class="xl-prevPage">上一页</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li class="xl-disabled">...</li>
+        <li class="xl-active">100</li>
+        <li class="xl-nextPage xl-disabled">下一页</li>
+ 
+    </ul>
+</div>
+    
 
-   
-    <div id="page" class="page_div"></div>
-   
 
 
 
@@ -272,11 +286,11 @@
             <dd><a href="#">hcylm008@dingtalk.com</a></dd>
             <dd><a href="#">武汉市硚口区南国大武汉H座18楼</a></dd>
             <dd>
-                <div class='concat_icon'>
-                    <div><img src="__SPI__/images/tie.png" alt=""></div>
-                    <div><img src="__SPI__/images/wx.png" alt=""></div>
-                    <div><img src="__SPI__/images/bo.png" alt=""></div>
-                  </div>
+              <div class='concat_icon'>
+                <div><img src="__SPI__/images/tie.png" alt=""></div>
+                <div><img src="__SPI__/images/wx.png" alt=""></div>
+                <div><img src="__SPI__/images/bo.png" alt=""></div>
+              </div>
             </dd>
           </dl>
 
@@ -299,22 +313,30 @@
 
 
   </div>
+  
 
 </body>
-<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src='__SPI__/js/xlPaging.js'></script>
-<script>
+<!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
 
-    
-  // pageMe.js 使用方法
+
+
+
+<script>
+  
+  $('.goTop').click(()=>{
+    alert(111)
+  })
   $("#page").paging({
-        pageNum: 5, // 当前页面
-        totalNum: 14, // 总页码
-        totalList: 300, // 记录总数量
-        callback: function (num) { //回调函数
-            console.log(num);
-        }
-    });
- 
+    nowPage: 6, // 当前页码
+    pageNum: 30, // 总页码
+    buttonNum: 6, //要展示的页码数量
+    canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
+    showOne: 0,//只有一页时，是否显示。0=不显示,1=显示（默认）
+    callback: function (num) { //回调函数
+      console.log(num);
+    }
+  });
+
 </script>
+
 </html>
