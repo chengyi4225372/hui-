@@ -375,7 +375,20 @@ a {
 /* 面包屑导航 */
 .bread-crumbs {
     margin-bottom: 2.0625rem;
+    color: rgba(153, 153, 153, 1);
 }
+.bread-crumbs>span:nth-child(1)>a{
+    color: rgba(153, 153, 153, 1);
+}
+.bread-crumbs>span:nth-child(1)>a:hover{
+    color: #4091FF;
+}
+
+.bread-crumbs>span:nth-child(2)>a:hover{
+    color: #4091FF;
+    cursor: pointer;
+}
+
 
 /* 资讯列表 */
 .information-list {
