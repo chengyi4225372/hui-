@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"C:\phpEnv\www\hui-\public/../application/home\view\index\get_info.html";i:1574733594;s:58:"C:\phpEnv\www\hui-\application\home\view\common\login.html";i:1574646729;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 
@@ -5,13 +6,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{$title}</title>
-  <link rel="stylesheet" href="__SPI__/css/base.css">
-  <link rel="stylesheet" href="__SPI__/css/detail.css">
+  <title><?php echo $title; ?></title>
+  <link rel="stylesheet" href="/static/spirit/css/base.css">
+  <link rel="stylesheet" href="/static/spirit/css/detail.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src='__HOME__/js/common.js'></script>
-  <script src='__PUBLIC__/common/js/public.js'></script>
-  <script src="__PUBLIC__/assets/plugins/layui/layui.all.js"></script>
+  <script src='/static/home/js/common.js'></script>
+  <script src='/static/common/js/public.js'></script>
+  <script src="/static/assets/plugins/layui/layui.all.js"></script>
   <style>
     /* 归属信息 */
     .affiliation{
@@ -35,7 +36,7 @@
           <a href="/"></a>
         </div>
         <ul class='titile'>
-          <li class='nav-active'><a href="{:url('/home/index/index')}">首页</a></li>
+          <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
           <li><a href="javascript:;">招募合伙人</a>
           </li>
           <li>
@@ -95,46 +96,58 @@
           <li><a href="javascript:;">政府招标信息</a></li>
           <li><a href="javascript:;">政府招商信息</a></li>
           <li><a href="javascript:;">行业资讯</a></li>
-          <!-- <li><a href="{:url('/home/launch/index')}">惠启动</a></li> -->
+          <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
         </ul>
-        {if empty($userinfo['mobile'])}
+        <?php if(empty($userinfo['mobile'])): ?>
         <div class='register'>
           <a href="javascript:void(0)"
-             login_url="{$baseurl}"
-             loca_url="{:config('curl.website')}" onclick="login_btn(this)">登录</a>
-          <a href="{:url('/home/login/register')}">注册</a>
+             login_url="<?php echo $baseurl; ?>"
+             loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
+          <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
-        {else /}
-        {include file="common/login"}
-        {/if}
+        <?php else: if(empty($userinfo['mobile'])): ?>
+<div class="loging clearfix">
+    <div class="register-btn"><a href="<?php echo $baseurl; ?>" target="_blank">
+        登陆
+    </a></div>
+    <div class="loging-btn"><a href="<?php echo url('/home/login/register'); ?>">注册</a></div>
+</div>
+<?php else: ?>
+<div class="u_info">
+    <img src="/static/home/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
+    <p style="display:inline-block;color:#fff;"  id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
+
+    <div class="u_info_content" id="u_info_content">
+        <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+    </div>
+</div>
+<?php endif; endif; ?>
       </div>
     </div>
-    <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="{:url('/home/index/infoList')}">资讯</a> > 新闻详情</div>
+    <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > 新闻详情</div>
     <div class='main_content'>
       <div class='content_middle'>
         <div class='pic_total'>
-          <div class='pic_title'>{$info.title}</div>
-          <div class='time'>{$info.release_time}</div>
+          <div class='pic_title'><?php echo $info['title']; ?></div>
+          <div class='time'><?php echo $info['release_time']; ?></div>
           <div class='line'></div>
           <div class='tuwen'>
-            <div class='wenzi'>{$info.content}</div>
+            <div class='wenzi'><?php echo $info['content']; ?></div>
 
             <div class="affiliation">
               <p>本信息来源：中国招标网</p>
             </div>
 
             <div class='page'>
-               {empty name='top'}
+               <?php if(empty($top) || (($top instanceof \think\Collection || $top instanceof \think\Paginator ) && $top->isEmpty())): ?>
               <div><span>上一篇:</span><a href="#">已经是第一篇了</a></div>
-               {else /}
-                <div><span>上一篇:</span><a href="{:url('/home/index/getInfo',array('mid'=>$top.id))}">{$top.title}</a></div>
-               {/empty}
-
-                {empty name='next'}
+               <?php else: ?>
+                <div><span>上一篇:</span><a href="<?php echo url('/home/index/getInfo',array('mid'=>$top['id'])); ?>"><?php echo $top['title']; ?></a></div>
+               <?php endif; if(empty($next) || (($next instanceof \think\Collection || $next instanceof \think\Paginator ) && $next->isEmpty())): ?>
                 <div><span>下一篇:</span><a href="#">已经是最后一篇了</a></div>
-                {else /}
-              <div><span>下一篇:</span><a href="{:url('/home/index/getInfo',array('mid'=>$next.id))}">{$next.title}</a></div>
-               {/empty}
+                <?php else: ?>
+              <div><span>下一篇:</span><a href="<?php echo url('/home/index/getInfo',array('mid'=>$next['id'])); ?>"><?php echo $next['title']; ?></a></div>
+               <?php endif; ?>
             </div>
           </div>
         </div>
@@ -177,9 +190,9 @@
 
         </div>
         <div class='concat_icon clearfix'>
-          <div><img src="__SPI__/images/tie.png" alt=""></div>
-          <div><img src="__SPI__/images/wx.png" alt=""></div>
-          <div><img src="__SPI__/images/bo.png" alt=""></div>
+          <div><img src="/static/spirit/images/tie.png" alt=""></div>
+          <div><img src="/static/spirit/images/wx.png" alt=""></div>
+          <div><img src="/static/spirit/images/bo.png" alt=""></div>
         </div>
         <div class="partener_fotter">© Copyright 2019 惠企动（湖北）科技有限公司 . All Rights Reserved</div>
       </div>

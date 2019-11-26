@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:112:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\infos_add.html";i:1572512921;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\dialog.html";i:1571369306;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1571899026;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:112:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\infos_add.html";i:1574669003;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\dialog.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1574667917;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574667917;}*/ ?>
+<!DOCTYPE>
 <html lang="<?php echo $config['language']; ?>">
 <head>
     <!-- 加载样式及META信息 -->
@@ -42,7 +42,6 @@
   <script src="/static/assets/dist/js/html5shiv.js"></script>
   <script src="/static/assets/dist/js/respond.min.js"></script>
 <![endif]-->
-
     
     <!-- 用来添加自定义的 样式 -->
     
@@ -54,6 +53,9 @@
     .dialog-content{margin:20px;}
     .dialog-footer{right:39%;top:82%;margin-left:30%;}
     .red-color{color:red;}
+    /* 修改原有下拉框*/
+    .bootstrap-select .btn {max-width: 550px;}
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {width: 550px;}
 </style>
 <div class="dialog-content">
     <form class="form-horizontal dialog-form" id="form">
@@ -77,7 +79,7 @@
                     </div>
                 </div>
 
-
+               <!--
                 <div class="form-group">
                     <label for="keyword" class="col-sm-3 control-label">
                         <span class="red-color">*</span>新闻关键字：</label>
@@ -85,6 +87,19 @@
                         <input type="text" class="form-control form-control-sm" id="keyword">
                     </div>
                 </div>
+                -->
+
+               <div class="form-group">
+                        <label for="keyword" class="col-sm-3 control-label">新闻关键字列表：</label>
+                        <div class="col-sm-9" >
+                            <select id="keyword" class="selectpicker" multiple  title="请选择..." >
+                                <?php if(is_array($catelist) || $catelist instanceof \think\Collection || $catelist instanceof \think\Paginator): $i = 0; $__LIST__ = $catelist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$co): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $co['title']; ?>" data-width="100%"><?php echo $co['title']; ?></option>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+                        </div>
+                    </div>
+
 
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">
@@ -115,6 +130,7 @@
 <!-- 加载JS脚本 -->
 <!-- jQuery 3 -->
 <script src="/static/assets/components/jquery/dist/jquery.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
 <script src="/static/assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- daterangepicker -->
@@ -143,7 +159,7 @@
 <script src="/static/assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="/static/assets/plugins/datatables/dataTables.bootstrap.js"></script>
 <!-- 富文本 -->
-<script src="/static/assets/plugins/ueditor//ueditor.config.js"></script>
+<script src="/static/assets/plugins/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/ueditor.all.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
 <!-- 富文本-->
@@ -156,6 +172,11 @@
 <script src="/static/assets/dist/js/infos.js"></script>
 <script src="/static/assets/dist/js/partners.js"></script>
 <script src="/static/assets/dist/js/works.js"></script>
+<!-- 标签 -->
+<script src="/static/assets/dist/js/ification.js"></script>
+
+
+
 <script>
     admin_module.changepas();
 </script>

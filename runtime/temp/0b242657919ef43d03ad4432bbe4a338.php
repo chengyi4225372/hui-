@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:68:"C:\phpEnv\www\hui-\public/../application/home\view\launch\index.html";i:1574646729;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:68:"C:\phpEnv\www\hui-\public/../application/home\view\launch\index.html";i:1574650520;}*/ ?>
+>>>>>>> 789554098325046124424e077a624b9f77c06ae6
 <!DOCTYPE html>
 <html lang="en">
 <head>

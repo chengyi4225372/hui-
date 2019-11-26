@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\index.html";i:1573181931;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574405417;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\info\infos\index.html";i:1574663075;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1573779814;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1574667917;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1574404183;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1574667917;}*/ ?>
 <!DOCTYPE>
 <html lang="zh-CN">
 <head>
@@ -42,7 +42,6 @@
   <script src="/static/assets/dist/js/html5shiv.js"></script>
   <script src="/static/assets/dist/js/respond.min.js"></script>
 <![endif]-->
-
     
     <!-- 用来添加自定义的 样式 -->
     <style>
@@ -360,6 +359,7 @@
                 <thead>
                 <th class="text-center">所属分类</th>
                 <th class="text-center">新闻标题</th>
+                <th class="text-center">新闻关键字</th>
                 <th class="text-center">创建时间</th>
                 <th class="text-center">操作</th>
                 </thead>
@@ -407,6 +407,7 @@
 <!-- 加载JS脚本 -->
 <!-- jQuery 3 -->
 <script src="/static/assets/components/jquery/dist/jquery.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
 <script src="/static/assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- daterangepicker -->
@@ -450,6 +451,9 @@
 <script src="/static/assets/dist/js/works.js"></script>
 <!-- 标签 -->
 <script src="/static/assets/dist/js/ification.js"></script>
+
+
+
 <script>
     admin_module.changepas();
 </script>

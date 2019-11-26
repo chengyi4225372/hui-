@@ -5,6 +5,7 @@ use app\common\controller\AuthController;
 use think\Config;
 use app\common\model\Info;
 use app\v1\service\Infosservice;
+use app\v1\service\Ificationservice;
 class Infos extends  AuthController
 {
 
@@ -24,6 +25,8 @@ class Infos extends  AuthController
 
   public function infosAdd(){
     if($this->request->isGet()){
+        $catelist = Ificationservice::instance()->getlist('');
+        $this->assign('catelist',$catelist);
         return $this->fetch();
     }
 
@@ -32,7 +35,7 @@ class Infos extends  AuthController
         $array['title'] = input('post.title', '', 'trim');
         $array['content'] = input('post.content', '');
         $array['describe'] = input('post.describe', '', 'trim');
-        $array['keyword'] = input('post.keyword', '', 'trim');
+        $array['keyword']  = implode(',',json_decode(input('post.keyword', '', 'trim')));
         $array['release_time'] = date("Y-m-d");
 
        $ret = Infosservice::instance()->saves($array);
@@ -53,8 +56,15 @@ class Infos extends  AuthController
           if(empty($id)){
               return false;
           }
-          $info = Infosservice::instance()->getId($id);
+          $info    = Infosservice::instance()->getId($id);
+
+          $keywords = explode(',',$info['keyword']);
+
+          //关键字列表
+          $catelist = Ificationservice::instance()->getlist('');
+          $this->assign('list',$catelist);
           $this->assign('info',$info);
+          $this->assign('keywords',$keywords);
           return $this->fetch();
       }
 
@@ -64,8 +74,8 @@ class Infos extends  AuthController
               'pid'     =>input('post.pid','','int'),
               'title'   =>input('post.title','','trim'),
               'content' =>input('post.content'),
-              'describe'    =>input('post.describe','','trim'),
-              'keyword' =>input('post.keyword','','trim'),
+              'describe'=>input('post.describe','','trim'),
+              'keyword' =>implode(',',json_decode(input('post.keyword', '', 'trim'))),
           );
 
           $ret = Infosservice::instance()->updateId($array,$id);

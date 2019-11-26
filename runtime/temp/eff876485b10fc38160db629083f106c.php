@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"C:\phpEnv\www\hui-\public/../application/home\view\index\index.html";i:1574733594;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"C:\Users\ni959\Desktop\php\hui-\public/../application/home\view\index\index.html";i:1574679075;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 

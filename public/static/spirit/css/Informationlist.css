@@ -146,7 +146,7 @@ a {
 
 
 .container {
-    min-width: 120rem;
+    /* min-width: 120rem; */
     background: #fff;
     padding-top: 3.75rem;
     box-sizing: border-box;
