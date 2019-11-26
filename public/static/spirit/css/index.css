@@ -150,9 +150,15 @@ input:-webkit-autofill {
 .nav-container .nav ul li a {
     display: block;
     width: 100%;
+<<<<<<< HEAD
+    height: 100%;
+    font-size: 20px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     /*height: 100%;*/
     font-size: 1.25rem;
     font-family: "PingFang SC";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
 }
@@ -194,9 +200,15 @@ input:-webkit-autofill {
 .nav-container .loging div a {
     display: block;
     width: 100%;
+<<<<<<< HEAD
+    height: 38px;
+    font-size: 16px;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+=======
     height: 2.375rem;
     font-size: 1rem;
     font-family: Source Han Sans CN;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 2.5rem;
@@ -259,8 +271,13 @@ input:-webkit-autofill {
 }
 
 .header-text-left .header-left-title {
+<<<<<<< HEAD
+    font-size: 48px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 3rem;
     font-family: "PingFang SC";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 800;
     color: rgba(255, 255, 255, 1);
     letter-spacing: 3px;
@@ -276,18 +293,30 @@ input:-webkit-autofill {
 }
 
 .header-text-left .header-left-title2 {
+<<<<<<< HEAD
+    font-size: 30px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.875rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     margin-bottom: 1.75rem;
 }
 
 .header-text-left .header-left-title3 {
+<<<<<<< HEAD
+    width: 311px;
+    height: 49px;
+    font-size: 18px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     width: 19.4375rem;
     height: 3.0625rem;
     font-size: 1.125rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 1.6875rem;
@@ -305,15 +334,32 @@ input:-webkit-autofill {
 }
 
 .header-right-title {
+<<<<<<< HEAD
+    font-size: 28px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.75rem;
     font-family: "PingFang SC";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 800;
     color: rgba(255, 255, 255, 1);
     letter-spacing: 0.1875rem;
 }
 
 .header-right-input {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
     flex-direction: column;
     width: 19.125rem;
     margin: 2.5rem .625rem 0px 0.75rem;
@@ -358,9 +404,15 @@ input::-ms-input-placeholder {
     height: 3.5rem;
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     opacity: 0.96;
+<<<<<<< HEAD
+    border-radius: 28px;
+    font-size: 22px;
+    font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+=======
     border-radius: 1.75rem;
     font-size: 1.375rem;
     font-family: Source Han Sans CN;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 3.625rem;
@@ -403,7 +455,19 @@ span:nth-child(4) {
 }
 
 .serves-box .serves .serve-item {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     width: 25rem;
     height: 100%;
@@ -431,7 +495,11 @@ span:nth-child(4) {
 }
 
 .serve-item .serve-item-text p:nth-child(1) {
+<<<<<<< HEAD
+    font-size: 24px;
+=======
     font-size: 1.5rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     letter-spacing: 3px;
@@ -441,8 +509,13 @@ span:nth-child(4) {
 
 .serve-item .serve-item-text p:nth-child(2),
 .serve-item .serve-item-text p:nth-child(3) {
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     letter-spacing: 2px;
     color: rgba(0, 0, 0, 1);
@@ -460,7 +533,11 @@ span:nth-child(4) {
     border-radius: 1rem;
     padding: 1px;
     background: linear-gradient(0deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
+<<<<<<< HEAD
+    font-size: 14px;
+=======
     font-size: .875rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
@@ -511,8 +588,13 @@ span:nth-child(4) {
 }
 
 .difficulty .difficulty-title p {
+<<<<<<< HEAD
+    font-size: 42px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 2.625rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin: 1.25rem 0 0 6.875rem;
@@ -553,7 +635,11 @@ span:nth-child(4) {
 
 .difficulty-item-title p {
     text-align: center;
+<<<<<<< HEAD
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
 }
@@ -594,8 +680,13 @@ span:nth-child(4) {
     margin-bottom: 1.25rem;
     padding-top: 1.25rem;
     background: url('../images/fanganbeijing2x.png') no-repeat;
+<<<<<<< HEAD
+    font-size: 42px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 2.625rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -606,8 +697,13 @@ span:nth-child(4) {
 .project .project-text {
     width: 61.25rem;
     margin: 0 auto;
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, .8);
     text-align: center;
@@ -628,9 +724,15 @@ span:nth-child(4) {
 
 .project-items .project-tabs {
     float: left;
+<<<<<<< HEAD
+    padding: 20px 79px;
+    font-size: 24px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     padding: 1.25rem 4.9375rem;
     font-size: 1.5rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     cursor: pointer
@@ -657,8 +759,13 @@ span:nth-child(4) {
 }
 
 .project-tabs-items p:nth-child(1) {
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     margin-top: 2.875rem;
@@ -666,9 +773,15 @@ span:nth-child(4) {
 }
 
 .project-tabs-items p:nth-child(2) {
+<<<<<<< HEAD
+    width: 628px;
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     width: 39.25rem;
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 1.625rem;
@@ -680,9 +793,15 @@ span:nth-child(4) {
     height: 2.5rem;
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     opacity: 0.96;
+<<<<<<< HEAD
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     border-radius: 1.25rem;
     font-size: .875rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -714,8 +833,13 @@ span:nth-child(4) {
     margin-bottom: 1.25rem;
     padding-top: 1.25rem;
     background: url('../images/liyoubeijing2x.png') no-repeat;
+<<<<<<< HEAD
+    font-size: 42px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 2.625rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -729,8 +853,13 @@ span:nth-child(4) {
 .reason-text {
     width: 42.5rem;
     margin: 0 auto;
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -746,7 +875,19 @@ span:nth-child(4) {
 .reason-content-items {}
 
 .reason-content-item {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
     height: 7.5rem;
     width: 35rem;
@@ -783,16 +924,26 @@ span:nth-child(4) {
 }
 
 .reason-content-item-text p:nth-child(1) {
+<<<<<<< HEAD
+    font-size: 24px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.5rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin-top: 1.5625rem;
 }
 
 .reason-content-item-text p:nth-child(2) {
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     opacity: 0.6;
@@ -826,8 +977,13 @@ span:nth-child(4) {
     margin-bottom: 1.8125rem;
     padding-top: 1.25rem;
     background: url('../images/liuchengbeijing2x.png') no-repeat;
+<<<<<<< HEAD
+    font-size: 42px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 2.625rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -835,8 +991,13 @@ span:nth-child(4) {
 }
 
 .process-text {
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -871,8 +1032,13 @@ span:nth-child(4) {
     margin-bottom: 1.8125rem;
     padding-top: 1.25rem;
     background: url('../images/hangyezixun2x.png') no-repeat;
+<<<<<<< HEAD
+    font-size: 42px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 2.625rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -880,8 +1046,13 @@ span:nth-child(4) {
 }
 
 .consulting-text {
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, .6);
     opacity: 0.6;
@@ -891,6 +1062,15 @@ span:nth-child(4) {
 
 .consulting-items ul {
     display: -webkit-box;
+<<<<<<< HEAD
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+=======
     /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
     display: -moz-box;
     /* 老版本语法: Firefox (buggy) */
@@ -898,6 +1078,7 @@ span:nth-child(4) {
     /* 混合版本语法: IE 10 */
     display: -webkit-flex;
     /* 新版本语法: Chrome 21+ */
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     display: flex;
     -webkit-justify-content: flex-start;
     -moz-justify-content: flex-start;
@@ -956,9 +1137,15 @@ span:nth-child(4) {
 }
 
 .consulting-item-content-title {
+<<<<<<< HEAD
+    height: 72px;
+    font-size: 23px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     height: 4.5rem;
     font-size: 1.4375rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     line-height: 2.25rem;
@@ -987,9 +1174,15 @@ span:nth-child(4) {
 }
 
 .consulting-item-content-details {
+<<<<<<< HEAD
+    height: 72px;
+    font-size: 14px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     height: 4.5rem;
     font-size: .875rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
     line-height: 1.5rem;
@@ -1016,9 +1209,15 @@ span:nth-child(4) {
     height: 2.5rem;
     margin: 0 auto;
     padding: 1px;
+<<<<<<< HEAD
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     border-radius: 1.875rem;
     font-size: .875rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
     background: linear-gradient(0deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
@@ -1039,8 +1238,13 @@ span:nth-child(4) {
     display: block;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
+    font-size: 14px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: .875rem;
     font-family: "PingFang SC";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(47, 128, 237, 1);
 }
@@ -1059,8 +1263,13 @@ span:nth-child(4) {
 }
 
 .salary-box .salary div:nth-child(1) {
+<<<<<<< HEAD
+    font-size: 30px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.875rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -1080,9 +1289,15 @@ span:nth-child(4) {
     height: 2.875rem;
     margin: 0 auto;
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
+<<<<<<< HEAD
+    border-radius: 23px;
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     border-radius: 1.4375rem;
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
@@ -1094,8 +1309,13 @@ span:nth-child(4) {
     display: block;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
+    font-size: 16px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
 }
@@ -1112,9 +1332,15 @@ span:nth-child(4) {
 .fotter-box .fotter {}
 
 .partener_titile {
+<<<<<<< HEAD
+    padding-top: 59px;
+    font-size: 48px;
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+=======
     padding-top: 3.6875rem;
     font-size: 3rem;
     font-family: "PingFang SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     -webkit-text-stroke: 1px undefined;
@@ -1135,7 +1361,11 @@ span:nth-child(4) {
 .parter_catefories {
     margin-top: 4.9375rem;
     overflow: hidden;
+<<<<<<< HEAD
+    font-size: 11px;
+=======
     font-size: .6875rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 300;
     color: rgba(220, 220, 220, 1);
@@ -1173,8 +1403,13 @@ span:nth-child(4) {
 }
 
 .parter_catefories dl dd>a {
+<<<<<<< HEAD
+    font-size: 18px;
+    font-family: 'Source Han Sans CN', "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.125rem;
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(220, 220, 220, .7);
 }
@@ -1241,7 +1476,11 @@ span:nth-child(4) {
 }
 
 .goTop div {
+<<<<<<< HEAD
+    font-size: 9px;
+=======
     font-size: 0.5625rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(50, 50, 50, 1);
@@ -1292,8 +1531,13 @@ span:nth-child(4) {
 .form-titile p {
     position: relative;
     text-align: center;
+<<<<<<< HEAD
+    font-size: 30px;
+    font-family: "Source Han Sans CN" , "Microsoft YaHei", "微软雅黑";
+=======
     font-size: 1.875rem;
     font-family: Source Han Sans CN;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
     line-height: 6.25rem;
@@ -1323,6 +1567,17 @@ span:nth-child(4) {
 }
 
 .form-content div {
+<<<<<<< HEAD
+    height: 40px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+=======
     height: 2.5rem;
     display: -webkit-box;
     /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
@@ -1332,6 +1587,7 @@ span:nth-child(4) {
     /* 混合版本语法: IE 10 */
     display: -webkit-flex;
     /* 新版本语法: Chrome 21+ */
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     display: flex;
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
@@ -1348,10 +1604,17 @@ span:nth-child(4) {
 
 .form-content div .title {
     display: inline-block;
+<<<<<<< HEAD
+    width: 100px;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 14px;
+=======
     width: 6.25rem;
     height: 2.5rem;
     margin-right: 1.25rem;
     font-size: .875rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
@@ -1374,7 +1637,11 @@ span:nth-child(4) {
     margin: 0 auto;
     background: linear-gradient(90deg, rgba(124, 219, 249, 1), rgba(47, 128, 237, 1));
     border-radius: 4px;
+<<<<<<< HEAD
+    font-size: 24px;
+=======
     font-size: 1.5rem;
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑";
     font-weight: 400;
     /* text-align: center; */

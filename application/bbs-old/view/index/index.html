@@ -1,3 +1,7 @@
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"C:\Users\Administrator\Desktop\hui-\public/../application/home\view\index\index.html";i:1572404913;}*/ ?>
+=======
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,7 +73,11 @@
                         <ul>
                             <li class="nav-active"><a href="#">首页</a></li>
                             <li><a href="#">惠优税</a></li>
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+                            <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
+=======
                             <li><a href="{:url('/home/spirit/index')}">惠灵工</a></li>
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
                             <li><a href="#">惠多薪</a></li>
                             <li><a href="#">惠创业</a></li>
                             <li><a href="#">惠找事</a></li>
@@ -83,8 +91,13 @@
                         </div>
                         {else /}
                         <div style="float: right;margin-top: 17px;cursor: pointer;">
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+                            <img src="/static/home/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
+                            <span style="vertical-align: middle;"><?php echo $userinfo['mobile']; ?></span>
+=======
                             <img src="__HOME__/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
                             <span style="vertical-align: middle;">{$userinfo['mobile']}</span>
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
                         </div>
                         {/if}
                     </div>
@@ -156,7 +169,11 @@
 
 
         <!-- 近期成功案例 -->
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+        <input type="hidden" id="add_url" value="<?php echo url('/home/index/ajaximage'); ?>">
+=======
         <input type="hidden" id="add_url" value="{:url('/home/index/ajaximage')}">
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
         <div class='success'>
             <div class='w success_content'>
                 <div class='success_title'></div>
@@ -435,7 +452,11 @@
                         <!-- 搜索 -->
                         <div class='zhaoSearch'>
                             <div class='searchLogo'>
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+                                <i onclick="search(this)" data-url="<?php echo url('/home/index/infoList'); ?>"></i>
+=======
                                 <i onclick="search(this)" data-url="{:url('/home/index/infoList')}"></i>
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
                                 <input type="text" id="keyword"  placeholder="搜索招标政策和招标信息...">
                             </div>
                             <!-- <button>查询</button> -->
@@ -454,8 +475,13 @@
                             <div> {$ss.desc}</div>
                             </a>
                         </div>
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)" data-url="<?php echo url('/home/index/infoList'); ?>" login_url="<?php echo url('/home/login/login'); ?>">了解更多</button>
+=======
                         {/volist}
                         <button class='know_more' mobile-phone="{$userinfo['mobile']}" onclick="showUrl(this)" data-url="{:url('/home/index/infoList')}" login_url="{:url('/home/login/login')}">了解更多</button>
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
                     </div>
 
                     <div class='zhaoTotalInfo'>
@@ -472,9 +498,15 @@
                             </div>
                             </a>
                         </div>
+<<<<<<< HEAD:runtime/temp/441cf145d0df069a57dfb9201990b671.php
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+
+                        <button class='know_more' mobile-phone="<?php echo $userinfo['mobile']; ?>" onclick="showUrl(this)" data-url="<?php echo url('/home/index/infoList'); ?>" login_url="<?php echo url('/home/login/login'); ?>">了解更多</button>
+=======
                         {/volist}
 
                         <button class='know_more' mobile-phone="{$userinfo['mobile']}" onclick="showUrl(this)" data-url="{:url('/home/index/infoList')}" login_url="{:url('/home/login/login')}">了解更多</button>
+>>>>>>> e0ee0deee146f6d2d492350cc22e2e2aeca16069:application/bbs-old/view/index/index.html
 
                     </div>
 
