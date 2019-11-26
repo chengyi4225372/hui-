@@ -96,6 +96,10 @@ a {
     text-decoration: none;
 }
 
+.active {
+    color: #4091FF;
+}
+
 .container {
     width: 100%;
 }
@@ -647,6 +651,7 @@ a {
 }
 
 .parter_catefories {
+    width:75rem;
     overflow: hidden;
 <<<<<<< HEAD
     font-size: 11px;
@@ -658,8 +663,8 @@ a {
     font-weight: 300;
     color: rgba(220, 220, 220, 1);
     box-sizing: border-box;
-    padding-left: 22.875rem;
     padding-top: 5rem;
+    margin: 0 auto;
 }
 
 .parter_catefories>dl {
@@ -675,7 +680,7 @@ a {
 }
 
 .parter_catefories>dl:nth-of-type(5) {
-    margin-left: 4.625rem;
+    margin-left: 5.625rem;
 }
 
 .parter_catefories dl dt {
