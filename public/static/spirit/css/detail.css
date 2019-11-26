@@ -97,7 +97,16 @@ a {
 }
 
 .actives {
+    color: rgba(153, 153, 153, 1);
+}
+
+.actives:hover{
     color: #4091FF;
+    cursor: pointer;
+}
+
+.activees {
+    color: rgba(153, 153, 153, 1);
 }
 
 .container {
@@ -401,6 +410,12 @@ a {
     box-sizing: border-box;
     background:rgba(245,249,255,1);
 }
+
+/*.bread_title:hover{*/
+/*    color: #4091FF;*/
+/*    cursor: pointer;*/
+/*}*/
+
 
 .pic_total {
     width: 75rem;

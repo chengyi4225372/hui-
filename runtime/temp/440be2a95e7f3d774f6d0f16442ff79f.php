@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\get_info.html";i:1573181705;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1573106971;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\get_info.html";i:1574740077;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<!DOCTYPE >
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/static/spirit/css/detail.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src='/static/home/js/common.js'></script>
-  <script src='/static/common/js/common.js'></script>
+  <script src='/static/common/js/public.js'></script>
   <script src="/static/assets/plugins/layui/layui.all.js"></script>
   <style>
     /* 归属信息 */
@@ -37,41 +37,99 @@
         </div>
         <ul class='titile'>
           <li class='nav-active'><a href="<?php echo url('/home/index/index'); ?>">首页</a></li>
-          <li><a href="<?php echo url('/home/optimal/index'); ?>">惠优税</a></li>
-          <li><a href="<?php echo url('/home/spirit/index'); ?>">惠灵工</a></li>
-          <li><a href="<?php echo url('/home/many/index'); ?>">惠多薪</a></li>
-          <li><a href="<?php echo url('/home/business/index'); ?>">惠创业</a></li>
-          <li><a href="<?php echo url('/home/searches/index'); ?>">惠找事</a></li>
-          <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li>
+          <li><a href="javascript:;">招募合伙人</a>
+          </li>
+          <li>
+            <a href="javascript:;">“惠”家族产品</a>
+            <!-- 二级菜单 -->
+								<div class="w secondary-menu" id="secondary-menu">
+                    <!-- <div>1</div>
+                                      <div>2</div> -->
+                    <div>
+                      <dl>
+                        <dt><a href="#">惠优税</a></dt>
+                        <dd>
+                          ·企税降成本 薪税降税负
+  
+                        </dd>
+                        <dd>·分红降扣率 创业降个税</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠灵工</a></dt>
+                        <dd>
+                          ·寻求多样化用工模式
+  
+                        </dd>
+                        <dd>·提高内部人员效能</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠多薪</a></dt>
+                        <dd>
+                          ·优化员工福利选择模块
+  
+                        </dd>
+                        <dd>·企业成本可控透明化</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠找事</a></dt>
+                        <dd>
+                          ·技能价值华
+  
+                        </dd>
+                        <dd>·成就更好自我</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠创业</a></dt>
+                        <dd>
+                          ·一站式解决方案
+  
+                        </dd>
+                        <dd>·激活企业最大效益</dd>
+                      </dl>
+                      <dl>
+                        <dt><a href="#">惠企动</a></dt>
+                        <dd>·产品内容建设中……</dd>
+                      </dl>
+                    </div>
+                  </div><!-- 二级菜单 -->
+          </li>
+          <li><a href="javascript:;">政府招标信息</a></li>
+          <li><a href="javascript:;">政府招商信息</a></li>
+          <li><a href="javascript:;">行业资讯</a></li>
+          <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
         </ul>
         <?php if(empty($userinfo['mobile'])): ?>
         <div class='register'>
-          <a href="<?php echo url('/home/login/login'); ?>">登录</a>
-          <span></span>
+          <a href="javascript:void(0)"
+             login_url="<?php echo $baseurl; ?>"
+             loca_url="<?php echo config('curl.website'); ?>" onclick="login_btn(this)">登录</a>
           <a href="<?php echo url('/home/login/register'); ?>">注册</a>
         </div>
         <?php else: if(empty($userinfo['mobile'])): ?>
 <div class="loging clearfix">
-    <div class="register-btn"><a href="<?php echo url('/home/login/login'); ?>">
+    <div class="register-btn"><a href="<?php echo $baseurl; ?>" target="_blank">
         登陆
     </a></div>
     <div class="loging-btn"><a href="<?php echo url('/home/login/register'); ?>">注册</a></div>
 </div>
 <?php else: ?>
 <div class="u_info">
-    <img src="/static/home/images/user_img.png"
-         style="width:30px;height:30px; vertical-align: middle;">
-    <p style="display:inline-block;color:#fff;"><?php echo $userinfo['mobile']; ?></p>
+    <img src="/static/home/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
+    <p style="display:inline-block;color:#fff;"  id="mobile_phone"><?php echo $userinfo['mobile']; ?></p>
+
     <div class="u_info_content" id="u_info_content">
-        <a class="u_out" href="javascript:void(0)" onclick="index_module.user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
+        <a class="u_out" href="javascript:void(0)" data-token="<?php echo $userinfo['token']; ?>" onclick="user_logout(this)" location_url="<?php echo url('/home/index/index'); ?>" data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
     </div>
 </div>
 <?php endif; endif; ?>
       </div>
     </div>
+    <div  class='bread_title'>
+      <a class="actives" href="/">首页 ></a>
+      <a  class="actives" onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> >
+      <a  class="activees" href="javasrcipt:;">新闻详情</a></div>
     <div class='main_content'>
       <div class='content_middle'>
-        <div class='bread_title'><a href="/">首页</a> > <a onclick="go_news(this)" data-url="<?php echo url('/home/index/infoList'); ?>">资讯</a> > 新闻详情</div>
         <div class='pic_total'>
           <div class='pic_title'><?php echo $info['title']; ?></div>
           <div class='time'><?php echo $info['release_time']; ?></div>
@@ -101,10 +159,10 @@
     <!-- 底部 -->
     <div class="fotter-box">
       <div class="w fotter">
-        <div class='partener_titile'>用智“慧”创造优“惠”</div>
+        <!-- <div class='partener_titile'>用智“慧”创造优“惠”</div>
         <div class='parterne_info'>
           深耕税筹行业多年，合作企业多达几千家。专业为个人和企业解决税务难题。为您提供一站式金融、税务和人力外包服务，以及专业的税筹划分析，最安全、高效、合理的节税措施。我们有最成熟的专家团队和各行业实操经验！作为国内领先的标准化税筹服务互联网平台，我们得到了上海、安徽、江西、湖北等各地政府的大力支持，为企业节税保驾护航！
-        </div>
+        </div> -->
         <div class='parter_catefories'>
           <dl>
             <dt><a href="#">服务产品</a></dt>
