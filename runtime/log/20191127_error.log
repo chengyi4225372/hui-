@@ -1,4 +1,5 @@
 ---------------------------------------------------------------
+<<<<<<< HEAD
 [ 2019-11-27T14:09:24+08:00 ] 127.0.0.1 GET /home/index/infoList.html
 [ error ] [0]致命错误: Call to a member function render() on array[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\service\Infosservice.php:133]
 ---------------------------------------------------------------
@@ -19,3 +20,7 @@
 ---------------------------------------------------------------
 [ 2019-11-27T15:03:35+08:00 ] 127.0.0.1 GET /home/index/infoBiao.html
 [ error ] [8]未定义变量: sh[C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\runtime\temp\4d075e163c80069ed890aedad80e2b5b.php:188]
+=======
+[ 2019-11-27T10:34:09+08:00 ] 172.26.2.108 GET /
+[ error ] [8]未定义变量: ss[/opt/web/hui-/runtime/temp/fc43eb112f593b1af4478cc2ab82a207.php:342]
+>>>>>>> b3b827c5c873e4cf5579cba18071e4c15aea68dc
