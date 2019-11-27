@@ -1,4 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574845356;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<<<<<<< HEAD:runtime/temp/e5a41df61c017a4f5ef31f4579652002.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574844262;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_biao.html";i:1574845196;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+>>>>>>> 5640ab2d4cf6e679deb55954d504ef1dba5dc827:runtime/temp/4d075e163c80069ed890aedad80e2b5b.php
 <!DOCTYPE>
 <html lang="en">
 
@@ -17,6 +21,7 @@
     <script src='/static/spirit/js/Informationlist.js'></script>
     <script src="/static/assets/plugins/layui/layui.all.js"></script>
     <script src='/static/home/js/common.js'></script>
+    <script src='/static/home/js/index.js'></script>
     <script src='/static/common/js/public.js'></script>
 </head>
 
@@ -86,8 +91,8 @@
                         </div>
                     </div><!-- 二级菜单 -->
                 </li>
-                <li><a href="<?php echo url('/home/index/infoBiao'); ?>">政府招标信息</a></li>
-                <li class='nav-active'><a href="javascript:;">政府招商信息</a></li>
+                <li class='nav-active'><a href="javascript:;">政府招标信息</a></li>
+                <li><a href="<?php echo url('/home/index/infoList'); ?>">政府招商信息</a></li>
                 <li><a href="javascript:;">行业资讯</a></li>
                 <!-- <li><a href="<?php echo url('/home/launch/index'); ?>">惠启动</a></li> -->
             </ul>
@@ -118,7 +123,6 @@
     </div>
 
 
-
     <div class="bg_banner">
         <div class="w banner">
 
@@ -131,7 +135,7 @@
         <div class="bread-crumbs">
             <span><a href="<?php echo url('/home/index/index'); ?>">首页</a></span> >
             <span><a class="current" style="color:#3E92FF;" onclick="go_news(this)"
-                     data-url="<?php echo url('/home/index/infoList'); ?>">招商政策资讯</a></span> <span></span>
+                     data-url="<?php echo url('/home/index/infoList'); ?>">政府招标信息</a></span> <span></span>
         </div>
     </div>
 
@@ -145,24 +149,25 @@
                       <li class="li-active">招商政策</li>
                       <li>招标信息</li>
                     </ul> -->
-                    <div class="govPolicy fl">政府招商政策</div>
+                    <div class="govPolicy fl">政府招标信息</div>
                     <div class="search-box fr">
                         <input type="text" id="keyword" value="<?php echo \think\Request::instance()->get('keyword'); ?>" placeholder="请输入关键字">
-                        <div id="searched" data-url="<?php echo url('/home/index/infoList'); ?>">搜索</div>
+                        <div id="searched" data-url="<?php echo url('/home/index/infoBiao'); ?>">搜索</div>
                     </div>
                 </div>
 
                 <!-- 热搜 -->
                 <div class="m hotWord">
                     <ul>
-                        <li style="cursor:pointer;" data-url="<?php echo url('/home/index/infoList'); ?>" onclick="location.href=$(this).attr('data-url')">
+                        <li style="cursor:pointer;" data-url="<?php echo url('/home/index/infoBiao'); ?>"
+                            onclick="location.href=$(this).attr('data-url')">
                             <span>热门关键词</span>
                         </li>
                         <?php if(is_array($four) || $four instanceof \think\Collection || $four instanceof \think\Paginator): $i = 0; $__LIST__ = $four;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ff): $mod = ($i % 2 );++$i;?>
-                        <li onclick="hotsearch(this);" data-title="<?php echo $ff['title']; ?>" data-url="<?php echo url('/home/index/infoList'); ?>">
-                        <span><?php echo $ff['title']; ?></span>
+                        <li onclick="hotsearch(this);" data-title="<?php echo $ff['title']; ?>" data-url="<?php echo url('/home/index/infoBiao'); ?>">
+                            <span><?php echo $ff['title']; ?></span>
                         </li>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
 
                 </div>
@@ -175,7 +180,7 @@
 
                 <div class="tabs-items show">
                     <ul id="shang">
-                        <?php if(empty($shang) || (($shang instanceof \think\Collection || $shang instanceof \think\Paginator ) && $shang->isEmpty())): ?>
+                        <?php if(empty($biao) || (($biao instanceof \think\Collection || $biao instanceof \think\Paginator ) && $biao->isEmpty())): ?>
                         <li>
                             <div class="tabs-items-content">
                                 <div class="tabs-items-content-text figcaption">
@@ -183,32 +188,35 @@
                                 </div>
                             </div>
                         </li>
-                        <?php else: if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sh): $mod = ($i % 2 );++$i;?>
+                        <?php else: if(is_array($biao) || $biao instanceof \think\Collection || $biao instanceof \think\Paginator): $i = 0; $__LIST__ = $biao;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ww): $mod = ($i % 2 );++$i;?>
                         <li>
-                            <a href="<?php echo url('/home/index/getInfo',array('mid'=>$sh['id'])); ?>">
+                            <a href="javascript:;"
+                               login_url="<?php echo $baseurl; ?>"
+                               loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $ww['id']; ?>"
+                               mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $ww['id']; ?>"
+                               onclick="home_module.show_detail(this)">
                                 <div class="infoItem">
                                     <div class="infoLeft">
-                                        <img src="<?php echo !empty($sh['imgs'])?$sh['imgs']:'/static/home/images/infoItem.jpg';; ?>" alt="">
+                                        <img src="<?php echo !empty($ww['imgs'])?$ww['imgs']:'/static/home/images/infoItem.jpg';; ?>" alt="">
                                     </div>
 
                                     <div class="infoRight">
                                         <div class="rightTop">
-                                            <div class="itemTitle"><?php echo mb_substr($sh['title'],0,35,'utf-8'); ?></div>
+                                            <div class="itemTitle"><?php echo mb_substr($ww['title'],0,35,'utf-8'); ?></div>
                                             <span class="itemTime">
-                                      <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $sh['release_time']; ?></span>
-                        </span>
+                                                <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $ww['release_time']; ?></span>
+                                            </span>
                                         </div>
                                         <p>
-                                            <?php echo $sh['describe']; ?>
+                                            <?php echo $ww['describe']; ?>
                                         </p>
-
                                     </div>
 
                                 </div>
                             </a>
                             <ul class="tags">
-                                <?php if(empty($sh['keyword']) || (($sh['keyword'] instanceof \think\Collection || $sh['keyword'] instanceof \think\Paginator ) && $sh['keyword']->isEmpty())): else: if(is_array($sh['keyword']) || $sh['keyword'] instanceof \think\Collection || $sh['keyword'] instanceof \think\Paginator): if( count($sh['keyword'])==0 ) : echo "" ;else: foreach($sh['keyword'] as $k=>$key): ?>
-                                <li onclick="hotsearch(this);" data-title="<?php echo $key; ?>" data-url="<?php echo url('/home/index/infoList'); ?>" ><?php echo $key; ?></li>
+                                <?php if(empty($ww['keyword']) || (($ww['keyword'] instanceof \think\Collection || $ww['keyword'] instanceof \think\Paginator ) && $ww['keyword']->isEmpty())): else: if(is_array($ww['keyword']) || $ww['keyword'] instanceof \think\Collection || $ww['keyword'] instanceof \think\Paginator): if( count($ww['keyword'])==0 ) : echo "" ;else: foreach($ww['keyword'] as $k=>$key): ?>
+                                <li onclick="hotsearch(this);" data-title="<?php echo $key; ?>" data-url="<?php echo url('/home/index/infoBiao'); ?>" ><?php echo $key; ?></li>
                                 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
                             </ul>
                         </li>
@@ -222,18 +230,14 @@
     </div>
     <!-- 分页 -->
     <div class="w pageNation">
-<!--        <ul class="page">-->
-<!--            <li class="prev">上一页</li>-->
-<!--            <li class="currentPage">1</li>-->
-<!--            <li>2</li>-->
-<!--            <li class="next">下一页</li>-->
-<!--        </ul>-->
-        <?php echo $shang->render(); ?>
+        <!--        <ul class="page">-->
+        <!--            <li class="prev">上一页</li>-->
+        <!--            <li class="currentPage">1</li>-->
+        <!--            <li>2</li>-->
+        <!--            <li class="next">下一页</li>-->
+        <!--        </ul>-->
+        <?php echo $biao->render(); ?>
     </div>
-
-
-
-
 
 
     <!-- 底部 -->
@@ -286,7 +290,6 @@
         <i></i>
         <div>返回顶部</div>
     </div>
-
 
 
 </div>

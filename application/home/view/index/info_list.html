@@ -171,7 +171,11 @@
                         {else /}
                         {volist name='shang' id='sh'}
                         <li>
-                            <a href="{:url('/home/index/getInfo',array('mid'=>$sh.id))}">
+                            <a href="javascript:;"
+                               login_url="{$baseurl}"
+                               loca_url="{:config('curl.website')}/home/index/getInfo?mid={$sh['id']}"
+                               mobile-phone="{$userinfo['mobile']}" data-id="{$sh['id']}"
+                               onclick="home_module.show_detail(this)">
                                 <div class="infoItem">
                                     <div class="infoLeft">
                                         <img src="{$sh.imgs?$sh.imgs:'__HOME__/images/infoItem.jpg';}" alt="">
