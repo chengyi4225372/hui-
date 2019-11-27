@@ -16,6 +16,7 @@
     <script src='__SPI__/js/Informationlist.js'></script>
     <script src="__PUBLIC__/assets/plugins/layui/layui.all.js"></script>
     <script src='__HOME__/js/common.js'></script>
+    <script src='__HOME__/js/index.js'></script>
     <script src='__PUBLIC__/common/js/public.js'></script>
 </head>
 
@@ -86,7 +87,7 @@
                     </div><!-- 二级菜单 -->
                 </li>
                 <li class='nav-active'><a href="javascript:;">政府招标信息</a></li>
-                <li ><a href="{:url('/home/index/infoList')}">政府招商信息</a></li>
+                <li><a href="{:url('/home/index/infoList')}">政府招商信息</a></li>
                 <li><a href="javascript:;">行业资讯</a></li>
                 <!-- <li><a href="{:url('/home/launch/index')}">惠启动</a></li> -->
             </ul>
@@ -101,7 +102,6 @@
             {/if}
         </div>
     </div>
-
 
 
     <div class="bg_banner">
@@ -140,7 +140,8 @@
                 <!-- 热搜 -->
                 <div class="m hotWord">
                     <ul>
-                        <li style="cursor:pointer;" data-url="{:url('/home/index/infoBiao')}" onclick="location.href=$(this).attr('data-url')">
+                        <li style="cursor:pointer;" data-url="{:url('/home/index/infoBiao')}"
+                            onclick="location.href=$(this).attr('data-url')">
                             <span>热门关键词</span>
                         </li>
                         {volist name='four' id='ff'}
@@ -171,7 +172,11 @@
                         {else /}
                         {volist name='biao' id='ww'}
                         <li>
-                            <a href="{:url('/home/index/getInfo',array('mid'=>$ww.id))}">
+                            <a href="javascript:;"
+                               login_url="{$baseurl}"
+                               loca_url="{:config('curl.website')}/home/index/getInfo?mid={$ww['id']}"
+                               mobile-phone="{$userinfo['mobile']}" data-id="{$ww['id']}"
+                               onclick="home_module.show_detail(this)">
                                 <div class="infoItem">
                                     <div class="infoLeft">
                                         <img src="{$ww.imgs?$ww.imgs:'__HOME__/images/infoItem.jpg';}" alt="">
@@ -181,8 +186,8 @@
                                         <div class="rightTop">
                                             <div class="itemTitle">{:mb_substr($ww.title,0,35,'utf-8')}</div>
                                             <span class="itemTime">
-                                      <img src="__SPI__/images/shijian2x.png" alt=""><span>{$ww.release_time}</span>
-                        </span>
+                                                <img src="__SPI__/images/shijian2x.png" alt=""><span>{$ww.release_time}</span>
+                                            </span>
                                         </div>
                                         <p>
                                             {$ww.describe}
@@ -216,10 +221,6 @@
         <!--        </ul>-->
         {$biao->render()}
     </div>
-
-
-
-
 
 
     <!-- 底部 -->
@@ -272,7 +273,6 @@
         <i></i>
         <div>返回顶部</div>
     </div>
-
 
 
 </div>
