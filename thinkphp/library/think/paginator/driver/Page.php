@@ -147,7 +147,7 @@ class Page extends Paginator
      */
     protected function getDisabledTextWrapper($text)
     {
-        return '<li class="onclick">' . $text . '</li>';   
+        return '<li class="onclick">' . $text . '</li>';
     }
 
     /**
