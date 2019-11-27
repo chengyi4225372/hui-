@@ -36,6 +36,7 @@ $('.cancle').click(function(){
 $('.infos-add').click(function(){
     var urls = $(this).attr('data-url');
 
+    var imgs    = $('#Images').val();
     var pid     = $("#pid option:selected").val();
     var title   = $('#title').val();
     var describe= $("#describe").val();
@@ -44,6 +45,11 @@ $('.infos-add').click(function(){
     if(title == '' || title== undefined){
         layer.msg('请填写新闻标题');
         return ;
+    }
+
+    if(imgs == '' || imgs == undefined){
+        layer.msg('请上传图片');
+        return false;
     }
 
     if(describe == '' || describe == undefined){
@@ -64,7 +70,7 @@ $('.infos-add').click(function(){
     }
 
 
-    $.post(urls,{'title':title,'pid':pid,'describe':describe,'content':content,'keyword': JSON.stringify(keyword)},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'describe':describe,'content':content,'keyword': JSON.stringify(keyword),'imgs':imgs},function(ret){
            if(ret.code == 200){
                layer.msg(ret.msg,{icon:6},function(){
                    parent.location.href="index";
@@ -93,7 +99,7 @@ $('.infos_edit').click(function(){
 });
 
 //编辑提交
-$('.infos-edits').click(function(){
+$('.infosedits').click(function(){
     var urls    = $(this).attr('data-url');
 
     var pid     = $("#pid option:selected").val();
@@ -101,10 +107,16 @@ $('.infos-edits').click(function(){
     var id      = $('#mid').val();
     var describe    = $("#describe").val();
     var keyword    = $("#keyword").val();
+    var imgs    = $('#Images').val();
 
     if(title == '' || title== undefined){
         layer.msg('请填写新闻标题');
         return ;
+    }
+
+    if(imgs == '' || imgs == undefined){
+        layer.msg('请上传图片');
+        return false;
     }
 
     if(id == '' || id==undefined){
@@ -129,7 +141,7 @@ $('.infos-edits').click(function(){
          return false;
     }
 
-    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':JSON.stringify(keyword)},function(ret){
+    $.post(urls,{'title':title,'pid':pid,'content':content,'id':id,'describe':describe,'keyword':JSON.stringify(keyword),'imgs':imgs},function(ret){
         if(ret.code == 200){
             layer.msg(ret.msg,{icon: 6},function(){
                 parent.location.href="index";
@@ -170,4 +182,35 @@ $('.infos_del').click(function(){
        parent.layer.closeAll();
     });
 
-})
+});
+
+
+//上传图片
+function upload_files() {
+    var formData =new FormData();
+    formData.append("file",$("#file")[0].files[0]);
+
+    var urls = "uploadImgs";
+
+    $.ajax({
+        url: urls,
+        type: "post",
+        data: formData,
+        async:false,
+        dataType: 'json',
+        cache: false,
+        processData : false,
+        contentType : false,
+        success: function (ret) {
+            if (ret.code == 200) {
+                $("#imgs").attr('src', ret.path);
+                $("#Images").val(ret.path);
+                layer.msg(ret.msg,{icon:6});
+            } else {
+                layer.msg(ret.msg);
+            }
+        },
+
+    });
+    return false;
+}

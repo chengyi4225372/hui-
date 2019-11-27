@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574753168;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:105:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\index.html";i:1574837681;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -188,10 +188,10 @@
                             </div>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">政府招标信息</a>
+                            <a href="<?php echo url('/home/index/infoBiao'); ?>">政府招标信息</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">政府招商信息</a>
+                            <a href="<?php echo url('/home/index/infoList'); ?>">政府招商信息</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">行业资讯</a>

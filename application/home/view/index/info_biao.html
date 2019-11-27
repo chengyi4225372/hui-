@@ -85,8 +85,8 @@
                         </div>
                     </div><!-- 二级菜单 -->
                 </li>
-                <li><a href="{:url('/home/index/infoBiao')}">政府招标信息</a></li>
-                <li class='nav-active'><a href="javascript:;">政府招商信息</a></li>
+                <li class='nav-active'><a href="javascript:;">政府招标信息</a></li>
+                <li ><a href="{:url('/home/index/infoList')}">政府招商信息</a></li>
                 <li><a href="javascript:;">行业资讯</a></li>
                 <!-- <li><a href="{:url('/home/launch/index')}">惠启动</a></li> -->
             </ul>
@@ -116,7 +116,7 @@
         <div class="bread-crumbs">
             <span><a href="{:url('/home/index/index')}">首页</a></span> >
             <span><a class="current" style="color:#3E92FF;" onclick="go_news(this)"
-                     data-url="{:url('/home/index/infoList')}">招商政策资讯</a></span> <span></span>
+                     data-url="{:url('/home/index/infoList')}">政府招标信息</a></span> <span></span>
         </div>
     </div>
 
@@ -130,24 +130,24 @@
                       <li class="li-active">招商政策</li>
                       <li>招标信息</li>
                     </ul> -->
-                    <div class="govPolicy fl">政府招商政策</div>
+                    <div class="govPolicy fl">政府招标信息</div>
                     <div class="search-box fr">
                         <input type="text" id="keyword" value="{$Think.get.keyword}" placeholder="请输入关键字">
-                        <div id="searched" data-url="{:url('/home/index/infoList')}">搜索</div>
+                        <div id="searched" data-url="{:url('/home/index/infoBiao')}">搜索</div>
                     </div>
                 </div>
 
                 <!-- 热搜 -->
                 <div class="m hotWord">
                     <ul>
-                        <li style="cursor:pointer;" data-url="{:url('/home/index/infoList')}" onclick="location.href=$(this).attr('data-url')">
+                        <li style="cursor:pointer;" data-url="{:url('/home/index/infoBiao')}" onclick="location.href=$(this).attr('data-url')">
                             <span>热门关键词</span>
                         </li>
                         {volist name='four' id='ff'}
-                        <li onclick="hotserach();" data-url="{:url('/home/index/infoList')}">
+                        <li onclick="hotserach();" data-url="{:url('/home/index/infoBiao')}">
                             <span>{$ff.title}</span>
                         </li>
-                    {/volist}
+                        {/volist}
                     </ul>
 
                 </div>
@@ -160,7 +160,7 @@
 
                 <div class="tabs-items show">
                     <ul id="shang">
-                        {empty name='shang'}
+                        {empty name='biao'}
                         <li>
                             <div class="tabs-items-content">
                                 <div class="tabs-items-content-text figcaption">
@@ -169,34 +169,33 @@
                             </div>
                         </li>
                         {else /}
-                        {volist name='shang' id='sh'}
+                        {volist name='biao' id='ww'}
                         <li>
-                            <a href="{:url('/home/index/getInfo',array('mid'=>$sh.id))}">
+                            <a href="{:url('/home/index/getInfo',array('mid'=>$ww.id))}">
                                 <div class="infoItem">
                                     <div class="infoLeft">
-                                        <img src="{$sh.imgs?$sh.imgs:'__HOME__/images/infoItem.jpg';}" alt="">
+                                        <img src="{$ww.imgs?$ww.imgs:'__HOME__/images/infoItem.jpg';}" alt="">
                                     </div>
 
                                     <div class="infoRight">
                                         <div class="rightTop">
-                                            <div class="itemTitle">{:mb_substr($sh.title,0,35,'utf-8')}</div>
+                                            <div class="itemTitle">{:mb_substr($ww.title,0,35,'utf-8')}</div>
                                             <span class="itemTime">
-                                      <img src="__SPI__/images/shijian2x.png" alt=""><span>{$sh.release_time}</span>
+                                      <img src="__SPI__/images/shijian2x.png" alt=""><span>{$ww.release_time}</span>
                         </span>
                                         </div>
                                         <p>
-                                            {$sh.describe}
+                                            {$ww.describe}
                                         </p>
-
+                                        <ul class="tags">
+                                            <li>外包</li>
+                                            <li>社保外包</li>
+                                            <li>人力资源数字转化</li>
+                                        </ul>
                                     </div>
 
                                 </div>
                             </a>
-                            <ul class="tags">
-                                <li>外包</li>
-                                <li>社保外包</li>
-                                <li>人力资源数字转化</li>
-                            </ul>
                         </li>
                         {/volist}
                         {/empty}
@@ -209,13 +208,13 @@
     </div>
     <!-- 分页 -->
     <div class="w pageNation">
-<!--        <ul class="page">-->
-<!--            <li class="prev">上一页</li>-->
-<!--            <li class="currentPage">1</li>-->
-<!--            <li>2</li>-->
-<!--            <li class="next">下一页</li>-->
-<!--        </ul>-->
-        {$shang->render()}
+        <!--        <ul class="page">-->
+        <!--            <li class="prev">上一页</li>-->
+        <!--            <li class="currentPage">1</li>-->
+        <!--            <li>2</li>-->
+        <!--            <li class="next">下一页</li>-->
+        <!--        </ul>-->
+        {$biao->render()}
     </div>
 
 

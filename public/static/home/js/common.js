@@ -150,7 +150,7 @@ function click_show(objthis){
 
 }
 
-//搜索
+//首页搜索
  function search(obj){
         var keyword = $('#keyword').val();
         var url = $(obj).attr('data-url');
@@ -196,76 +196,13 @@ $(function(){
     });
 });
 
-
-//招商信息分页
-function moreShang(keyword,pages,objthis){
-    var urls = $(objthis).attr('data-url');
-    var hrefs = $(objthis).attr('data-href');
-    $.get(urls,{'keyword':keyword,'page':pages},function(ret){
-        if(ret.code == 200){
-            var html= "";
-            $.each(ret.data,function(i,item){
-                 html+= "<li>";
-                 html+= "<a href='"+hrefs+"?mid="+item.id+" '>";
-                 html+= "<div class='tabs-items-content'>";
-                 html+= "<div class='tabs-items-content-title figcaption'>";
-                 html+= "<p>"+item.title+"</p></div>";
-                 html+= "<div class='tabs-items-content-text figcaption'>";
-                 html+= "<p>"+item.describe+"</p></div>";
-                 html+= "<div class='tabs-items-content-time'><span>";
-                 html+= "<img src='/static/spirit/images/shijian2x.png'>";
-                 html+="</span><span>"+item.release_time+"</span></div></div></a>";
-                 html +="</li>";
-            });
-            $('#shang').append(html).html();
-            $('#page').val(++pages);
-
-        }
-
-        if(ret.code == 404){
-            layer.msg(ret.msg);
-            return false;
-        }
-    },'json');
-}
-
-//招标信息分页
-function moreBiao(keyword,pages,objthis){
-    var urls = $(objthis).attr('data-url');
-    var hrefs = $(objthis).attr('data-href');
-    $.get(urls,{'keyword':keyword,'page':pages},function(ret){
-        if(ret.code == 200){
-            var html= "";
-            $.each(ret.data,function(i,item){
-                html+= "<li>";
-                html+= "<a href='"+hrefs+"?mid="+item.id+" '>";
-                html+= "<div class='tabs-items-content'>";
-                html+= "<div class='tabs-items-content-title figcaption'>";
-                html+= "<p>"+item.title+"</p></div>";
-                html+= "<div class='tabs-items-content-text figcaption'>";
-                html+= "<p>"+item.describe+"</p></div>";
-                html+= "<div class='tabs-items-content-time'><span>";
-                html+= "<img src='/static/spirit/images/shijian2x.png'>";
-                html+="</span><span>"+item.release_time+"</span></div></div></a>";
-                html+="</li>";
-            });
-            console.log(html);
-            $('#biao').append(html).html();
-            $('#pages').val(++pages);
-        }
-
-        if(ret.code == 404){
-            layer.msg(ret.msg);
-            return false;
-        }
-    },'json');
-}
-
-
 //回到列表页
 function go_news(obj){
     var url = $(obj).attr('data-url');
     window.location.href= url;
 }
 
+//列表页热门搜索
+function hotsearch(){
 
+}

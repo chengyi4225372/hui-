@@ -23,6 +23,15 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="images" class="col-sm-3 control-label"><span class="red-color">*</span>新闻展示图：</label>
+                    <div class="col-sm-9">
+                        <input type="file"  onchange="upload_files()" style="display:none;" class="form-control form-control-sm" id="file">
+                        <img id="imgs" src="{$info.imgs|default='__PUBLIC__/default.png'}" style="width:90px;height:80px;">
+                        <input type="hidden" id="Images" value="{$info.imgs}">
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">
                         <span class="red-color">*</span>新闻标题：</label>
                     <div class="col-sm-9">
@@ -35,7 +44,7 @@
                     <div class="col-sm-9" >
                         <select id="keyword" class="selectpicker" multiple  title="{$info.keyword}">
                             {volist name='list' id='co'}
-                            <option value="{$co.title}" data-width="100%" {if in_array($co.title,$keywords)} selected="true"{/if}>{$co.title}</option>
+                            <option value="{$co.title}" data-width="100%" {if in_array($co.title,$keywords)} selected="selected" {/if}>{$co.title}</option>
                             {/volist}
                         </select>
                     </div>
@@ -61,7 +70,7 @@
         </div>
         <div class="td-align dialog-footer">
             <button class="btn btn-warning cancle"> <i class="fa fa-close"></i> 取消</button>
-            <button class="btn btn-primary infos-edits" type="button"  data-url="{:url('/v1/info/infos/infosEdit')}"><i class="fa fa-save"></i> 确定提交</button>
+            <button class="btn btn-primary infosedits" type="button"  data-url="{:url('/v1/info/infos/infosEdit')}"><i class="fa fa-save"></i> 确定提交</button>
 
         </div>
     </form>

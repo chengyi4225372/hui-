@@ -103,8 +103,6 @@ function turnoff(){
     $('#popbox').hide();
 }
 
-
-
 //提交公海
 function form_btn(){
     var data = {};
@@ -173,42 +171,6 @@ function form_btn(){
 
     });
 };
-
-
-//分页
-function getMore(keyword,i,objthis){
-   var urls = $(objthis).attr('data-url');
-
-   var hrefs=$(objthis).attr('data-href');
-   $.get(urls,{'keyword':keyword,'page':i},function(ret){
-         if(ret.code == 200){
-             var html= '';
-             $.each(ret.data,function(i,item){
-                html+= "<li>";
-                html+= "<a href= '"+hrefs+"?mid="+item.id+"'>";
-                html+= "<div class='tabs-items-img'><img src="+item.imgs+" alt=''></div>";
-                html+= "<div class='tabs-items-content'><div class='tabs-items-content-title figcaption'>";
-                html+=  "<p>"+ item.title +"</p></div>";
-                html+= "<div class='tabs-items-content-text figcaption'>";
-                html+= "<p>"+item.desc+"</p></div>";
-                html+=" <div class='tabs-items-content-time'>" ;
-                html+="<span><img src='/static/spirit/images/shijian2x.png' alt=''></span>";
-                html+="<span>"+item.create_time +"</span></div></div>";
-                html+= "</a>";
-                html+="</li>";
-             });
-             console.log(html);
-             $('#content').append(html).html();
-             $('#page').val(++i);
-         }
-
-         if(ret.code == 404){
-             layer.msg(ret.msg);
-             return false;
-         }
-   },'json')
-
-}
 
 
 //回到惠灵工

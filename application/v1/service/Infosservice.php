@@ -104,15 +104,12 @@ class Infosservice
             $array['title|keyword|describe'] = ['like','%'.$title.'%'];
         }
 
-        $limit = 10;
-        if(empty($page)){
-            $page = '';
-        }else{
-            $page = $page * $limit;
+        if(empty($page) || is_null($page)){
+            $page = 10;
         }
 
-        $arr = Info::instance()->where($array)->order('release_time desc')->limit($page,$limit)->select();
-        return $arr;
+        $arr = Info::instance()->where($array)->order('release_time desc')->paginate($page);
+        return $arr?$arr:'';
     }
 
     /**
@@ -128,16 +125,16 @@ class Infosservice
             $array['pid'] =2;
             $array['title|keyword|describe'] = ['like','%'.$title.'%'];
         }
-        $limit = 10;
-        if(empty($page)){
-            $page = 0;
-        }else{
-            $page = $page * $limit;
+
+        if(empty($page) || is_null($page)){
+            $page = 15;
         }
 
-        $arr = Info::instance()->where($array)->order('release_time desc')->limit($page,$limit)->select();
-        return $arr;
+        $arr  = Info::instance()->where($array)->order('release_time desc')->paginate($page);
+
+        return $arr?$arr:'';
     }
+
 
 
     /**

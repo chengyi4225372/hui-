@@ -55,7 +55,7 @@
                     <td class="text-center">{$vo.title}</td>
                     <td class="text-center">{$vo.create_time}</td>
                     <td class="text-center">
-                        <a  class="btn btn-info" data-url="{:url('/v1/cate/ifications/edit')}" data-id="{$vo.id}" onclick="edits(this)">编辑</a>
+                        <a  class="btn btn-info" data-url="{:url('/v1/cate/ifications/edit',['mid'=>$vo.id])}"  onclick="edits(this)">编辑</a>
 
                         <a  class="btn btn-danger" data-url="{:url('/v1/cate/ifications/dels')}" data-id="{$vo.id}" onclick="dels(this)">删除</a>
                     </td>

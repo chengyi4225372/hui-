@@ -35,6 +35,7 @@ class Infos extends  AuthController
         $array['title'] = input('post.title', '', 'trim');
         $array['content'] = input('post.content', '');
         $array['describe'] = input('post.describe', '', 'trim');
+        $array['imgs']  = input('post.imgs', '', 'trim');
         $array['keyword']  = implode(',',json_decode(input('post.keyword', '', 'trim')));
         $array['release_time'] = date("Y-m-d");
 
@@ -76,6 +77,7 @@ class Infos extends  AuthController
               'content' =>input('post.content'),
               'describe'=>input('post.describe','','trim'),
               'keyword' =>implode(',',json_decode(input('post.keyword', '', 'trim'))),
+              'imgs'    =>input('post.imgs', '', 'trim'),
           );
 
           $ret = Infosservice::instance()->updateId($array,$id);
@@ -109,5 +111,30 @@ class Infos extends  AuthController
      }
      return false;
   }
+
+
+    //上传图片
+    public function uploadImgs(){
+        // 获取上传文件
+        $file =$this->request->file('file');
+        // 验证图片,并移动图片到框架目录下。
+        $path = ROOT_PATH.'public/uploads/imgs/works/';
+
+        if(!is_dir($path)){
+            mkdir($path,0755);
+        }
+
+        $info = $file->move($path,false,true);
+        if($info){
+            $mes = $info->getSaveName();
+            $mes = str_replace("\\",'/',$mes);
+            return json(['code'=>'200','msg'=>'上传成功','path'=>'/uploads/imgs/works/'.$mes]);
+        }else{
+            // 文件上传失败后的错误信息
+            $mes = $file->getError();
+            return json(['code'=>'400','msg'=>$mes]);
+        }
+    }
+
 
 }

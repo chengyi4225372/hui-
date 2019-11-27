@@ -55,7 +55,7 @@ class Ificationservice
              return false;
          }
 
-         $info = Ification::instance()->where(['status'=>1])->find();
+         $info = Ification::instance()->where(['status'=>1,'id'=>$id])->find();
 
          return empty($info)?'':$info;
      }
@@ -147,4 +147,12 @@ class Ificationservice
 
      }
 
+     /**
+      * 获取最高四条数据
+      */
+     public function getfour(){
+         $resfour = Ification::instance()->where(['status'=>1])->order('sort desc')->limit(4)->select();
+
+         return $resfour?$resfour:'';
+     }
 }

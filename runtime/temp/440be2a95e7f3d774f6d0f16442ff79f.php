@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"/opt/web/hui-/public/../application/home/view/index/get_info.html";i:1574740131;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:108:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\get_info.html";i:1574740077;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
 <!DOCTYPE >
 <html lang="en">
 

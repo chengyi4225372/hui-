@@ -8,6 +8,7 @@ use app\v1\service\Protuctservice;
 use app\v1\service\Infosservice;
 use app\v1\service\Systems;
 use app\v1\service\Caseservice;
+use app\v1\service\Ificationservice;
 use think\Cookie;
 use think\Cache;
 class Index extends BaseController
@@ -84,7 +85,7 @@ class Index extends BaseController
 
 
     /**
-     * 列表页面
+     * 招商列表页面
      */
     public function infoList(){
        if($this->request->isGet()){
@@ -92,19 +93,47 @@ class Index extends BaseController
 //           if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
 //               return $this->redirect('/home/index/index');
 //           }
-           //招标 招商信息
+           // 招商信息
            $title = input('get.keyword','','trim');
-           $biao = Infosservice::instance()->getbiao($title,'');
-           $shang = Infosservice::instance()->getshang($title,'');
-          // $total = count($biao) + count($shang);
-          // $this->assign('total',$total);
-           $this->assign('biao',$biao);
+           //$biao = Infosservice::instance()->getbiao($title,'');
+           $shang = Infosservice::instance()->getshang($title,20);
+
+           //关键字排序 最高四条
+           $four = Ificationservice::instance()->getfour();
+
+          // $this->assign('biao',$biao);
            $this->assign('shang',$shang);
            $this->assign('title','招商招标信息列表');
+           $this->assign('four',$four);
            return $this->fetch();
        }
        return false;
     }
+
+
+    /**
+     * 招标列表页
+     */
+     public function infoBiao(){
+         if($this->request->isGet()){
+
+//           if(Cookie('mobile') == '' || Cookie('mobile') == NULL || Cookie('mobile') == 0 ){
+//               return $this->redirect('/home/index/index');
+//           }
+             // 招商信息
+             $title = input('get.keyword','','trim');
+             $biao = Infosservice::instance()->getbiao($title,30);
+
+             //关键字排序 最高四条
+             $four = Ificationservice::instance()->getfour();
+             $this->assign('biao',$biao);
+             $this->assign('four',$four);
+             $this->assign('title','招标信息列表');
+             return $this->fetch();
+         }
+         return false;
+     }
+
 
     /**
      * 新闻详情页
