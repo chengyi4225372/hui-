@@ -9,7 +9,7 @@ window.onload = function () {
     var headerTotal = document.getElementById("headerTotal");
     var ul = document.querySelector(".content ul")
     var register = document.querySelector('.register')
-    var uinfo = document.querySelector('#u_info')
+    var uinfo = document.querySelector('.u_info')
     // var goTop=document.getElementByClassName("goTop")
     // console.log(goTop)
     if (top >= 1080) {
@@ -25,7 +25,7 @@ window.onload = function () {
       register.classList.add('register_two')
 
 
-      // uinfo.classList.add('u_info_two')
+       uinfo.classList.add('u_info_two')
       // uinfo.style.marginTop = '1rem'
 
 
@@ -68,7 +68,7 @@ window.onload = function () {
       logo.classList.remove('content_logo_two')
       ul.classList.remove('two')
       register.classList.remove('register_two')
-      // uinfo.classList.remove('u_info_two')
+      uinfo.classList.remove('u_info_two')
 
       // 返回顶部样式
       let goTop = document.getElementById('goTop')

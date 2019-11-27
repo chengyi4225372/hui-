@@ -1785,3 +1785,16 @@ input:-webkit-autofill {
 .u_info:hover .u_info_content {
   display: block
 }
+
+#register{
+  display:block;
+}
+#registers{
+  display:none;
+}
+#u_info{
+  display:none;
+}
+#u_info2{
+  display:block;
+}
