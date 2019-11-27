@@ -94,8 +94,9 @@ class Index extends BaseController
 //               return $this->redirect('/home/index/index');
 //           }
            // 招商信息
-           $title = input('get.keyword','','trim');
-           //$biao = Infosservice::instance()->getbiao($title,'');
+           $title   = input('get.keyword','','trim');
+           $keyword = input('get.title','','trim');
+           $title?$title:$keyword;
            $shang = Infosservice::instance()->getshang($title,20);
 
            //关键字排序 最高四条
@@ -121,7 +122,11 @@ class Index extends BaseController
 //               return $this->redirect('/home/index/index');
 //           }
              // 招商信息
-             $title = input('get.keyword','','trim');
+             $title   = input('get.keyword','','trim');//正常搜索
+             $keyword = input('get.title','','trim'); //热门搜索
+
+             $title?$title:$keyword;
+
              $biao = Infosservice::instance()->getbiao($title,30);
 
              //关键字排序 最高四条

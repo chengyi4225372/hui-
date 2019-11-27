@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574842557;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574845356;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -159,8 +159,8 @@
                             <span>热门关键词</span>
                         </li>
                         <?php if(is_array($four) || $four instanceof \think\Collection || $four instanceof \think\Paginator): $i = 0; $__LIST__ = $four;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ff): $mod = ($i % 2 );++$i;?>
-                        <li onclick="hotserach();" data-url="<?php echo url('/home/index/infoList'); ?>">
-                            <span><?php echo $ff['title']; ?></span>
+                        <li onclick="hotsearch(this);" data-title="<?php echo $ff['title']; ?>" data-url="<?php echo url('/home/index/infoList'); ?>">
+                        <span><?php echo $ff['title']; ?></span>
                         </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
@@ -207,9 +207,9 @@
                                 </div>
                             </a>
                             <ul class="tags">
-                                <li>外包</li>
-                                <li>社保外包</li>
-                                <li>人力资源数字转化</li>
+                                <?php if(empty($sh['keyword']) || (($sh['keyword'] instanceof \think\Collection || $sh['keyword'] instanceof \think\Paginator ) && $sh['keyword']->isEmpty())): else: if(is_array($sh['keyword']) || $sh['keyword'] instanceof \think\Collection || $sh['keyword'] instanceof \think\Paginator): if( count($sh['keyword'])==0 ) : echo "" ;else: foreach($sh['keyword'] as $k=>$key): ?>
+                                <li onclick="hotsearch(this);" data-title="<?php echo $key; ?>" data-url="<?php echo url('/home/index/infoList'); ?>" ><?php echo $key; ?></li>
+                                <?php endforeach; endif; else: echo "" ;endif; endif; ?>
                             </ul>
                         </li>
                         <?php endforeach; endif; else: echo "" ;endif; endif; ?>

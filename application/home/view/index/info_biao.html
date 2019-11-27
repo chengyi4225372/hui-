@@ -144,7 +144,7 @@
                             <span>热门关键词</span>
                         </li>
                         {volist name='four' id='ff'}
-                        <li onclick="hotserach();" data-url="{:url('/home/index/infoBiao')}">
+                        <li onclick="hotsearch(this);" data-title="{$ff.title}" data-url="{:url('/home/index/infoBiao')}">
                             <span>{$ff.title}</span>
                         </li>
                         {/volist}
@@ -187,15 +187,18 @@
                                         <p>
                                             {$ww.describe}
                                         </p>
-                                        <ul class="tags">
-                                            <li>外包</li>
-                                            <li>社保外包</li>
-                                            <li>人力资源数字转化</li>
-                                        </ul>
                                     </div>
 
                                 </div>
                             </a>
+                            <ul class="tags">
+                                {empty name='$ww.keyword'}
+                                {else /}
+                                {foreach name="$ww.keyword" item="key" key="k" }
+                                <li onclick="hotsearch(this);" data-title="{$key}" data-url="{:url('/home/index/infoBiao')}" >{$key}</li>
+                                {/foreach}
+                                {/empty}
+                            </ul>
                         </li>
                         {/volist}
                         {/empty}
