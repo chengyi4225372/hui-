@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574845714;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574846268;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -199,8 +199,8 @@
                                         <div class="rightTop">
                                             <div class="itemTitle"><?php echo mb_substr($sh['title'],0,35,'utf-8'); ?></div>
                                             <span class="itemTime">
-                                      <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $sh['release_time']; ?></span>
-                        </span>
+                                                <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $sh['release_time']; ?></span>
+                                            </span>
                                         </div>
                                         <p>
                                             <?php echo $sh['describe']; ?>
