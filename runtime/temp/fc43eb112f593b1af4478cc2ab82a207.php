@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574753168;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"/opt/web/hui-/public/../application/home/view/index/index.html";i:1574817580;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -198,14 +198,14 @@
                         </li>
                     </ul>
 
-                    <?php if(empty($userinfo['mobile'])): ?>
-                    <div class='register'>
+
+                    <div class='register' id="<?php if(empty($userinfo['mobile'])): ?>register<?php else: ?>registers<?php endif; ?>">
                         <a href="javascript:void(0)" login_url="<?php echo $baseurl; ?>" loca_url="<?php echo config('curl.website'); ?>"
                            onclick="login_btn(this)">登录</a>
                         <a href="<?php echo url('/home/login/register'); ?>">注册</a>
                     </div>
-                    <?php else: ?>
-                    <div class="u_info" id="u_info">
+
+                    <div class="u_info" id="<?php if(empty($userinfo['mobile'])): ?>u_info<?php else: ?>u_info2<?php endif; ?>" >
                         <img src="/static/home/images/user_img.png">
                         <p id="mobile_phone">
                             <?php echo $userinfo['mobile']; ?></p>
@@ -215,7 +215,7 @@
                                data-url="<?php echo url('/home/login/logout'); ?>">退出账号</a>
                         </div>
                     </div>
-                    <?php endif; ?>
+
 
 
                 </div>
