@@ -88,15 +88,16 @@ class Index extends BaseController
 //               return $this->redirect('/home/index/index');
 //           }
            // 招商信息
-           $title   = input('get.keyword','','trim');
-           $keyword = input('get.title','','trim');
-           $title?$title:$keyword;
-           $shang = Infosservice::instance()->getshang($title,20);
+           $keyword   = input('get.keyword','','trim');
+           $title     = input('get.title','','trim');
+
+           $titles    =$keyword?$keyword:$title;
+
+           $shang = Infosservice::instance()->getshang($titles,20);
 
            //关键字排序 最高四条
            $four = Ificationservice::instance()->getfour();
 
-          // $this->assign('biao',$biao);
            $this->assign('shang',$shang);
            $this->assign('title','招商招标信息列表');
            $this->assign('four',$four);
@@ -116,12 +117,12 @@ class Index extends BaseController
 //               return $this->redirect('/home/index/index');
 //           }
              // 招商信息
-             $title   = input('get.keyword','','trim');//正常搜索
-             $keyword = input('get.title','','trim'); //热门搜索
+             $keyword   = input('get.keyword','','trim');//正常搜索
+             $title     = input('get.title','','trim'); //热门搜索
 
-             $title?$title:$keyword;
+             $titles    =$keyword?$keyword:$title;
 
-             $biao = Infosservice::instance()->getbiao($title,30);
+             $biao = Infosservice::instance()->getbiao($titles,30);
 
              //关键字排序 最高四条
              $four = Ificationservice::instance()->getfour();

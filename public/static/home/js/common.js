@@ -207,8 +207,10 @@ function hotsearch(obj){
   var keyword  = $(obj).attr('data-title');
   var url    = $(obj).attr('data-url');
 
+  //alert(url);
   if(keyword== '' || keyword== undefined || keyword == 'undefined'){
       return false;
   }
+
   window.location.href = url+'?title='+keyword;
 }
