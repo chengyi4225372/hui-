@@ -1,4 +1,8 @@
+<<<<<<< HEAD:runtime/temp/e5a41df61c017a4f5ef31f4579652002.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574844262;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_biao.html";i:1574845196;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+>>>>>>> 5640ab2d4cf6e679deb55954d504ef1dba5dc827:runtime/temp/4d075e163c80069ed890aedad80e2b5b.php
 <!DOCTYPE>
 <html lang="en">
 
@@ -160,7 +164,7 @@
                             <span>热门关键词</span>
                         </li>
                         <?php if(is_array($four) || $four instanceof \think\Collection || $four instanceof \think\Paginator): $i = 0; $__LIST__ = $four;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ff): $mod = ($i % 2 );++$i;?>
-                        <li onclick="hotserach();" data-url="<?php echo url('/home/index/infoBiao'); ?>">
+                        <li onclick="hotsearch(this);" data-title="<?php echo $ff['title']; ?>" data-url="<?php echo url('/home/index/infoBiao'); ?>">
                             <span><?php echo $ff['title']; ?></span>
                         </li>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -206,15 +210,15 @@
                                         <p>
                                             <?php echo $ww['describe']; ?>
                                         </p>
-                                        <ul class="tags">
-                                            <li>外包</li>
-                                            <li>社保外包</li>
-                                            <li>人力资源数字转化</li>
-                                        </ul>
                                     </div>
 
                                 </div>
                             </a>
+                            <ul class="tags">
+                                <?php if(empty($ww['keyword']) || (($ww['keyword'] instanceof \think\Collection || $ww['keyword'] instanceof \think\Paginator ) && $ww['keyword']->isEmpty())): else: if(is_array($ww['keyword']) || $ww['keyword'] instanceof \think\Collection || $ww['keyword'] instanceof \think\Paginator): if( count($ww['keyword'])==0 ) : echo "" ;else: foreach($ww['keyword'] as $k=>$key): ?>
+                                <li onclick="hotsearch(this);" data-title="<?php echo $key; ?>" data-url="<?php echo url('/home/index/infoBiao'); ?>" ><?php echo $key; ?></li>
+                                <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+                            </ul>
                         </li>
                         <?php endforeach; endif; else: echo "" ;endif; endif; ?>
                     </ul>

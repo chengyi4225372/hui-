@@ -203,6 +203,12 @@ function go_news(obj){
 }
 
 //列表页热门搜索
-function hotsearch(){
+function hotsearch(obj){
+  var keyword  = $(obj).attr('data-title');
+  var url    = $(obj).attr('data-url');
 
+  if(keyword== '' || keyword== undefined || keyword == 'undefined'){
+      return false;
+  }
+  window.location.href = url+'?title='+keyword;
 }

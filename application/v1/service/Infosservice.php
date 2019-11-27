@@ -109,6 +109,11 @@ class Infosservice
         }
 
         $arr = Info::instance()->where($array)->order('release_time desc')->paginate($page);
+
+        foreach ($arr as $k =>$val){
+            $arr[$k]['keyword'] = explode(',',$arr[$k]['keyword']);
+        }
+
         return $arr?$arr:'';
     }
 
@@ -131,6 +136,10 @@ class Infosservice
         }
 
         $arr  = Info::instance()->where($array)->order('release_time desc')->paginate($page);
+
+        foreach ($arr as $k =>$val){
+            $arr[$k]['keyword'] = explode(',',$arr[$k]['keyword']);
+        }
 
         return $arr?$arr:'';
     }
