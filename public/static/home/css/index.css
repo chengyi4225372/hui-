@@ -1714,13 +1714,13 @@ input:-webkit-autofill {
 .u_info p {
   display: inline-block;
   color: #000;
-  height: 23px;
+  height: 25px;
 }
 
 .u_info_two p {
   display: inline-block;
   color: #fff;
-  height: 23px;
+  height: 25px;
 }
 
 .u_info_content {
