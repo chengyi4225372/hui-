@@ -1,8 +1,4 @@
-<<<<<<< HEAD:runtime/temp/6333cc91b24067eade9e8de6f853d685.php
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574843164;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574845356;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
->>>>>>> 5640ab2d4cf6e679deb55954d504ef1dba5dc827:runtime/temp/eec3f0a86829f985a45e938bd89e2e0e.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_list.html";i:1574845714;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -189,7 +185,11 @@
                         </li>
                         <?php else: if(is_array($shang) || $shang instanceof \think\Collection || $shang instanceof \think\Paginator): $i = 0; $__LIST__ = $shang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sh): $mod = ($i % 2 );++$i;?>
                         <li>
-                            <a href="<?php echo url('/home/index/getInfo',array('mid'=>$sh['id'])); ?>">
+                            <a href="javascript:;"
+                               login_url="<?php echo $baseurl; ?>"
+                               loca_url="<?php echo config('curl.website'); ?>/home/index/getInfo?mid=<?php echo $sh['id']; ?>"
+                               mobile-phone="<?php echo $userinfo['mobile']; ?>" data-id="<?php echo $sh['id']; ?>"
+                               onclick="home_module.show_detail(this)">
                                 <div class="infoItem">
                                     <div class="infoLeft">
                                         <img src="<?php echo !empty($sh['imgs'])?$sh['imgs']:'/static/home/images/infoItem.jpg';; ?>" alt="">
