@@ -1,8 +1,4 @@
-<<<<<<< HEAD:runtime/temp/e5a41df61c017a4f5ef31f4579652002.php
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574844262;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_biao.html";i:1574845196;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
->>>>>>> 5640ab2d4cf6e679deb55954d504ef1dba5dc827:runtime/temp/4d075e163c80069ed890aedad80e2b5b.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574845714;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
