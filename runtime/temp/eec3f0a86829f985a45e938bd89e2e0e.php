@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574846230;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_list.html";i:1574904492;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -197,10 +197,10 @@
 
                                     <div class="infoRight">
                                         <div class="rightTop">
-                                            <div class="itemTitle"><?php echo mb_substr($sh['title'],0,35,'utf-8'); ?></div>
+                                            <div class="itemTitle"><?php echo $sh['title']; ?></div>
                                             <span class="itemTime">
-                                      <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $sh['release_time']; ?></span>
-                        </span>
+                                                <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $sh['release_time']; ?></span>
+                                            </span>
                                         </div>
                                         <p>
                                             <?php echo $sh['describe']; ?>

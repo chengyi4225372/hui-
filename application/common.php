@@ -13,7 +13,12 @@
 
 // 公共助手函数
 
+<<<<<<< HEAD
+
+if(!function_exists('mb_substr')){
+=======
 /*if(!function_exists('mb_substr')){
+>>>>>>> 6c41af2b0700210ebe11c0428437327d20f21196
         function mb_substr($str, $start=0, $length, $charset="utf-8", $suffix=true)
     {
         $re['utf-8']   = "/[x01-x7f]|[xc2-xdf][x80-xbf]|[xe0-xef]
