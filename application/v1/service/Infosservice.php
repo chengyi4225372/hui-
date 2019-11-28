@@ -112,6 +112,7 @@ class Infosservice
 
         foreach ($arr as $k =>$val){
             $arr[$k]['keyword'] = explode(',',$arr[$k]['keyword']);
+            $arr[$k]['title']   = mb_substr($arr[$k]['title'],0,50,'utf-8');
         }
 
         return $arr?$arr:'';
@@ -139,6 +140,7 @@ class Infosservice
 
         foreach ($arr as $k =>$val){
             $arr[$k]['keyword'] = explode(',',$arr[$k]['keyword']);
+            $arr[$k]['title']   = mb_substr($arr[$k]['title'],'0','50','utf-8');
         }
 
         return $arr?$arr:'';

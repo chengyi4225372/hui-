@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_biao.html";i:1574846230;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:109:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/home\view\index\info_biao.html";i:1574904502;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\home\view\common\login.html";i:1574064453;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -17,7 +17,6 @@
     <script src='/static/spirit/js/Informationlist.js'></script>
     <script src="/static/assets/plugins/layui/layui.all.js"></script>
     <script src='/static/home/js/common.js'></script>
-    <script src='/static/home/js/index.js'></script>
     <script src='/static/common/js/public.js'></script>
 </head>
 
@@ -198,7 +197,7 @@
 
                                     <div class="infoRight">
                                         <div class="rightTop">
-                                            <div class="itemTitle"><?php echo mb_substr($ww['title'],0,35,'utf-8'); ?></div>
+                                            <div class="itemTitle"><?php echo $ww['title']; ?></div>
                                             <span class="itemTime">
                                                 <img src="/static/spirit/images/shijian2x.png" alt=""><span><?php echo $ww['release_time']; ?></span>
                                             </span>

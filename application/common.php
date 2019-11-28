@@ -13,6 +13,7 @@
 
 // 公共助手函数
 
+
 if(!function_exists('mb_substr')){
         function mb_substr($str, $start=0, $length, $charset="utf-8", $suffix=true)
     {
