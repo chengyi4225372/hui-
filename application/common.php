@@ -13,7 +13,7 @@
 
 // 公共助手函数
 
-if(!function_exists('mb_substr')){
+/*if(!function_exists('mb_substr')){
         function mb_substr($str, $start=0, $length, $charset="utf-8", $suffix=true)
     {
         $re['utf-8']   = "/[x01-x7f]|[xc2-xdf][x80-xbf]|[xe0-xef]
@@ -27,7 +27,7 @@ if(!function_exists('mb_substr')){
         return $slice;
 
     }
-}
+}*/
 
 
 
