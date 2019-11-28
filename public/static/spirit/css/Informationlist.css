@@ -377,7 +377,7 @@ a {
 .u_info {
     position: relative;
     float: right;
-    margin-top: .4625rem;
+    /*margin-top: .4625rem;*/
     cursor: pointer;
 }
 
