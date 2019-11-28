@@ -97,7 +97,14 @@
                 <a href="{:url('/home/login/register')}">注册</a>
             </div>
             {else /}
-            {include file="common/login"}
+            <div class="u_info">
+                <img src="__HOME__/images/user_img.png" style="width:30px;height:30px; vertical-align: middle;">
+                <p style="display:inline-block;color:#fff;"  id="mobile_phone">{$userinfo['mobile']}</p>
+
+                <div class="u_info_content" id="u_info_content">
+                    <a class="u_out" href="javascript:void(0)" data-token="{$userinfo['token']}" onclick="user_logout(this)" location_url="{:url('/home/index/index')}" data-url="{:url('/home/login/logout')}">退出账号</a>
+                </div>
+            </div>
             {/if}
         </div>
     </div>
