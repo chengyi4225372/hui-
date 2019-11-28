@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574845714;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"/opt/web/hui-/public/../application/home/view/index/info_biao.html";i:1574902442;s:53:"/opt/web/hui-/application/home/view/common/login.html";i:1574064677;}*/ ?>
 <!DOCTYPE>
 <html lang="en">
 
@@ -17,7 +17,6 @@
     <script src='/static/spirit/js/Informationlist.js'></script>
     <script src="/static/assets/plugins/layui/layui.all.js"></script>
     <script src='/static/home/js/common.js'></script>
-    <script src='/static/home/js/index.js'></script>
     <script src='/static/common/js/public.js'></script>
 </head>
 
@@ -148,7 +147,7 @@
                     <div class="govPolicy fl">政府招标信息</div>
                     <div class="search-box fr">
                         <input type="text" id="keyword" value="<?php echo \think\Request::instance()->get('keyword'); ?>" placeholder="请输入关键字">
-                        <div id="searched" data-url="<?php echo url('/home/index/infoBiao'); ?>">搜索</div>
+                        <div id="searched" style="cursor:pointer;" data-url="<?php echo url('/home/index/infoBiao'); ?>">搜索</div>
                     </div>
                 </div>
 
