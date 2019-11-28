@@ -172,6 +172,7 @@
                         {volist name='shang' id='sh'}
                         <li>
                             <a href="javascript:;"
+                               data-url="{:url('/home/index/getInfo',['mid' => $sh.id])}"
                                login_url="{$baseurl}"
                                loca_url="{:config('curl.website')}/home/index/getInfo?mid={$sh['id']}"
                                mobile-phone="{$userinfo['mobile']}" data-id="{$sh['id']}"
