@@ -74,7 +74,7 @@ $('.cancle').click(function(){
  */
 function edits(obj){
   var urls = $(obj).attr('data-url');
-
+  var mid  = $(obj).attr('data-id');
 
   if(urls == '' || urls == undefined || urls == 'undefined'){
       return false;
@@ -86,7 +86,7 @@ function edits(obj){
       shadeClose: true,
       shade: 0.8,
       area: ['35%', '40%'],
-      content: urls, //iframe的url
+      content: urls+'?mid='+mid, //iframe的url
        });
 }
 

@@ -70,6 +70,39 @@ class Systems
         return true;
     }
 
+    /**
+     * @DESC：菜单
+     * @author: jason
+     * @date: 2019-07-26 09:58:40
+     */
+    public function menu($params)
+    {
+        //每页显示的数量
+        $page_size = !empty($params['ps']) ? $params['ps'] : 20;
+        //当前页
+        $current_page = (!empty($params['page']) && intval($params['page']) > 0) ? $params['page'] : 1;
+        //分页起始值
+        $start = $page_size * ($current_page - 1);
+        $fields = 'id,type,pid,title,url,icon,url,weigh,status,createtime,remark';
+        $where['status'] = 1;
+        //分页url参数
+        $config = [
+            'query' => request()->param(),
+        ];
+        $menuInfo = Menu::instance()->where($where)
+            ->limit($start,$page_size)
+            ->order('weigh', 'desc')
+            ->field($fields)
+            ->paginate($page_size, false, $config);
+        $page = $menuInfo->render();
+        $return_data = [
+            'list' => $menuInfo->toArray(),
+            'page' => $page,
+        ];
+        return $return_data;
+    }
+
+
 
     /**
      * @DESC：修改密码
@@ -89,7 +122,40 @@ class Systems
         return true;
     }
 
+    /**
+     * @DESC：树形结构
+     * @author: jason
+     * @date: 2019-08-02 04:10:03
+     */
+    public function getMenuTree()
+    {
+        //查询出所有的菜单
+        $menuInfo = collection(Menu::order('weigh', 'desc')->select())->toArray();
+        Tree::instance()->init($menuInfo);
+        $treeList = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0),'title');
+        return $treeList;
+    }
 
+    /**
+     * @DESC：更新菜单
+     * @author: jason
+     * @date: 2019-08-28 02:47:03
+     */
+    public function savemenu($params)
+    {
+        $add['title'] = $params['title'];
+        $add['type'] = $params['type'];
+        $add['status'] = $params['status'];
+        $add['url'] = $params['url'];
+        $add['icon'] = $params['icon'];
+        $add['remark'] = $params['remark'];
+        $add['createtime'] = time();
+        $res = Menu::instance()->insert($add);
+        if($res === false){
+            return json(['status' => false,'msg' => '操作失败']);
+        }
+        return json(['status' => true,'msg' => '操作成功']);
+    }
 
     /**
      * @DESC：添加网站设置
@@ -200,10 +266,10 @@ class Systems
             return json(['status' => false,'msg' => '添加失败']);
         }
         $add['pic'] = $params['pic'];
-        $add['title'] = isset($params['title']) && !empty($params['title']) ? $params['title'] : '';
-        $add['desc'] = isset($params['desc']) && !empty($params['desc']) ? $params['desc'] : '';
-        $add['url'] = isset($params['url']) && !empty($params['url']) ? $params['url'] : '';
-        $add['status'] = isset($params['status']) && !empty($params['status']) ? $params['status'] : 1;
+        $add['title'] = $params['title'] ?? '';
+        $add['desc'] = $params['desc'] ?? '';
+        $add['url'] = $params['url'] ?? '';
+        $add['status'] = $params['status'] ?? 1;
         $res = Slideshow::insert($add);
         if($res === false){
             return json(['status' => false,'msg' => '添加失败']);

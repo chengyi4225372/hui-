@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:103:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\public/../application/v1\view\index\index.html";i:1572505804;s:96:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\layout\default.html";i:1571369306;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\meta.html";i:1572405618;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\header.html";i:1571727608;s:93:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\left.html";i:1572353870;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\footer.html";i:1571727608;s:95:"C:\Users\Administrator\Desktop\phpEnv5.6.0-Green\www\hui\application\v1\view\common\script.html";i:1571899026;}*/ ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:75:"/opt/web/hui/public/../application/v1/view/systematic/system/slideshow.html";i:1573792447;s:52:"/opt/web/hui/application/v1/view/layout/default.html";i:1573792446;s:49:"/opt/web/hui/application/v1/view/common/meta.html";i:1573792446;s:51:"/opt/web/hui/application/v1/view/common/header.html";i:1573792446;s:49:"/opt/web/hui/application/v1/view/common/left.html";i:1573792446;s:51:"/opt/web/hui/application/v1/view/common/footer.html";i:1573792446;s:51:"/opt/web/hui/application/v1/view/common/script.html";i:1574307552;}*/ ?>
+<!DOCTYPE>
 <html lang="zh-CN">
 <head>
     <!-- 加载样式及META信息 -->
@@ -320,63 +320,85 @@
     <!-- Full Width Column -->
     <div class="content-wrapper">
         
-    <!-- Main content -->
-    <section class="content">
-        <div class="box box-default color-palette-box" style="min-height:700px;">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                        <a href="<?php echo url('/v1/protuct/protucts/index'); ?>">
-                            <div class="info-box-content">
-                                <span class="info-box-text"><h2>共享产品</h2></span>
-                                <span class="info-box-number"><h2><?php echo $pro_count; ?></h2></span>
-                            </div>
-                        </a>
+<div class="content" style="margin-bottom:0px;min-height:0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline"  id="form">
 
-                        <!-- /.info-box-content -->
+                <div class="panel panel-default panel-btn">
+                    <div class="panel-heading">
+                        <div class="form-group">
+                            <label>状态：</label>
+                            <select class="form-control" name="status">
+                                <option value="">请选择</option>
+                                <option value="1" <?php if((isset($params['status'])) && ($params['status'] == 1)): ?>selected='selected'<?php endif; ?>>启用</option>
+                                <option value="2" <?php if((isset($params['status'])) && ($params['status'] == 2)): ?>selected='selected'<?php endif; ?>>禁用</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button class="btn btn-info" id="btn_search" type="Submit"  data-url="<?php echo url('/v1/users/user/index'); ?>"><i class="glyphicon glyphicon-search" aria-hidden="true"></i>搜索</button>
+                        </div>
                     </div>
-                    <!-- /.info-box -->
                 </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-                        <a href="<?php echo url('/v1/info/infos/index'); ?>">
-                            <div class="info-box-content">
-                                <span class="info-box-text"><h2>招标信息</h2></span>
-                                <span class="info-box-number"><h2><?php echo $info_count; ?></h2></span>
-                            </div>
-                        </a>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-
-                <!-- fix for small devices only -->
-                <div class="clearfix visible-sm-block"></div>
-
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-                        <a href="<?php echo url('/v1/users/user/index'); ?>">
-                            <div class="info-box-content">
-                                <span class="info-box-text"><h2>用户信息</h2></span>
-                                <span class="info-box-number"><h2><?php echo $user_count; ?></h2></span>
-                            </div>
-                        </a>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-            </div>
+                <br>
+            </form>
         </div>
-    </section>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+    <div class="box box-default color-palette-box" style="min-height:700px;">
+        <div class="box-header with-border">
+            <button type="button" class="btn btn-sm btn-refresh"><i class="fa fa-refresh"></i></button>
+            <button type="button" class="btn bg-purple btn-sm btn-dialog"
+                    id="addslideshow" data-url="<?php echo url('/v1/systematic/system/addslideshow'); ?>">
+                <i class="fa fa-plus-circle">添加轮播图</i></button>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <th class="td-align td-width-40px">
+                    <input class="data-check_box_total" onclick="admin_module.check_out(this)" type="checkbox"/>
+                </th>
+                <th class="text-center">标题</th>
+                <th class="text-center">描述</th>
+                <th class="text-center">URL</th>
+                <th class="text-center">图片</th>
+                <th class="text-center">状态</th>
+                <th class="text-center">操作</th>
+                </thead>
+                <tbody>
+                <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?>
+                    <tr>
+                        <td class="td-align td-padding">
+                            <input type="checkbox" name="box_checked" data-id="<?php echo isset($list['id']) ? $list['id'] : ''; ?>" class="data-check_box">
+                        </td>
+                        <td class="text-center"><?php echo $list['title']; ?></td>
+                        <td class="text-center"><?php echo $list['desc']; ?></td>
+                        <td class="text-center"><?php echo $list['url']; ?></td>
+                        <td class="text-center">
+                            <img src="<?php echo $list['pic']; ?>" style="width:50px;height:50px;">
+                        </td>
+                        <td class="text-center">
+                            <span class="btn <?php if($list['status'] == 1): ?>btn-success<?php else: ?>btn-danger<?php endif; ?>"><?php echo $status[$list['status']]; ?></span>
+                        </td>
+                        <td class="text-center">
+                            <a href="javascript:void(0)" class="btn btn-info" data-url="<?php echo url('/v1/systematic/system/editslideshow',['id' => $list['id']]); ?>" onclick="admin_module.edit_slideshow(this)">编辑</a>
+                        </td>
+                    </tr>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+                </tbody>
+            </table>
+            <div class="pages"></div>
+        </div>
+    </div>
+
+</section>
 
     </div>
 
@@ -419,7 +441,7 @@
 <script src="/static/assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="/static/assets/plugins/datatables/dataTables.bootstrap.js"></script>
 <!-- 富文本 -->
-<script src="/static/assets/plugins/ueditor//ueditor.config.js"></script>
+<script src="/static/assets/plugins/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/ueditor.all.js"> </script>
 <script type="text/javascript" charset="utf-8" src="/static/assets/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
 <!-- 富文本-->
